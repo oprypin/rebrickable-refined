@@ -1,0 +1,94 @@
+{
+    "manifest_version": 3,
+    "name": "Rebrickable Refined",
+    "description": "Enhances rebrickable.com with new features and fixes some annoyances",
+    "version": "1.0",
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://oprypin.github.io/*"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Rebrickable Refined"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://rebrickable.com/*"
+            ],
+            "js": [
+                "settings.js",
+                "global.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://rebrickable.com/*"
+            ],
+            "js": [
+                "sort-order.js"
+            ],
+            "world": "MAIN",
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://rebrickable.com/*"
+            ],
+            "js": [
+                "common.js",
+                "part-lists.js",
+                "search-addition.js",
+                "set-lists.js",
+                "owned-colors.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://rebrickable.com/parts/*"
+            ],
+            "js": [
+                "related-parts-data.js",
+                "related-parts.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://rebrickable.com/*"
+            ],
+            "js": [
+                "search-in-part-dialog.js"
+            ],
+            "world": "MAIN",
+            "run_at": "document_end"
+        }
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "@rebrickablerefined",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
+        }
+    }
+}

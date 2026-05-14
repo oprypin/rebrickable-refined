@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 630px;
+      padding: 7px;
+      font-family: Roboto, "Segoe UI", Ubuntu, system-ui, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    h2 {
+      margin-top: 1px;
+      margin-bottom: 3px;
+    }
+
+    h3 {
+      margin-top: 18px;
+      margin-bottom: 6px;
+    }
+
+    .subtree {
+      margin-left: 18px;
+      padding-left: 8px;
+      margin-bottom: 4px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      padding: 2px;
+      margin-left: 8px;
+      cursor: pointer;
+      position: relative;
+      gap: 7px;
+    }
+
+    label.active::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #3479e8;
+    }
+
+    label:has(input:disabled) {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    input[type="checkbox"] {
+      accent-color: #3479e8;
+      width: 16px;
+      height: 16px;
+      cursor: inherit;
+    }
+
+    .help-icon {
+      display: flex;
+      visibility: hidden;
+      color: rgba(102, 102, 102, 0.9);
+    }
+
+    label:hover .help-icon,
+    .help-icon:focus {
+      visibility: visible;
+    }
+
+    .help-icon:hover {
+      color: #0056b3;
+    }
+
+    h3 small {
+      font-weight: 400;
+      font-size: 80%;
+      margin-left: 10px;
+      vertical-align: bottom;
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .warning,
+    .warning a {
+      color: #474223 !important;
+    }
+
+    .warning svg {
+      color: #7d763e;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <a style="float: right" title="Homepage" href="https://github.com/oprypin/rebrickable-refined">
+    <img style="width: 64px; height: 64px" src="icon128.png" alt="Logo">
+  </a>
+  <h2>Settings for <b><i>Rebrickable Refined</i></b></h2>
+  <section>
+    <h3>Part lists</h3>
+    <div>
+      <label><input type="checkbox" id="fix-parts-sort-order"> Fix the sort order of parts</label>
+      <label><input type="checkbox" id="rework-inventory-styles"> Rework part list styles</label>
+    </div>
+    <div class="subtree">
+      <label><input type="checkbox" id="decorate-part-colors"> Add colored corners to part tiles to disambiguate the color</label>
+    </div>
+    <label><input type="checkbox" id="consistent-part-images"> Make part images consistent, fix brightness of black parts</label>
+    <label><input type="checkbox" id="checklist-range-selection"> Enable range selection in part lists (Click, then Shift+Click)</label>
+
+    <h3>Part details pages</h3>
+    <label><input type="checkbox" id="display-related-parts"> Show additional related parts, add detailed tables where applicable</label>
+    <label><input type="checkbox" id="fix-part-retirement-years"> Display corrected part retirement years if they are known to be wrong</label>
+    <label><input type="checkbox" id="owned-parts-headings"> Your Colors: Add textual headings to the table of your owned colors of parts</label>
+    <label><input type="checkbox" id="partlists-first-in-owned-parts"> Your Colors: Show partlists first</label>
+
+    <h3>Main search field
+      <small class="warning" data-setting="add-main-parts-search">Uses an external service: <a href="https://github.com/oprypin/rebrickable-refined#privacy">privacy note</a></small>
+    </h3>
+    <label><input type="checkbox" id="add-main-parts-search"> Add an improved parts search function to the main search field ("Parts+")</label>
+    <div class="subtree">
+      <label><input type="checkbox" id="focus-main-parts-search"> Always pre-select the new search function when viewing any parts-related page</label>
+    </div>
+    <label><input type="checkbox" id="remember-selected-search-option"> Remember the selected search category across page visits</label>
+
+    <h3>Part details and search
+      <small class="warning" data-setting="part-dialog-replace-search">Uses an external service: <a href="https://github.com/oprypin/rebrickable-refined#privacy">privacy note</a></small>
+    </h3>
+    <label><input type="checkbox" id="part-dialog-replace-search"> Replace the parts search function in the "Part Summary" and "Add Part" dialogs</label>
+    <div class="subtree">
+      <label><input type="checkbox" id="part-dialog-filter-existing-colors"> Filter selectable part colors to only the existing ones in the "Add Part" dialog</label>
+    </div>
+    <label><input type="checkbox" id="part-dialog-always-sort-colors"> Always sort the color dropdown alphabetically in the "Use Part" dialog</label>
+    <label><input type="checkbox" id="part-dialog-improved-keyboard-input"> Improved keyboard input in the "Add Part" dialog</label>
+
+    <h3>Set / MOC details</h3>
+    <label><input type="checkbox" id="redesign-set-and-moc-tiles"> Redesign set and MOC tiles: show likes, release dates, part counts</label>
+    <label><input type="checkbox" id="detailed-moc-sidebar"> Show more details on the sidebar of a MOC</label>
+    <label><input type="checkbox" id="quick-download-csv-link"> Add a quick download link for the CSV parts list in the sidebar of a MOC</label>
+
+    <h3>General</h3>
+    <label><input type="checkbox" id="increase-image-resolution"> Increase resolution for most thumbnail images, so they are not blurry</label>
+    <label><input type="checkbox" id="enable-high-contrast-text"> Enable the built-in "high contrast text" setting</label>
+    </div>
+
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+        <line x1="12" y1="9" x2="12" y2="13"></line>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </symbol>
+      <symbol id="icon-question" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3v0.9"></path>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </symbol>
+    </svg>
+
+    <script src="settings.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

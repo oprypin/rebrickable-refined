@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "es2021",
+        "isolatedModules": true,
+        "strictNullChecks": true,
+        "removeComments": false,
+        "alwaysStrict": false,
+        "module": "preserve",
+        "types": [
+            "chrome"
+        ],
+    },
+    "filesGlob": [
+        "src/**/*.ts",
+    ]
+}

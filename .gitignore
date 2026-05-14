@@ -1,0 +1,10 @@
+.*
+!.github/
+node_modules/
+dist/
+site/
+*.crx
+*.pem
+*.xpi
+*.zip
+package-lock.json
