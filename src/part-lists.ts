@@ -286,7 +286,7 @@ function fixImg(container: HTMLElement) {
         const element = elementMatch[1];
         const timestamp = Math.floor(parseFloat(elementMatch[2]));
         const colorId = container.querySelector<HTMLElement>('[data-color_id]')?.dataset['color_id'];
-        if (timestamp >= 1776053292) {
+        if (timestamp >= 1775010000) {
             replaceImage(`https://www.lego.com/cdn/product-assets/element.img.lod5photo.192x192/${element}.jpg`);
             if (colorId === '0' && elementsToDarken.has(element)) {
                 img.style.filter = 'contrast(1.26)';

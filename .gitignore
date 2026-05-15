@@ -7,4 +7,5 @@ site/
 *.pem
 *.xpi
 *.zip
+*.xcf
 package-lock.json

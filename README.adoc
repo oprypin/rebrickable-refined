@@ -4,12 +4,18 @@
 
 === Browser extension that enhances https://rebrickable.com/[rebrickable.com] with new features and fixes some annoyances
 
-"Rebrickable Refined" is a browser extension is meant to improve your experience of using https://rebrickable.com/[rebrickable.com]. It is *not affiliated* with https://rebrickable.com/[rebrickable.com]
+"Rebrickable Refined" is meant to improve your experience of using https://rebrickable.com/[rebrickable.com]. It is *not affiliated* with https://rebrickable.com/[rebrickable.com]
 
-The features are all something that I personally wish was part of the main website. I spent a lot of time developing them for myself, so I can only hope these improvements will reach as many people as possible.
+The features are all something that I personally wish was part of the main website. I spent a lot of time developing them for myself, now I just hope that these improvements will reach as many people as possible.
 
 You can see all the features described below. +
 Per your preference, they can all be individually enabled or disabled in the Settings screen (click on the extension's icon in the toolbar). But in my personal opinion, all of them are good to enable -- it should be rare for any of the features to disrupt your experience.
+
+# Installation
+
+* https://chromewebstore.google.com/detail/rebrickable-refined/bgpmmnkkpdpnmbimbdocoalmgoocmlan[image:https://developer.chrome.com/static/docs/webstore/branding/image/206x58-chrome-web-bcb82d15b2486.png[]]
+
+* (And the extension for Firefox is currently still under review)
 
 = Privacy
 
@@ -35,23 +41,29 @@ All external-facing features (present and future) will be described in this sect
 [#fix-parts-sort-order]
 === Fix the sort order of parts
 
-Rebrickable sorts parts in a confusing way - numbers can go like "1, 10, 12, 2, 3, 4..." rather than "1, 2, 3, 4, 10, 12". +
-This fixes the problem with sorting. Example:
+Rebrickable sorts parts in a confusing way -- numbers can go like "1, 10, 12, 2, 3, 4..." rather than "1, 2, 3, 4, 10, 12".
 
-[frame=none,cols="a,a"]
-|===
-|Before: +
+This fixes the problem with sorting. +
+Example (can be observed at https://rebrickable.com/sets/10255-1/assembly-square/#parts["Assembly Square"]):
+
+.Before:
+[%collapsible%open]
+====
 image:docs/sort-order-before.png[]
-|After: +
+====
+
+.After:
+[%collapsible%open]
+====
 image:docs/sort-order-after.png[]
-|===
+====
 
 https://forum.rebrickable.com/t/fix-the-parts-sort-order-number-10-should-not-come-directly-after-1/170763[(Corresponding forum post)]
 
 Additional fixes:
 
 * When sorting by Hue, "Red" and "Trans-Red" will no longer be arbirarily mixed with each other just because they have the same hue.
-* When sorting by Category, the sort order used to be "by Category, then by Color" which makes little sense. Change it to "by Category, then by Part, then by Hue"
+* When sorting by Category, the sort order used to be "by Category, then by Color" which is disorienting. Change it to "by Category, then by Part, then by Hue"
 
 // The sorting fixes can also apply in other areas of the website but there is no known effect of this.
 
@@ -80,13 +92,9 @@ See previous screenshot -- these corners can be disabled if desired.
 
 The images of parts on Rebrickable can have varying styles and varying levels of brightness for the same color. This brings them back to a consistent look.
 
-[frame=none,cols="a,a"]
-|===
-|Before: +
-image:docs/part-colors-before.png[]
-|After: +
-image:docs/part-colors-after.png[]
-|===
+Here's a live comparison of how the images look with and without this change:
+
+image::docs/part-colors-comparison.gif[]
 
 https://forum.rebrickable.com/t/parts-in-black-have-varying-brightness-sometimes-too-similar-to-dark-bluish-gray/171452/33[(Corresponding forum  post)]
 
@@ -122,7 +130,7 @@ image::docs/fix-part-retirement-years.png[]
 [#owned-parts-headings]
 === Your Colors: Add textual headings to the table of your owned colors of parts
 
-Add rotated column headings that name each color, as seen at the top of this screenshot:
+Add vertical column headings that name each color, as seen at the top of this screenshot:
 
 image::docs/owned-parts-headings.png[]
 
@@ -153,11 +161,13 @@ This is completely new search functionality based on an external service that I'
 * It directly downranks "Duplo", "Quatro", "Primo" and "Modulex" parts unless that word is explicitly mentioned. Similarly for stickers and cards.
 
 This functionality concerns only searching of *parts*. +
-It is activated only when you select the new "Parts+" dropdown item instead of the old "Parts" item.
+It is activated only when you select the new "Parts+" dropdown item of the search field instead of the old "Parts" item.
 
 
 [#focus-main-parts-search]
 === Always pre-select the new search function when viewing any parts-related page
+
+(This feature is disabled by default; enable it in settings)
 
 When visiting parts search or a part's details page, the top-right global Search field will always have "Parts+" selected by default.
 
@@ -170,6 +180,8 @@ When you make a new selection in the top-right global Search field, the selectio
 
 [#part-dialog-replace-search]
 === Replace the parts search function in the "Part Summary" and "Add Part" dialogs
+
+(This feature is disabled by default; enable it in settings)
 
 The same new search functionality (described in detail above) can also be applied to part details dialogs.
 
@@ -186,7 +198,9 @@ image:docs/part-dialog-replace-search-after.png[]
 [#part-dialog-filter-existing-colors]
 === Filter selectable part colors to only the existing ones in the "Add Part" dialog
 
-When adding a new part, you first find the correct part and then select its color. The color selection normally shows all colors. This changes that - now the colors are limited to only the existing colors of the part that you just found in the search results.
+(This feature is disabled by default; enable it in settings)
+
+When adding a new part, you first find the correct part and then select its color. The color selection normally shows all colors. This changes that -- now the colors are limited to only the existing colors of the part that you just found in the search results.
 
 [frame=none,cols="a,a"]
 |===
@@ -199,12 +213,19 @@ image:docs/part-dialog-filter-existing-colors-after.png[]
 [#part-dialog-always-sort-colors]
 === Always sort the color dropdown alphabetically in the "Use Part" dialog
 
-When clicking on a part in order add it to another list, the color dropdown is sorted by how often that color occurs. For better "muscle memory", now we always sort the colors alphabetically instead.
+When clicking on a part in order add it to another list, the color dropdown is sorted by how often that color occurs. For better "muscle memory", now we always sort the colors alphabetically instead. This is particularly relevant for the following feature:
 
 [#part-dialog-improved-keyboard-input]
 === Improved keyboard input in the "Add Part" dialog
 
-// TODO
+This setting (especially together with the above setting) allows you to add parts faster, with this workflow:
+
+. Click "Add part".
+. Start typing to search for the part's name (ideally using the replaced search feature).
+. Click the correct part.
+. Immediately start typing the color name. E.g. type "r e d" for Red or "r e d d" for Reddish Brown.
+. Immediately start typing the amount such as "12". (Your input will automatically go to the Quantity field without needing to select it)
+. Press Enter to add the part.
 
 == Set / MOC details
 
@@ -240,6 +261,8 @@ image::docs/quick-download-csv-link.png[]
 [#increase-image-resolution]
 === Increase resolution for most thumbnail images, so they are not blurry
 
+(This feature is disabled by default; enable it in settings)
+
 [frame=none,cols="a,a"]
 |===
 |Before: +
@@ -252,6 +275,14 @@ image:docs/increase-image-resolution-after.jpg[]
 === Enable the built-in "high contrast text" setting
 
 The "High Contrast Text" setting of Rebrickable is very nice to enable, so I really hope to spread the word about it in this way. We forcibly enable it and also fix up a few further places where high contrast should have been applied.
+
+== SetMaster for Rebrickable
+
+==== Download a ZIP archive with all your Set Lists, Part Lists, etc. in one click
+
+There is another (entirely separate) browser extension: https://setmaster.pryp.in/#extension[*SetMaster for Rebrickable*]. I mention it here because it's likely also relevant.
+
+It lets you export all your Set Lists, Part Lists, etc. in the Rebrickable CSV format -- all in one click, as a single ZIP archive, which is convenient for backup purposes.
 
 = Author
 
