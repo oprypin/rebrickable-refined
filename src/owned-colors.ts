@@ -38,13 +38,16 @@ function updateOwnedParts(colorId: number | null) {
             th.rbrefined-parts-heading small {
                 font-weight: normal;
                 text-orientation: sideways;
-                transform: rotate(186deg);
+                transform-origin: top center;
+                transform: translateY(100%) rotate(186deg);
+                position: relative;
+                left: -3px;
                 writing-mode: vertical-rl;
                 max-height: 200px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: inline-block;
-                text-wrap: nowrap;
+                white-space: nowrap;
                 font-size: 95%;
             }
             @media (min-width: 1200px) {
