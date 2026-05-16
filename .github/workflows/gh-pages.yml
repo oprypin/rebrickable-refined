@@ -2,12 +2,12 @@ name: Deploy GH pages
 on:
   push:
     paths:
-      - '.github/**'
+      - '.github/workflows/gh-pages.yml'
       - 'scripts/**'
       - 'src/related-parts-data.ts'
   pull_request:
     paths:
-      - '.github/**'
+      - '.github/workflows/gh-pages.yml'
       - 'scripts/**'
       - 'src/related-parts-data.ts'
   schedule:

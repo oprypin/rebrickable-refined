@@ -1,0 +1,28 @@
+name: CI
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 6 * * 6'
+jobs:
+  test:
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download source
+        uses: actions/checkout@v6
+      - name: Install dependencies
+        run: |
+          npm ci --omit=dev
+      - name: Build code
+        run: |
+          npm run build
+      - name: Fix code style
+        run: |
+          npm run lint:fix
+      - name: Check if any edits are necessary
+        run: |
+          git diff --color --exit-code
+      - name: Apply automatic fixes using pre-commit-ci-lite
+        if: failure() && github.event_name == 'pull_request'
+        uses: pre-commit-ci/lite-action@5d6cc0eb514c891a40562a58a8e71576c5c7fb43 # v1.1.0
