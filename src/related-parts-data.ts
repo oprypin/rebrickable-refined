@@ -52,12 +52,17 @@ const relatedPartsData = `
 
 32324 Technic Brick 4 x 4 with 2 x 2 Opening;32531 Technic Brick 4 x 6 with 2 x 4 Opening;32532 Technic Brick 6 x 8 with 4 x 6 Opening
 
-87080 Technic Panel Fairing #1 Small Smooth Short, Side A;87086 Technic Panel Fairing #2 Small Smooth Short, Side B;;64683 Technic Panel Fairing #3 Small Smooth Long, Side A;64391 Technic Panel Fairing #4 Small Smooth Long, Side B;;64681 Technic Panel Fairing #5 Long Smooth, Side A;64393 Technic Panel Fairing #6 Long Smooth, Side B
-2387 Technic Panel Fairing #7 3L Very Small Smooth, Side A;2389 Technic Panel Fairing #8 3L Very Small Smooth, Side B;;2395 Technic Panel Fairing #9 Medium Triangle Smooth;2403 Technic Panel Fairing #10 Medium Triangle Smooth;;64394 Technic Panel Fairing #13 Large Short Smooth, Side A;64680 Technic Panel Fairing #14 Large Short Smooth, Side B
-64392 Technic Panel Fairing #17 Large Smooth, Side A;64682 Technic Panel Fairing #18 Large Smooth, Side B;;44350 Technic Panel Fairing #20 Large Long, Small Hole, Side A;44351 Technic Panel Fairing #21 Large Long, Small Hole, Side B;;44352 Technic Panel Fairing #22 Large Short, Small Hole, Side A;44353 Technic Panel Fairing #23 Large Short, Small Hole, Side B
-47712 Technic Panel Fairing #24 Small Short, Small Hole, Side B;47713 Technic Panel Fairing #25 Small Short, Small Hole, Side A;;5741 Technic Panel Fairing Long Smooth Inverted, Side A #40;5742 Technic Panel Fairing Long Smooth Inverted, Side B #41;;6609 Technic Panel Fairing #42 5 x 7, Side A Inverted;6606 Technic Panel Fairing #43 5 x 7, Side B Inverted
-67142 Technic Panel Curved 5 x 13 x 2 Tapered, Left #50;68196 Technic Panel Curved 5 x 13 x 2 Tapered, Right #51;;4527 Technic Panel Curved 3 x 13 x 2 Tapered, Left #52;5426 Technic Panel Curved 3 x 13 x 2 Tapered, Right #53;;4443 Technic Panel Curved 5 x 13 x 3 Tapered, Left #54;4446 Technic Panel Curved 5 x 13 x 3 Tapered, Right #55
-80268 Technic Panel Curved 5 x 7 Parallelogram Right #60;80267 Technic Panel Curved 5 x 7 Parallelogram Left #61;;80274 Technic Panel Triangle 5 x 4 Right #62;80278 Technic Panel Triangle 5 x 4 Left #63;;80271 Technic Panel Curved and Bent Angled Right 5 x 4 x 3 #70;80272 Technic Panel Curved and Bent Angled Left 5 x 4 x 3 #71
+87080 Technic Panel Fairing #1 Small Smooth Short, Side A;;64683 Technic Panel Fairing #3 Small Smooth Long, Side A;;64681 Technic Panel Fairing #5 Long Smooth, Side A;;2387 Technic Panel Fairing #7 3L Very Small Smooth, Side A;;2395 Technic Panel Fairing #9 Medium Triangle Smooth
+87086 Technic Panel Fairing #2 Small Smooth Short, Side B;;64391 Technic Panel Fairing #4 Small Smooth Long, Side B;;64393 Technic Panel Fairing #6 Long Smooth, Side B;;2389 Technic Panel Fairing #8 3L Very Small Smooth, Side B;;2403 Technic Panel Fairing #10 Medium Triangle Smooth
+;
+64394 Technic Panel Fairing #13 Large Short Smooth, Side A;;64392 Technic Panel Fairing #17 Large Smooth, Side A;;11946 Technic Panel Fairing #21 5L Small Smooth, Side B;;5741 Technic Panel Fairing #40 Long Smooth Inverted, Side A;;6609 Technic Panel Fairing #42 5 x 7, Side A Inverted
+64680 Technic Panel Fairing #14 Large Short Smooth, Side B;;64682 Technic Panel Fairing #18 Large Smooth, Side B;;11947 Technic Panel Fairing #22 5L Small Smooth, Side A;;5742 Technic Panel Fairing #41 Long Smooth Inverted, Side B;;6606 Technic Panel Fairing #43 5 x 7, Side B Inverted
+;
+67142 Technic Panel #50 Curved 5 x 13 x 2 Tapered, Left;;4527 Technic Panel #52 Curved 3 x 13 x 2 Tapered, Left;;4443 Technic Panel #54 Curved 5 x 13 x 3 Tapered, Left;;7658 Technic Panel #56 Curved 3 x 9 x 2 Tapered, Left;;80268 Technic Panel #60 Curved 5 x 7 Parallelogram Right;;80274 Technic Panel #62 Triangle 5 x 4 Right;;80271 Technic Panel #70 Curved and Bent Angled Right 5 x 4 x 3
+68196 Technic Panel #51 Curved 5 x 13 x 2 Tapered, Right;;5426 Technic Panel #53 Curved 3 x 13 x 2 Tapered, Right;;4446 Technic Panel #55 Curved 5 x 13 x 3 Tapered, Right;;7656 Technic Panel #57 Curved 3 x 9 x 2 Tapered, Right;;80267 Technic Panel #61 Curved 5 x 7 Parallelogram Left;;80278 Technic Panel #63 Triangle 5 x 4 Left;;80272 Technic Panel #71 Curved and Bent Angled Left 5 x 4 x 3
+
+32190 Technic Panel Fairing #1 Large Short, Large Holes, Side A;32188 Technic Panel Fairing #3 Large Long, Large Holes, Side A;32527 Technic Panel Fairing #5 Small Short, Large Hole, Side A;32534 Technic Panel Fairing #7 Small Long, Large Hole, Side A;44350 Technic Panel Fairing #20 Large Long, Small Hole, Side A;44352 Technic Panel Fairing #22 Large Short, Small Hole, Side A;47712 Technic Panel Fairing #24 Small Short, Small Hole, Side B
+32191 Technic Panel Fairing #2 Large Short, Large Holes, Side B;32189 Technic Panel Fairing #4 Large Long, Large Holes, Side B;32528 Technic Panel Fairing #6 Small Short, Large Hole, Side B;32535 Technic Panel Fairing #8 Small Long, Large Hole, Side B;44351 Technic Panel Fairing #21 Large Long, Small Hole, Side B;44353 Technic Panel Fairing #23 Large Short, Small Hole, Side B;47713 Technic Panel Fairing #25 Small Short, Small Hole, Side A
 
 24316 Technic Axle 3 with Stop;87083 Technic Axle 4 with Stop;15462 Technic Axle 5 with Stop;55013 Technic Axle 8 with Stop
 
@@ -116,7 +121,7 @@ const relatedPartsData = `
 
 3024 Plate 1 x 1;86996 Plate 1 x 1 x 2/3 with Open Stud;3005 Brick 1 x 1;14716 Brick 1 x 1 x 3;2453b Brick 1 x 1 x 5;43888 Support Round 1 x 1 x 6 Solid Pillar
 
-+3023 Plate 1 x 2;3004/3065 Brick 1 x 2;3245c Brick 1 x 2 x 2;22886 Brick 1 x 2 x 3;2454b/46212 Brick 1 x 2 x 5
++3023 Plate 1 x 2;3004/3065 Brick 1 x 2;3245c Brick 1 x 2 x 2;22886 Brick 1 x 2 x 3;2454b/46212/2454a Brick 1 x 2 x 5
 
 +3710 Plate 1 x 4;+3010/3066 Brick 1 x 4;49311 Brick 1 x 4 x 3
 
@@ -124,7 +129,7 @@ const relatedPartsData = `
 
 14716 Brick 1 x 1 x 3;22886 Brick 1 x 2 x 3;49311 Brick 1 x 4 x 3;30145 Brick 2 x 2 x 3
 
-2453b Brick 1 x 1 x 5;2454b/46212 Brick 1 x 2 x 5
+2453b Brick 1 x 1 x 5;2454b/46212/2454a Brick 1 x 2 x 5
 
 98283 Brick Special 1 x 2 with Masonry Brick Profile;30136 Brick Special 1 x 2 Palisade [aka Log];2877 Brick Special 1 x 2 with Grille;4216 Brick Special 1 x 2 with Groove
 15533 Brick Special 1 x 4 with Masonry Brick Profile;30137 Brick Special 1 x 4 Palisade [aka Log]

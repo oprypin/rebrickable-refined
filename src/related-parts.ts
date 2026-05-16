@@ -356,6 +356,9 @@ if (insertBefore) {
                 #rbrefined-related-parts tr {
                     height: 10px;
                 }
+                #rbrefined-related-parts td {
+                    min-width: 10px;
+                }
                 #rbrefined-related-parts img {
                     width: 75px;
                     height: 75px;
