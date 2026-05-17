@@ -165,7 +165,7 @@ It is activated only when you select the new "Parts+" dropdown item of the searc
 
 
 [#focus-main-parts-search]
-=== Always pre-select the new search function when viewing any parts-related page
+=== Always select the new search function when viewing any parts-related page
 
 (This feature is disabled by default; enable it in settings)
 
