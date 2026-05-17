@@ -3,17 +3,38 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
   <style>
     body {
-      width: 630px;
-      padding: 7px;
+      width: 660px;
+      margin: 0;
+      padding: 12px;
+      box-sizing: border-box;
       font-family: Roboto, "Segoe UI", Ubuntu, system-ui, Helvetica, Arial, sans-serif;
       font-size: 16px;
+    }
+
+    .logo {
+      float: right;
+      margin-left: 16px;
+      margin-bottom: 8px;
+    }
+
+    .logo img {
+      width: 64px;
+      height: 64px;
+      display: block;
     }
 
     h2 {
       margin-top: 1px;
       margin-bottom: 3px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    header i {
+      white-space: nowrap;
     }
 
     h3 {
@@ -97,14 +118,27 @@
       height: 18px;
       flex-shrink: 0;
     }
+
+    @media screen and (max-device-width: 600px) {
+      body {
+        width: 100%;
+      }
+
+      .help-icon {
+        visibility: visible;
+        margin-left: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <a style="float: right" title="Homepage" href="https://github.com/oprypin/rebrickable-refined">
-    <img style="width: 64px; height: 64px" src="icon128.png" alt="Logo">
-  </a>
-  <h2>Settings for <b><i>Rebrickable Refined</i></b></h2>
+  <header>
+    <a class="logo" title="Homepage" href="https://github.com/oprypin/rebrickable-refined">
+      <img src="icon128.png" alt="Logo">
+    </a>
+    <h2>Settings for <b><i>Rebrickable Refined</i></b></h2>
+  </header>
   <section>
     <h3>Part lists</h3>
     <div>
@@ -128,7 +162,7 @@
     </h3>
     <label><input type="checkbox" id="add-main-parts-search"> Add an improved parts search function to the main search field ("Parts+")</label>
     <div class="subtree">
-      <label><input type="checkbox" id="focus-main-parts-search"> Always pre-select the new search function when viewing any parts-related page</label>
+      <label><input type="checkbox" id="focus-main-parts-search"> Always select the new search function when viewing any parts-related page</label>
     </div>
     <label><input type="checkbox" id="remember-selected-search-option"> Remember the selected search category across page visits</label>
 
