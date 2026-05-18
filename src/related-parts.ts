@@ -207,9 +207,6 @@ if (insertBefore) {
                             div.setAttribute('style', 'font-size: 90%; white-space: pre-line');
                             div.textContent = partName.replaceAll('[', '\n[').replaceAll('  ', '\n').replace(/\b x \b/g, '\u00a0x\u00a0').trim();
                             td.append(div);
-                        } else {
-                            table.style.flexBasis = '100%';
-                            table.style.position = 'relative';
                         }
                         tr.append(td);
                     }
@@ -235,7 +232,9 @@ if (insertBefore) {
                             }
                         }
                     } else {
-                        container.append(table);
+                        const el = createElement('div', {}, [table]);
+                        el.style.overflow = 'auto';
+                        container.append(el);
                     }
                 }
             }
@@ -349,9 +348,6 @@ if (insertBefore) {
                 }
                 #rbrefined-related-parts table {
                     min-width: 20px;
-                }
-                #rbrefined-related-parts table:hover {
-                    z-index: 100;
                 }
                 #rbrefined-related-parts tr {
                     height: 10px;
