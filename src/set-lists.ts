@@ -18,7 +18,7 @@ function populateSetDetails(root: HTMLDivElement) {
         authorEl = null;
     }
     if (authorEl != null) {
-        authorEl.setAttribute('style', 'margin-bottom: 0 !important; padding-bottom: 1px; font-size: 13px !important');
+        authorEl.classList.add('rbrefined-set-author');
         result.push(authorEl);
     }
 
@@ -28,7 +28,6 @@ function populateSetDetails(root: HTMLDivElement) {
     if (setNum == null && data['set_num']) {
         setNum = createElement('span', {}, [
             createElement('i', {className: 'fa fa-hashtag'}),
-            '\u2009',
             data['set_num'],
         ]);
     } else if (setNum) {
@@ -55,30 +54,30 @@ function populateSetDetails(root: HTMLDivElement) {
             if (el.title.includes('Alternate Build') && !el.title.includes('only')) {
                 el.append('+');
             }
-            el.style.filter = 'opacity(0.85)';
         }
-        el.style.display = 'inline-block';
-        el.style.padding = '3.5px';
-        el.style.fontSize = '12px !important';
     }
 
-    const row = createElement('div');
-    row.setAttribute('style', 'display: flex; justify-content: space-between; align-items: center; width: 100%; margin: 2px 0 4px');
+    const row = createElement('div', {className: 'rbrefined-set-stats'});
 
     let resultData: Array<string | HTMLElement | null>;
     if (data['likes'] && data['added'] && data['num_parts']) {
         // MOCs
         const [, month, year] = new Date(+data['added'] * 1000).toString().match(/^\w+ (\w+) [0-9]+ ([0-9]{4,6})\b/)!;
+
+        const dateEl = createElement('span', {}, [
+            createElement('span', {className: 'rbrefined-extra', innerText: month}),
+            `${year}`,
+        ]);
         resultData = [
             count,
             data['likes'],
             data['num_parts'],
-            document.querySelector('#user_profile_sections') ? year : `${month} ${year}`,
+            dateEl,
         ];
         row.innerHTML = `
-            <div><small><span></span></small> <label style="margin: 0"><i class="fa fa-star"></i>&thinsp;<span style="color: var(--primary-high-contrast)"></span></label></div>
-            <div><i class="fa fa-puzzle-piece"></i>&thinsp;<span></span></div>
-            <div><i class="fa fa-calendar"></i>&thinsp;<span></span></div>
+            <div><small><span></span></small><i class="fa fa-star"></i><span style="color: var(--primary-high-contrast)"></span></div>
+            <div><i class="fa fa-puzzle-piece"></i><span></span></div>
+            <div><i class="fa fa-calendar"></i><span></span></div>
         `;
     } else if (setNum != null && data['year'] && data['num_parts']) {
         // Sets
@@ -89,15 +88,23 @@ function populateSetDetails(root: HTMLDivElement) {
         ];
         row.innerHTML = `
             <div><span></span></div>
-            <div><i class="fa fa-puzzle-piece"></i>&thinsp;<span></span></div>
-            <div><i class="fa fa-calendar"></i>&thinsp;<span></span></div>
+            <div><i class="fa fa-puzzle-piece"></i><span></span></div>
+            <div><i class="fa fa-calendar"></i><span></span></div>
         `;
     } else {
         return;
     }
     for (const [i, span] of row.querySelectorAll('span').entries()) {
-        if (resultData[i] != null) {
-            span.append(resultData[i]);
+        const data = resultData[i];
+        if (data == null) {
+            continue;
+        }
+        const replacement = (data instanceof HTMLElement ? [...data.childNodes] : [data]);
+        span.replaceWith(...replacement);
+    }
+    for (const el of row.querySelectorAll('small')) {
+        if (!el.textContent) {
+            el.remove();
         }
     }
     result.push(row);
@@ -117,7 +124,6 @@ function populateSetDetails(root: HTMLDivElement) {
                 authorEl.prepend(button);
             }
         }
-        buttons.style.minHeight = '23px';
     }
 
     details.replaceChildren(...result);
@@ -137,6 +143,54 @@ when('redesign-set-and-moc-tiles', (activated) => {
         populateSetDetails(el);
         activated();
     }
+    addStyle(/* css */`
+        .rbrefined-set-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 0 4px;
+            container-type: inline-size;
+            width: 100%;
+        }
+        .rbrefined-set-stats > div {
+            display: flex;
+            column-gap: 4px;
+            align-items: baseline;
+            flex-direction: row;
+        }
+        @container (max-width: 150px) {
+            .rbrefined-set-stats > div {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @container (max-width: 180px) {
+            .rbrefined-set-stats > div .rbrefined-extra {
+                display: none;
+            }
+        }
+        .rbrefined-set-stats button {
+            display: flex;
+        }
+        .rbrefined-set-stats .label {
+            display: inline-block;
+            padding: 3.5px;
+            font-size: 12px;
+        }
+        .rbrefined-set-stats .label.fa-retweet {
+            filter: opacity(0.85);
+        }
+        .rbrefined-set-stats .action-buttons {
+            min-height: 23px;
+        }
+        .rbrefined-set-stats .fa-puzzle-piece {
+            margin-right: -1.5px;
+        }
+        .rbrefined-set-author {
+            margin-bottom: 0;
+            padding-bottom: 1px;
+            font-size: 12.5px;
+        }
+    `.replaceAll(';', ' !important;'));
 });
 
 when('detailed-moc-sidebar', (activated) => {
