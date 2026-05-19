@@ -62,7 +62,3 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
     return undefined;
 });
-
-chrome.runtime.onInstalled.addListener(() => {
-    void chrome.storage.local.set({extensionLastUpdated: Date.now()});
-});
