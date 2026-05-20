@@ -201,3 +201,10 @@ for (const modalBody of document.querySelectorAll('#page_modal_body, #part_popup
         subtree: true,
     });
 }
+
+// Miscellaneous: fix an offset pixel.
+addStyle(/* css */`
+    #header .header-logo {
+        line-height: initial;
+    }
+`);
