@@ -98,6 +98,10 @@ image::docs/part-colors-comparison.gif[]
 
 https://forum.rebrickable.com/t/parts-in-black-have-varying-brightness-sometimes-too-similar-to-dark-bluish-gray/171452/33[(Corresponding forum  post)]
 
+[#always-export-parts]
+=== Allow exporting "parts in common" in the Compare tool
+
+image::docs/export-common-parts.png[]
 
 == Part details pages
 

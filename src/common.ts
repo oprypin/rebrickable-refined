@@ -71,3 +71,16 @@ function observeChanges(container: HTMLElement, action: () => boolean | void, de
         characterData: true,
     });
 }
+
+function initiateDownload(
+    data: Array<BlobPart>,
+    {filename, type}: {filename: string; type: string},
+) {
+    const blob = new Blob(data, {type: type});
+    const url = window.URL.createObjectURL(blob);
+    const a = createElement('a', {href: url, download: filename});
+    a.style = 'display: "none"';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+}

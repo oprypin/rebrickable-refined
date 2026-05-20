@@ -257,6 +257,43 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
             }
         });
     });
+
+    when('always-export-parts', (activated) => {
+        for (const inventory of inventoryContainer.querySelectorAll<HTMLDivElement>('#common_parts:has(.js-part)')) {
+            if (inventory.querySelector('.js-export-parts-list, .rbrefined-export-parts-list')) {
+                continue;
+            }
+            const exportButton = createElement('button', {className: 'btn btn-default rbrefined-export-parts-list'}, [
+                createElement('i', {className: 'fa fa-save'}), ' ',
+                createElement('span', {className: 'hidden-xs'}, ['Export Parts']), ' ',
+                createElement('span', {className: 'hidden-xs'}, ['(CSV)']),
+            ]);
+            exportButton.addEventListener('click', () => {
+                exportInventoryCsv(inventory);
+            });
+            inventory.prepend(exportButton);
+            activated();
+        }
+    });
+}
+
+function exportInventoryCsv(inventory: HTMLElement) {
+    const csvRows = ['Part,Color,Quantity\n'];
+    for (const part of inventory.querySelectorAll<HTMLElement>('.inv_img .js-part-data')) {
+        const [, partNum] = new RegExp('/parts/(\\w+)/').exec(part.dataset['url']!)!;
+        const colorId = part.dataset['color_id']!;
+        const quantity = part.dataset['quantity']!;
+        csvRows.push(`${partNum},${colorId},${quantity}\n`);
+    }
+    let suffix = inventory.id;
+    if (suffix) {
+        suffix = '_' + suffix;
+    }
+    if (csvRows.length > 1) {
+        initiateDownload(csvRows, {filename: `rebrickable_parts${suffix}.csv`, type: 'text/csv;charset=utf-8'});
+    } else {
+        alert('No parts to export');
+    }
 }
 
 const timestampsToDarken = new Set([

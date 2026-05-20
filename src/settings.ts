@@ -5,6 +5,7 @@ const settings = {
     'rework-inventory-styles': true,
     'decorate-part-colors': true,
     'consistent-part-images': true,
+    'always-export-parts': true,
     'display-related-parts': true,
     'fix-part-retirement-years': true,
     'owned-parts-headings': true,
