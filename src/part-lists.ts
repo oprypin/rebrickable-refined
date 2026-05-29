@@ -251,6 +251,12 @@ const timestampsToDarken = new Set([
 const elementsToDarken = new Set([
     '3004626', '408126', '4107783', '4114295', '4121667', '4164133', '4168884', '4173668', '4193529', '4500458', '4526982', '6089577', '6325254', '6331437', '655826',
 ]);
+const elementsNotAvailable = new Set([
+    '4519318', '4519317',
+]);
+const elementsToReplaceAnyway = new Set([
+    '4163480', '4159737', '4187745', '4159736', '6337380', '4238349', '4216217', '4172149', '4179282', '4162507', '4176634', '4165521', '4178189', '4168885', '4173061', '4158935', '4243827', '4162143', '4163928', '4119674', '4186528', '4162952', '4169425', '4166522', '4173206', '4183073', '4171973', '4166037', '4179822', '4238357', '4163532', '4194239', '4194240', '4164169', '4159742', '4184895', '4164248', '4182012', '4183106', '4186372', '4164246', '4183051', '4129848', '4243832', '4243833', '4243832',
+]);
 
 function fixImg(container: HTMLElement) {
     const img = (
@@ -286,7 +292,10 @@ function fixImg(container: HTMLElement) {
         const element = elementMatch[1];
         const timestamp = Math.floor(parseFloat(elementMatch[2]));
         const colorId = container.querySelector<HTMLElement>('[data-color_id]')?.dataset['color_id'];
-        if (timestamp >= 1775010000) {
+        if (
+            (timestamp >= 1775010000 && !elementsNotAvailable.has(element))
+            || elementsToReplaceAnyway.has(element)
+        ) {
             replaceImage(`https://www.lego.com/cdn/product-assets/element.img.lod5photo.192x192/${element}.jpg`);
             if (colorId === '0' && elementsToDarken.has(element)) {
                 img.style.filter = 'contrast(1.26)';
