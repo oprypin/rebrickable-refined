@@ -256,6 +256,8 @@ const relatedPartsData = `
 
 14769pr0001/4150pr0001 Tile Round 2 x 2 Clock Print;14769pr1172 Tile Round 2 x 2 with Clock with Red Second Hand Print
 
+53451 Animal Body Part, Barb / Claw / Tooth / Talon / Horn, Small;87747 Animal Body Part, Barb / Claw / Tooth / Talon / Horn, Medium;11089 Animal Body Part, Barb / Claw / Tooth / Talon / Horn, Large
+
 *3961/3961a Dish 8 x 8 Inverted [Radar]
 *6177b Plate Special Round 8 x 8 with 2 x 2 Center Studs
 *74611 Plate Round 8 x 8
@@ -912,6 +914,12 @@ Fits with
 *27263 Tile Special 2 x 2 Corner with Cut Corner - Facet
 *27925 Tile 2 x 2 Curved, Macaroni
 *35787 Tile 45° Cut 2 x 2 (Triangle)
+
+*35787 Tile 45° Cut 2 x 2 (Triangle)
+*7975 Tile 45° Cut 4 x 4 (Triangle)
+
+*2630 Cable, Flexible 21L with 2 Connectors and Bars
+*27965 Zipline, 22L with 2 Connectors - Flexible
 
 Fits with
 *2420 Plate 2 x 2 Corner
