@@ -72,9 +72,14 @@ if (insertBefore) {
         const partsImages: Array<Record<string, string>> = await chrome.runtime.sendMessage({action: 'getPartColorsData'}) ?? [];
         function getPartImage(partNum: string) {
             for (const record of partsImages) {
-                if (record[partNum]) {
-                    return `https://cdn.rebrickable.com/media/thumbs/parts/${record[partNum]}/250x250p.jpg`;
+                const url = record[partNum];
+                if (!url) {
+                    continue;
                 }
+                if (url.startsWith('lod5photo/')) {
+                    return url.replace('lod5photo/', 'https://www.lego.com/cdn/product-assets/element.img.lod5photo.192x192/');
+                }
+                return `https://cdn.rebrickable.com/media/thumbs/parts/${url}/250x250p.jpg`;
             }
             if (siteImgUrls[partNum]) {
                 return siteImgUrls[partNum];

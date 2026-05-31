@@ -10,9 +10,10 @@ async function fetchJson(url: string): Promise<object> {
     return await response.json();
 }
 
-async function getOrUpdateDataFile({key, maxAgeDays, filename}: {
-    key: string; maxAgeDays: number; filename: string;
+async function getOrUpdateDataFile({maxAgeDays, filename}: {
+    maxAgeDays: number; filename: string;
 }) {
+    const key = `cached-file-${filename}`;
     const results: Array<object> = [];
 
     let storageResult = (await chrome.storage.local.get([key]))[key] as {
@@ -54,9 +55,8 @@ async function getOrUpdateDataFile({key, maxAgeDays, filename}: {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'getPartColorsData') {
         void getOrUpdateDataFile({
-            key: 'partsImages',
             maxAgeDays: 1,
-            filename: 'parts-images.json',
+            filename: 'parts-images-v2.json',
         }).then(sendResponse);
         return true;
     }

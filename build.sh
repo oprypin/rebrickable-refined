@@ -6,6 +6,7 @@ rm -rf dist
 mkdir dist
 
 make -j
+rm -f dist/parts-images.json
 
 jq 'del(.background.service_worker)' data/manifest.json > dist/manifest.json
 (cd dist && zip -q -r ../rebrickable-refined.zip .)
