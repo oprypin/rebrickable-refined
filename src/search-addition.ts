@@ -121,7 +121,7 @@ for (const searchField of document.querySelectorAll<HTMLElement>('.autosuggest')
 
 for (const modalBody of document.querySelectorAll('#page_modal_body, #part_popup_modal')) {
     new MutationObserver(() => {
-        if (modalBody.querySelector('#tab_edit')) {
+        if (modalBody.querySelector('#tab_edit, #js-bulk-edit-parts-form')) {
             // This indicates editing an existing part, this functionality should not be applied there.
             return;
         }
