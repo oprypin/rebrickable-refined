@@ -178,7 +178,6 @@ if (insertBefore) {
                                         loading: 'lazy',
                                         src: getPartImage(partNum),
                                     });
-                                    img.setAttribute('data-src', img.src);
                                     img.setAttribute('data-url', `/parts/${partNum}/summary/`);
                                     img.classList.add('js-part-popup');
                                     td.classList.add('inv_img');
