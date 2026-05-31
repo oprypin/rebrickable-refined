@@ -199,7 +199,7 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
             countText.textContent = countText.textContent.replace(' x', '');
             part.querySelector('.part-text')?.after(countText);
 
-            fixImg(part);
+            fixImg(part, true);
         }
 
         when('decorate-part-colors', (activated) => {
@@ -260,16 +260,16 @@ const elementsToReplaceAnyway = new Set([
     4119674, 4129848, 4158935, 4159736, 4159737, 4159742, 4162143, 4162507, 4162952, 4163480, 4163532, 4163928, 4164169, 4164237, 4164246, 4164248, 4165521, 4166037, 4166522, 4168885, 4169425, 4171973, 4172149, 4173061, 4173206, 4176634, 4178189, 4179282, 4179822, 4182012, 4183051, 4183073, 4183106, 4184895, 4186372, 4186528, 4187745, 4194239, 4194240, 4211387, 4211388, 4211394, 4211397, 4211398, 4216217, 4238349, 4238357, 4243827, 4243832, 4243833, 4251149, 4514846, 6093058, 6225246, 6337380, 6390673,
 ]);
 
-function fixImg(container: HTMLElement) {
+function fixImg(container: HTMLElement, alsoNonLazy = false) {
     const img = (
         container.tagName === 'IMG'
             ? container as HTMLImageElement
-            : container.querySelector<HTMLImageElement>('img[data-src]')
+            : container.querySelector<HTMLImageElement>('img')
     );
     if (img == null) {
         return;
     }
-    let imgSrc = img.dataset['src']!;
+    let imgSrc = (img.dataset['src'] ?? (alsoNonLazy ? img.src : null))!;
     if (imgSrc == null) {
         return;
     }
@@ -335,6 +335,10 @@ function fixImg(container: HTMLElement) {
 const inventoryContainer = document.querySelector<HTMLElement>('#inventory, #part_list_parts, #tab_parts, .container:has(#common_parts)');
 if (inventoryContainer != null) {
     processPartsInventory(inventoryContainer);
+}
+
+for (const placeholderContainer of document.querySelectorAll<HTMLElement>('#part_stores_list')) {
+    processPartsInventory(placeholderContainer);
 }
 
 for (const img of document.querySelectorAll<HTMLElement>('img.img-responsive[data-src]')) {
