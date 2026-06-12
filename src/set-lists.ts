@@ -17,7 +17,27 @@ function populateSetDetails(root: HTMLDivElement) {
     if (!authorEl?.textContent.trim().startsWith('By ')) {
         authorEl = null;
     }
-    if (authorEl != null) {
+    if (authorEl == null) {
+        // Populate author in case it's missing, also adjust vertical spacing for build search page.
+        const match = details.querySelector<HTMLAnchorElement>('a[href^="/mocs/"]')?.href.match(/\/mocs\/MOC-[0-9]+\/([^/]+)/);
+        const authorEl = createElement('div', {className: 'clearfix trunc mb-6 size-12 rbrefined-set-author'}, ['\u00a0']);
+        if (match != null && !document.location.pathname.startsWith(`/users/${match[1]}/`)) {
+            const authorLink = createElement('a', {className: 'js-hover-card', href: `/users/${match[1]}/mocs/`}, [decodeURIComponent(match[1])]);
+            authorLink.dataset['hover'] = `/users/${match[1]}/card/`;
+            authorEl.replaceChildren('By ', authorLink);
+            result.push(authorEl);
+        }
+        // Places that can contain both MOCs and sets: need to add the author field even if it's empty.
+        if (document.location.pathname.match(new RegExp('^/build/|^/users/[^/]+/lists/[0-9]+'))) {
+            for (const el of root.querySelectorAll<HTMLDivElement>('a div.p-5')) {
+                if (el.textContent.startsWith('Missing:')) {
+                    el.style = 'margin-bottom: -7px !important; padding-bottom: 0 !important';
+                    el.closest('a')!.style.color = 'inherit';
+                }
+            }
+            result.push(authorEl);
+        }
+    } else {
         authorEl.classList.add('rbrefined-set-author');
         result.push(authorEl);
     }
@@ -189,6 +209,9 @@ when('redesign-set-and-moc-tiles', (activated) => {
             margin-bottom: 0;
             padding-bottom: 1px;
             font-size: 12.5px;
+        }
+        .text-right:has(.pagination-btns) {
+            clear: both;
         }
     `.replaceAll(';', ' !important;'));
 });
