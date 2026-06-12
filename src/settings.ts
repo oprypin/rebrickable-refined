@@ -5,7 +5,6 @@ const settings = {
     'rework-inventory-styles': true,
     'decorate-part-colors': true,
     'consistent-part-images': true,
-    'checklist-range-selection': true,
     'display-related-parts': true,
     'fix-part-retirement-years': true,
     'owned-parts-headings': true,
@@ -21,6 +20,7 @@ const settings = {
     'detailed-moc-sidebar': true,
     'quick-download-csv-link': true,
     'increase-image-resolution': false,
+    'checklist-range-selection': true,
     'enable-high-contrast-text': true,
 };
 

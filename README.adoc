@@ -99,13 +99,6 @@ image::docs/part-colors-comparison.gif[]
 https://forum.rebrickable.com/t/parts-in-black-have-varying-brightness-sometimes-too-similar-to-dark-bluish-gray/171452/33[(Corresponding forum  post)]
 
 
-[#checklist-range-selection]
-=== Enable range selection in part lists (Click, then Shift+Click)
-
-In Checklist mode, you can easily select a range of parts by clicking the first part and Shift+clicking the last part of the range.
-
-image::docs/checklist-range-selection.png[]
-
 == Part details pages
 
 [#display-related-parts]
@@ -270,6 +263,15 @@ image:docs/increase-image-resolution-before.jpg[]
 |After: +
 image:docs/increase-image-resolution-after.jpg[]
 |===
+
+[#checklist-range-selection]
+=== Enable range selection in lists of checkboxes (Click, then Shift+Click)
+
+* In Checklist mode, you can easily select a range of parts by clicking the first part and Shift+clicking the last part of the range.
+
+* For lists of filters, you can similarly select or deselect a range of checkboxes by clicking the first checkbox and Shift+clicking the last checkbox you want to change.
+
+image::docs/checklist-range-selection.png[]
 
 [#enable-high-contrast-text]
 === Enable the built-in "high contrast text" setting
