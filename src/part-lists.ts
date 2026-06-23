@@ -175,6 +175,34 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
     });
 
     observeChanges(inventoryContainer, () => {
+        for (const part of inventoryContainer.querySelectorAll<HTMLElement>('.js-part')) {
+            when('checklist-range-selection', (activated) => {
+                activated();
+            });
+
+            const countText = part.querySelector('.part-text b');
+            if (countText == null) {
+                continue;  // Not `return` - for the case where only 1 item in the inventory gets dynamically refreshed.
+            }
+
+            when('rework-inventory-styles', (activated) => {
+                // Move the part quantity out of the first line.
+                countText.textContent = countText.textContent.replace(' x', '');
+                part.querySelector('.part-text')?.after(countText);
+
+                const img = part.querySelector('.inv_img');
+                if (img != null && !img.classList.contains('inv_img_small')) {
+                    img.classList.add('inv_img_med');
+                }
+
+                activated();
+            });
+
+            fixImg(part, true);
+        }
+    }, 0);
+
+    observeChanges(inventoryContainer, () => {
         try {
             for (const menu of inventoryContainer.querySelectorAll<HTMLUListElement>('ul.dropdown-menu')) {
                 const li = menu.querySelector('li:last-child');
@@ -188,30 +216,6 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
                 }
             }
         } catch (e) {}
-
-        for (const part of inventoryContainer.querySelectorAll<HTMLElement>('.js-part')) {
-            when('checklist-range-selection', (activated) => {
-                activated();
-            });
-
-            when('rework-inventory-styles', (activated) => {
-                const img = part.querySelector('.inv_img');
-                if (img != null && !img.classList.contains('inv_img_small')) {
-                    img.classList.add('inv_img_med');
-                }
-                activated();
-            });
-
-            // Move the part quantity out of the first line.
-            const countText = part.querySelector('.part-text b');
-            if (countText == null) {
-                continue;  // Not `return` - for the case where only 1 item in the inventory gets dynamically refreshed.
-            }
-            countText.textContent = countText.textContent.replace(' x', '');
-            part.querySelector('.part-text')?.after(countText);
-
-            fixImg(part, true);
-        }
 
         when('decorate-part-colors', (activated) => {
             const isEnabled = !!inventoryContainer.querySelector('.rbrefined-corner-enabled');
@@ -383,14 +387,16 @@ for (const img of document.querySelectorAll<HTMLElement>('img.img-responsive[dat
     fixImg(img);
 }
 
-for (const container of document.querySelectorAll<HTMLElement>('div[data-src], div.tab-content>.tab-pane, #set_list_sets, #build_results')) {
+for (const container of document.querySelectorAll<HTMLElement>('div[data-src], div.tab-content>.tab-pane, #set_list_sets, #build_results, #filtered_results')) {
     const observer = new MutationObserver(() => {
         for (const part of container.querySelectorAll<HTMLElement>('div.js-part, div.set-tn')) {
             fixImg(part);
         }
     });
-    observer.observe(container.querySelector('div[id]') ?? container, {
-        childList: true,
-        attributes: true,
-    });
+    for (const el of [container, ...container.querySelectorAll('div[id]')]) {
+        observer.observe(el, {
+            childList: true,
+            attributes: true,
+        });
+    }
 }

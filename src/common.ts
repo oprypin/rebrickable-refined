@@ -38,7 +38,7 @@ function nestedEventListener<K extends keyof HTMLElementEventMap>(
     });
 }
 
-function observeChanges(container: HTMLElement, action: () => boolean | void) {
+function observeChanges(container: HTMLElement, action: () => boolean | void, delay: number = 20) {
     let mutationTimer: number | null = null;
     let preventMutations = false;
 
@@ -57,7 +57,11 @@ function observeChanges(container: HTMLElement, action: () => boolean | void) {
             clearTimeout(mutationTimer);
         }
         if (!preventMutations) {
-            mutationTimer = setTimeout(onSequenceFinished, 20);
+            if (delay > 0) {
+                mutationTimer = setTimeout(onSequenceFinished, 20);
+            } else {
+                onSequenceFinished();
+            }
         }
     });
     observer.observe(container, {
