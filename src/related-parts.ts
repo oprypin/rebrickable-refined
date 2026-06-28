@@ -302,7 +302,7 @@ if (insertBefore) {
         } catch (e) {}
 
         if (molds.length > 1) {
-            molds.sort((a, b) => a[0] - b[0]);
+            molds.sort((a, b) => a.avgYear - b.avgYear);
             const ul = createElement('ul');
 
             for (const {minYear, maxYear, partNum, partName} of molds) {
