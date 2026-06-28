@@ -113,6 +113,7 @@ if (insertBefore) {
                     [/\bLeft\b/, 'Right'],
                     [/\bRight\b/, 'Left'],
                     [/\bTile Round\b/, 'Tile'],
+                    [/\bTechnic Brick (.+)( \[\d+ Pin Holes?\]| with (Axle|Pin) Hole)/, 'Brick $1'],
                 ] as const) {
                     for (const [partName, partNum] of seenPartsByName.entries()) {
                         const partName2 = partName.replace(search, replacement);

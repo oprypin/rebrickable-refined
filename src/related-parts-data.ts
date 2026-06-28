@@ -171,7 +171,7 @@ const relatedPartsData = `
 26601 Wedge Plate 2 x 2 Cut Corner;2450 Wedge Plate 3 x 3 Cut Corner;30503 Wedge Plate 4 x 4 Cut Corner;6106 Wedge Plate 6 x 6 Cut Corner;30504 Wedge Plate 8 x 8 Cut Corner;92584 Wedge Plate 10 x 10 Cut Corner [No Centre Studs]
 
 4490 Brick Arch 1 x 3;3659 Brick Arch 1 x 4;92950 Brick Arch 1 x 6
-;6182 Brick Arch 1 x 4 x 2;15254 Brick Arch 1 x 6 x 2;5850/88292 (half of 1 x 6 x 2)  Brick Arch 1 x 3 x 2;16577 Brick Arch 1 x 8 x 2;3572 (half of 1 x 10 x 2)  Brick Arch 1 x 5 x 2
+;6182 Brick Arch 1 x 4 x 2;15254/12939/3307 Brick Arch 1 x 6 x 2;5850/88292 (half of 1 x 6 x 2)  Brick Arch 1 x 3 x 2;16577 Brick Arch 1 x 8 x 2;3572 (half of 1 x 10 x 2)  Brick Arch 1 x 5 x 2
 ;;;13965 (half of 1 x 6 x 3)  Brick Arch 1 x 3 x 3;80543 (half of 1 x 8 x 3)  Brick Arch 1 x 4 x 3;18838 Brick Arch 1 x 12 x 3 Raised Arch
 ;;;;;14395 (half of 1 x 10 x 4)  Brick Arch 1 x 5 x 4
 
@@ -257,6 +257,16 @@ const relatedPartsData = `
 14769pr0001/4150pr0001 Tile Round 2 x 2 Clock Print;14769pr1172 Tile Round 2 x 2 with Clock with Red Second Hand Print
 
 53451 Animal Body Part, Barb / Claw / Tooth / Talon / Horn, Small;87747 Animal Body Part, Barb / Claw / Tooth / Talon / Horn, Medium;11089 Animal Body Part, Barb / Claw / Tooth / Talon / Horn, Large
+
+298c02 Lever Small Base with Black Lever;298c03 Lever Small Base with Light Gray Lever;298c05 Lever Small Base with Light Bluish Gray Lever;298c04 Lever Small Base with White Lever;298c01 Lever Small Base with Yellow Lever
+
+Fits with
+*15254 Brick Arch 1 x 6 x 2
+*20309 Window 1 x 4 x 1 2/3 with Spoked Rounded Top
+
+Fits with
+*15254 Brick Arch 1 x 6 x 2
+*18653 Brick Arch 1 x 3 x 2 Inverted [Inside Bow]
 
 *3961/3961a Dish 8 x 8 Inverted [Radar]
 *6177b Plate Special Round 8 x 8 with 2 x 2 Center Studs
@@ -869,6 +879,12 @@ Fits with
 *59349 Panel 1 x 6 x 5
 *64448 Support 1 x 6 x 5 Girder Rectangular
 
+*15207/43337 Panel 1 x 4 x 1
+*3633 Fence Lattice 1 x 4 x 1
+
+*3633 Fence Lattice 1 x 4 x 1
+*3185 Fence Lattice 1 x 4 x 2
+
 Fits with
 *59349 Panel 1 x 6 x 5
 *30562 Panel 4 x 4 x 6 Quarter Cylinder
@@ -1014,6 +1030,9 @@ Fits with
 
 *87081 Brick Round 4 x 4 Centre Hole
 *6222 Brick Round 4 x 4 with 4 Side Pin Holes and Center Axle Hole
+
+*64225 Wedge Curved 4 x 3 No Studs [Plain]
+*47753 Wedge Curved 4 x 4 No Top Studs
 
 Fits with
 *3709 Technic Plate 2 x 4 [3 Holes]
@@ -1229,6 +1248,9 @@ Fits with
 *11211 Brick Special 1 x 2 with 2 Studs on 1 Side
 *87087 Brick Special 1 x 1 with Stud on 1 Side
 
+*11211 Brick Special 1 x 2 with 2 Studs on 1 Side
+*52107 Brick Special 1 x 2 with Studs on 2 Sides
+
 *33492 Cone 1 1/2 x 1 1/2 x 2/3
 *85975 Cone 1.17 x 1.17 x 2/3 (Fez)
 
@@ -1300,6 +1322,15 @@ Fits with
 
 *18674 Plate Special Round 2 x 2 with Center Stud (Jumper Plate)
 *4740 Dish 2 x 2 Inverted [Radar]
+
+*3068bpr0201 Tile 2 x 2 with Newspaper 'THE LEGO NEWS volume 3' Print
+*3068bpr0364 Tile 2 x 2 with 'THE LEGO NEWS' and 'The greatest hero ever!' Print
+
+*3404 Turntable 4 x 4 Top
+*87081 Brick Round 4 x 4 Centre Hole
+
+*973c47h03pr0001 Torso Armor, Black and Silver Falcon Symbol, Dark Bluish Grey Cloak print, Pearl Dark Grey Arms, Black Hands
+*973c03h01pr0043 Torso Black Falcon with Rounder Bottomed Shield Print, Black Arms, Yellow Hands
 
 Fits with
 *41749 Wedge Curved 8 x 3 x 2 Open Right
@@ -1536,17 +1567,23 @@ Fits with
 
 66897/21445 Plate Special 1 x 2 with Wheel Holder;67687/4600 Plate Special 2 x 2 with Wheel Holders;67688/4488 Plate Special 2 x 2 with Wheel Holder
 2926 Plate Special 1 x 4 with Wheels Holder;39767/6157 Plate Special 2 x 2 with Wheels Holder Wide;42947/18892 Brick Special 2 x 4 with Wheels Holder with 2 x 2 Recessed and Hole
+
+Fits with
+*49307 Brick Curved 1 x 1 x 2/3 Double Curved Top, No Studs
+*7818 Brick Curved 1 x 1 x 2/3 Curved Top, Corner
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const partRetirementYears = {
     '26287': 2019,
+    '2780': 2021,
     '30259': 2020,
     '30283': 2009,
     '30350a': 2007,
     '30367a': 2005,
     '32005b': 2011,
     '32209': 2010,
+    '32556': 2022,
     '3747a': 2010,
     '3794a': 2014,
     '3794b': 2017,
@@ -1562,5 +1599,7 @@ const partRetirementYears = {
     '51011': 2013,
     '6019': 2013,
     '60471': 2020,
+    '6628': 2021,
+    '6558': 2022,
     '99206': 2023,
 };
