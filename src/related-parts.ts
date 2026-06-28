@@ -66,6 +66,10 @@ if (insertBefore) {
     }
 
     when('display-related-parts', async (activated) => {
+        if (document.querySelector('#rbrefined-related-parts')) {
+            return;
+        }
+
         const splitData = relatedPartsData.trim().split('\n\n');
         splitData.push(...extraSplitData);
 
