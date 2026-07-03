@@ -66,12 +66,14 @@ for (const searchField of document.querySelectorAll<HTMLElement>('.autosuggest')
         void activated;
     });
 
-    const searchKey = 'rbrefined_parts';
+    const searchAttr = 'data-rbrefined-search';
+    const searchValue = 'rbrefined_parts';
     const localStorageKey = 'rbrefined-search-selection';
 
     when('add-main-parts-search', (activated) => {
         const newOption = partsOption.cloneNode() as HTMLOptionElement;
-        newOption.value = searchKey;
+        newOption.value = 'parts';
+        newOption.setAttribute(searchAttr, searchValue);
         newOption.innerText = 'Parts+';
         partsOption.after(newOption);
 
@@ -84,7 +86,7 @@ for (const searchField of document.querySelectorAll<HTMLElement>('.autosuggest')
         });
 
         function updateQueryUrl() {
-            if (sel.value === searchKey) {
+            if (sel.options[sel.selectedIndex]?.getAttribute(searchAttr) === searchValue) {
                 searchField.setAttribute('data-queryurl', 'https://setmaster.pryp.in/api/search_parts_rebrickable/?format=part_v1&q=');
             } else {
                 searchField.setAttribute('data-queryurl', originalQueryUrl.replace('?', `?st=${sel.value}&`));
@@ -101,7 +103,8 @@ for (const searchField of document.querySelectorAll<HTMLElement>('.autosuggest')
         if (shouldRememberSearchOption) {
             const savedSelection = localStorage.getItem(localStorageKey);
             if (savedSelection && savedSelection.match(/^\w+$/)) {
-                for (const option of sel.querySelectorAll<HTMLOptionElement>(`option[value="${savedSelection}"]`)) {
+                const selector = (savedSelection === searchValue ? `option[${searchAttr}="${savedSelection}"]` : `option[value="${savedSelection}"]`);
+                for (const option of sel.querySelectorAll<HTMLOptionElement>(selector)) {
                     if (!option.selected) {
                         option.selected = true;
                         sel.dispatchEvent(new Event('change', {bubbles: true, cancelable: true}));
@@ -114,7 +117,10 @@ for (const searchField of document.querySelectorAll<HTMLElement>('.autosuggest')
     });
     sel.addEventListener(
         'change',
-        () => localStorage.setItem(localStorageKey, sel.value),
+        () => localStorage.setItem(
+            localStorageKey,
+            sel.options[sel.selectedIndex]?.getAttribute(searchAttr) || sel.value,
+        ),
         {capture: true},
     );
 }
