@@ -227,7 +227,7 @@ const relatedPartsData = `
 
 3386 Plate 1 x 1 x 2/3 Half Round with Side Stud;4304/99206 Plate Special 2 x 2 x 2/3 with Two Studs On Side and Two Raised;72132/87609 Plate Special 2 x 6 x 2/3 with 4 Studs on Side
 
-5847 Slope Curved 1 x 2 Inverted with 1 x 1 Cutouts;1750 Slope Curved 2 x 2 Inverted with 1 x 2 Cutouts;5853 Slope Curved 2 x 4 Inverted with 1 x 4 Cutouts
+5847 Brick Curved Inverted 1 x 2 with 1 x 1 Cutouts;1750 Brick Curved Inverted 2 x 2 with 1 x 2 Cutouts;5853 Brick Curved Inverted 2 x 4 with 1 x 4 Cutouts
 
 60032/2377 Window 1 x 2 x 2 Plane;61345/4863 Window 1 x 4 x 2 Plane
 3233/4035 Window 1 x 2 x 3 Train;6556/4033 Window 1 x 4 x 3 Train
@@ -427,8 +427,8 @@ Fits with
 *6153b Wedge Sloped 6 x 4 Cutout
 
 Fits with
-*77180 Slope Curved 10 x 2 x 2 with Curved End Left
-*77182 Slope Curved 10 x 2 x 2 with Curved End Right
+*77180 Brick Round, Curved 10 x 2 x 2 with Rounded End Left
+*77182 Brick Round, Curved 10 x 2 x 2 with Rounded End Right
 *5841 Brick Curved 1 x 2 x 1 with Curved Top
 
 Fits with
@@ -464,8 +464,8 @@ Fits with
 *5907 Brick Curved 1 x 2 x 1 2/3 with 1 Cutout
 *5906 Brick Round Corner, Curved 2 x 2 x 1 2/3 Quarter Dome with 1 Cutout
 *5843 Brick Arch 1 x 3 x 1 2/3 Curved Top
-*7519 Slope Curved 3 x 2 x 1 2/3 with Stud Notch Left
-*7520 Slope Curved 3 x 2 x 1 2/3 with Stud Notch Right
+*7519 Brick Wedged, Curved 3 x 2 x 1 2/3 with Stud Notch Left
+*7520 Brick Wedged, Curved 3 x 2 x 1 2/3 with Stud Notch Right
 
 Fits with
 *5848 Brick Round Curved 1 x 1 x 1 Quarter Dome
@@ -486,12 +486,12 @@ Fits with
 *18653 Brick Arch 1 x 3 x 2 Inverted
 *30099 Brick Arch 1 x 5 x 4 Inverted
 
-*11290 Slope Curved 2 x 8 x 2 Double
-*54095 Slope Curved 8 x 8 x 2 Double
+*11290 Brick Curved 2 x 8 x 2 Double
+*54095 Brick Curved 8 x 8 x 2 Double
 
 Fits with
-*24201 Slope Curved 2 x 1 Inverted
-*32803 Slope Curved 2 x 2 x 2/3 Inverted
+*24201 Brick Curved Inverted 2 x 1
+*32803 Brick Curved 2 x 2 x 2/3 Inverted
 
 *18946 Technic Gear 16 Tooth with Clutch on Both Sides
 *81346 Technic Gear 20 Tooth with Clutch on Both Sides
@@ -643,30 +643,30 @@ Fits with
 *3044c/3044b Brick Sloped 45° 2 x 1 Double
 
 Fits with
-*11153/61678 Slope Curved 4 x 1 No Studs
-*93606 Slope Curved 4 x 2 No Studs
-*6930 Slope Curved 4 x 2 with Stud Notch Left
-*6929 Slope Curved 4 x 2 with Stud Notch Right
+*11153/61678 Brick Curved 4 x 1 No Studs
+*93606 Brick Curved 4 x 2 No Studs
+*6930 Brick Wedged, Curved 4 x 2 with Stud Notch Left
+*6929 Brick Wedged, Curved 4 x 2 with Stud Notch Right
 
 Fits with
-*11153/61678 Slope Curved 4 x 1 No Studs
-*93606 Slope Curved 4 x 2 No Studs
-*5415 Slope Curved 1 x 4 with Stud Notch Left
-*5414 Slope Curved 1 x 4 with Stud Notch Right
+*11153/61678 Brick Curved 4 x 1 No Studs
+*93606 Brick Curved 4 x 2 No Studs
+*5415 Brick Wedged, Curved 1 x 4 with Stud Notch Left
+*5414 Brick Wedged, Curved 1 x 4 with Stud Notch Right
 
 *6091 Brick Curved 1 x 2 x 1 1/3 with Curved Top
 *5841 Brick Curved 1 x 2 x 1 with Curved Top
 
 Fits with
 *5849 Brick Curved 1 x 4 x 1
-*6822 Slope Curved 3 x 2 Beveled with Stud Notch Left
-*6823 Slope Curved 3 x 2 Beveled with Stud Notch Right
+*6822 Brick Round, Curved Double 3 x 2 Beveled with Stud Notch Left
+*6823 Brick Round, Curved Double 3 x 2 Beveled with Stud Notch Right
 
 Fits with
-*11153/61678 Slope Curved 4 x 1 No Studs
-*93606 Slope Curved 4 x 2 No Studs
-*7206 Slope Curved 1 x 4 with Stud Notch Left
-*7205 Slope Curved 1 x 4 with Stud Notch Right
+*11153/61678 Brick Curved 4 x 1 No Studs
+*93606 Brick Curved 4 x 2 No Studs
+*7206 Brick Round, Curved Double 1 x 4 with Stud Notch Left
+*7205 Brick Round, Curved Double 1 x 4 with Stud Notch Right
 
 Fits with
 *47753 Wedge Curved 4 x 4 No Top Studs
@@ -691,31 +691,31 @@ Fits with
 *3049d Brick Sloped 45° 2 x 1 Double / Inverted
 
 Fits with
-*5847 Slope Curved 1 x 2 Inverted with 1 x 1 Cutouts
-*1750 Slope Curved 2 x 2 Inverted with 1 x 2 Cutouts
-*5853 Slope Curved 2 x 4 Inverted with 1 x 4 Cutouts
-*7512 Brick Curved 2 x 2 x 1 Curved Inverted, Corner
+*5847 Brick Curved Inverted 1 x 2 with 1 x 1 Cutouts
+*1750 Brick Curved Inverted 2 x 2 with 1 x 2 Cutouts
+*5853 Brick Curved Inverted 2 x 4 with 1 x 4 Cutouts
+*7512 Brick Curved Inverted 2 x 2 x 1, Corner
 
 Fits with
 *6826 Brick Curved 2 x 2 Inverted
-*1750 Slope Curved 2 x 2 Inverted with 1 x 2 Cutouts
+*1750 Brick Curved Inverted 2 x 2 with 1 x 2 Cutouts
 
 Fits with
 *6826 Brick Curved 2 x 2 Inverted
 *5174 Brick Curved Double 2 x 4 Inverted
 
 Fits with
-*50950 Slope Curved 3 x 1 No Studs
-*24309 Slope Curved 3 x 2 No Studs
-*80177 Slope Curved 3 x 2 with Stud Notch Left
-*80178 Slope Curved 3 x 2 with Stud Notch Right
+*50950 Brick Curved 3 x 1 No Studs
+*24309 Brick Curved 3 x 2 No Studs
+*80177 Brick Wedged, Curved 3 x 2 with Stud Notch Left
+*80178 Brick Wedged, Curved 3 x 2 with Stud Notch Right
 *76797 Brick Round Corner, Curved 3 x 3 x 1 Quarter Circle
 
 Fits with
-*50950 Slope Curved 3 x 1 No Studs
-*24309 Slope Curved 3 x 2 No Studs
-*6822 Slope Curved 3 x 2 Beveled with Stud Notch Left
-*6823 Slope Curved 3 x 2 Beveled with Stud Notch Right
+*50950 Brick Curved 3 x 1 No Studs
+*24309 Brick Curved 3 x 2 No Studs
+*6822 Brick Round, Curved Double 3 x 2 Beveled with Stud Notch Left
+*6823 Brick Round, Curved Double 3 x 2 Beveled with Stud Notch Right
 *76797 Brick Round Corner, Curved 3 x 3 x 1 Quarter Circle
 
 Fits with
@@ -972,39 +972,39 @@ Fits with
 *27263 Tile Special 2 x 2 Corner with Cut Corner - Facet
 
 Fits with
-*11477 Slope Curved 2 x 1 No Studs [1/2 Bow]
-*15068 Slope Curved 2 x 2 x 2/3
-*5095 Slope Curved 2 x 2 with Stud Notch Left
-*5093 Slope Curved 2 x 2 with Stud Notch Right
+*11477 Brick Curved 2 x 1 No Studs [1/2 Bow]
+*15068 Brick Curved 2 x 2 x 2/3
+*5095 Brick Wedged, Curved 2 x 2 with Stud Notch Left
+*5093 Brick Wedged, Curved 2 x 2 with Stud Notch Right
 *5852 Brick Round Corner, Curved 2 x 2 x 2/3 Quarter Circle
-*93273 Slope Curved 4 x 1 Double with No Studs
+*93273 Brick Curved 4 x 1 Double with No Studs
 
 Inverted
-*11477 Slope Curved 2 x 1 No Studs [1/2 Bow]
-*24201 Slope Curved 2 x 1 Inverted
+*11477 Brick Curved 2 x 1 No Studs [1/2 Bow]
+*24201 Brick Curved Inverted 2 x 1
 
 Inverted
-*15068 Slope Curved 2 x 2 x 2/3
-*32803 Slope Curved 2 x 2 x 2/3 Inverted
+*15068 Brick Curved 2 x 2 x 2/3
+*32803 Brick Curved 2 x 2 x 2/3 Inverted
 
-*66956 Slope Curved 2 x 2 with Stud Notches
-*15068 Slope Curved 2 x 2 x 2/3
-
-Fits with
-*29120 Slope Curved 2 x 1 with Stud Notch Left
-*66956 Slope Curved 2 x 2 with Stud Notches
-*29119 Slope Curved 2 x 1 with Stud Notch Right
+*66956 Brick Wedged, Curved 2 x 2 with Stud Notches
+*15068 Brick Curved 2 x 2 x 2/3
 
 Fits with
-*15068 Slope Curved 2 x 2 x 2/3
-*11477 Slope Curved 2 x 1 No Studs [1/2 Bow]
-*29120 Slope Curved 2 x 1 with Stud Notch Left
-*29119 Slope Curved 2 x 1 with Stud Notch Right
+*29120 Brick Wedged, Curved 2 x 1 with Stud Notch Left
+*66956 Brick Wedged, Curved 2 x 2 with Stud Notches
+*29119 Brick Wedged, Curved 2 x 1 with Stud Notch Right
 
-*29120 Slope Curved 2 x 1 with Stud Notch Left
+Fits with
+*15068 Brick Curved 2 x 2 x 2/3
+*11477 Brick Curved 2 x 1 No Studs [1/2 Bow]
+*29120 Brick Wedged, Curved 2 x 1 with Stud Notch Left
+*29119 Brick Wedged, Curved 2 x 1 with Stud Notch Right
+
+*29120 Brick Wedged, Curved 2 x 1 with Stud Notch Left
 *5091 Tile 1 x 2 with Stud Notch Left
 
-*29119 Slope Curved 2 x 1 with Stud Notch Right
+*29119 Brick Wedged, Curved 2 x 1 with Stud Notch Right
 *5092 Tile 1 x 2 with Stud Notch Right
 
 Fits with
@@ -1377,7 +1377,7 @@ Fits with
 
 Fits with
 *6005 Brick Arch 1 x 3 x 2 Curved Top
-+11477 Slope Curved 2 x 1 No Studs [1/2 Bow]
++11477 Brick Curved 2 x 1 No Studs [1/2 Bow]
 
 Fits with
 *6005 Brick Arch 1 x 3 x 2 Curved Top
