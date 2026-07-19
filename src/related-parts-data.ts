@@ -260,6 +260,25 @@ const relatedPartsData = `
 
 298c02 Lever Small Base with Black Lever;298c03 Lever Small Base with Light Gray Lever;298c05 Lever Small Base with Light Bluish Gray Lever;298c04 Lever Small Base with White Lever;298c01 Lever Small Base with Yellow Lever
 
+6564 Brick Wedged, Angled 3 x 2 Right;6565 Brick Wedged, Angled 3 x 2 Left
+41768 Brick Wedged, Angled 4 x 2 Left;41767 Brick Wedged, Angled 4 x 2 Right
+
+Fits with
+*41770 Wedge Plate 4 x 2 Left
+*41768 Brick Wedged, Angled 4 x 2 Left
+
+Fits with
+*41769 Wedge Plate 4 x 2 Right
+*41767 Brick Wedged, Angled 4 x 2 Right
+
+Fits with
+*43723 Wedge Plate 3 x 2 Left
+*6565 Brick Wedged, Angled 3 x 2 Left
+
+Fits with
+*43722 Wedge Plate 3 x 2 Right
+*6564 Brick Wedged, Angled 3 x 2 Right
+
 Fits with
 *15254 Brick Arch 1 x 6 x 2
 *20309 Window 1 x 4 x 1 2/3 with Spoked Rounded Top
