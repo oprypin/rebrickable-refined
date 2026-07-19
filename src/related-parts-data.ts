@@ -38,8 +38,8 @@ const relatedPartsData = `
 6541 Technic Brick 1 x 1 with Pin Hole;32000 Technic Brick 1 x 2 [2 Pin Holes];5565 Technic Brick 1 x 3 [3 Pin Holes]
 73230 Technic Brick 1 x 1 with Axle Hole;32064a Technic Brick 1 x 2 with Axle Hole
 
-3665 Slope Inverted 45° 2 x 1;3660/76959 Slope Inverted 45° 2 x 2
-4287c Slope Inverted 33° 3 x 1;2752/3747b Slope Inverted 33° 3 x 2
+3665 Brick Sloped Inverted 45° 2 x 1;3660/76959 Brick Sloped Inverted 45° 2 x 2
+4287c Brick Sloped Inverted 33° 3 x 1;2752/3747b Brick Sloped Inverted 33° 3 x 2
 
 87620 Wedge 2 x 2 Facet;2462 Wedge 3 x 3 Facet;14413 Wedge 4 x 4 Facet;6107 Wedge 5 x 5 Facet
 
@@ -66,23 +66,23 @@ const relatedPartsData = `
 
 24316 Technic Axle 3 with Stop;87083 Technic Axle 4 with Stop;15462 Technic Axle 5 with Stop;55013 Technic Axle 8 with Stop
 
-3040b Slope 45° 2 x 1;3039 Slope 45° 2 x 2;3038 Slope 45° 2 x 3;3037 Slope 45° 2 x 4;23949 Slope 45° 2 x 6;4445 Slope 45° 2 x 8
-4286 Slope 33° 3 x 1;3298 Slope 33° 3 x 2;4161 Slope 33° 3 x 3;3297 Slope 33° 3 x 4;58181/3939 Slope 33° 3 x 6 No Inner Walls
-60477 Slope 18° 4 x 1;30363 Slope 18° 4 x 2
+3040b Brick Sloped 45° 2 x 1;3039 Brick Sloped 45° 2 x 2;3038 Brick Sloped 45° 2 x 3;3037 Brick Sloped 45° 2 x 4;23949 Brick Sloped 45° 2 x 6;4445 Brick Sloped 45° 2 x 8
+4286 Brick Sloped 33° 3 x 1;3298 Brick Sloped 33° 3 x 2;4161 Brick Sloped 33° 3 x 3;3297 Brick Sloped 33° 3 x 4;58181/3939 Brick Sloped 33° 3 x 6 No Inner Walls
+60477 Brick Sloped 18° 4 x 1;30363 Brick Sloped 18° 4 x 2
 
-3040b Slope 45° 2 x 1;3039 Slope 45° 2 x 2
-60481 Slope 65° 2 x 1 x 2;3678b Slope 65° 2 x 2 x 2
-4460b Slope 75° 2 x 1 x 3;98560 Slope 75° 2 x 2 x 3
+3040b Brick Sloped 45° 2 x 1;3039 Brick Sloped 45° 2 x 2
+60481 Brick Sloped 65° 2 x 1 x 2;3678b Brick Sloped 65° 2 x 2 x 2
+4460b Brick Sloped 75° 2 x 1 x 3;98560 Brick Sloped 75° 2 x 2 x 3
 
-32802 Slope Inverted 45° 4 x 1 Double with 1 x 2 Recessed;4871 Slope Inverted 45° 4 x 2 Double with 2 x 2 Recessed;72454/4854 Slope Inverted 45° 4 x 4 Double with 4 x 2 Recessed
-52501 Slope Inverted 45° 6 x 1 Double with 1 x 4 Recessed;22889 Slope Inverted 45° 6 x 2 Double with 2 x 4 Recessed;60219/30283 Slope Inverted 45° 6 x 4 Double with 4 x 4 Recessed
-;11301 Slope, Curved 2 x 8 x 2 Inverted Double;*54091 Slope Curved 8 x 8 x 2 Inverted Double
+32802 Brick Sloped Inverted 45° 4 x 1 Double with 1 x 2 Recessed;4871 Brick Sloped Inverted 45° 4 x 2 Double with 2 x 2 Recessed;72454/4854 Brick Sloped Inverted 45° 4 x 4 Double with 4 x 2 Recessed
+52501 Brick Sloped Inverted 45° 6 x 1 Double with 1 x 4 Recessed;22889 Brick Sloped Inverted 45° 6 x 2 Double with 2 x 4 Recessed;60219/30283 Brick Sloped Inverted 45° 6 x 4 Double with 4 x 4 Recessed
+;11301 Brick Curved Inverted 2 x 8 x 2 Double;*54091 Brick Curved Inverted 8 x 8 x 2 Double
 
-35464 Slope Double 45° 1 x 1
-3044c/3044b Slope 45° 2 x 1 Double;3043 Slope 45° 2 x 2 Double;3041 Slope 45° 2 x 4 Double
-;3300 Slope 33° 2 x 2 Double;3299 Slope 33° 2 x 4 Double
+35464 Brick Sloped Double 45° 1 x 1
+3044c/3044b Brick Sloped 45° 2 x 1 Double;3043 Brick Sloped 45° 2 x 2 Double;3041 Brick Sloped 45° 2 x 4 Double
+;3300 Brick Sloped 33° 2 x 2 Double;3299 Brick Sloped 33° 2 x 4 Double
 
-54200 Slope 30° 1 x 1 x 2/3;85984 Slope 30° 1 x 2 x 2/3;7825 Slope 30° 1 x 3 x 2/3;7835 Slope 30° 1 x 4 x 2/3
+54200 Brick Sloped 30° 1 x 1 x 2/3;85984 Brick Sloped 30° 1 x 2 x 2/3;7825 Brick Sloped 30° 1 x 3 x 2/3;7835 Brick Sloped 30° 1 x 4 x 2/3
 
 1745 Plate Round 1 x 2 Half Circle with Stud (Jumper);15573/3794b/3794a Plate Special 1 x 2 with 1 Stud with Groove and Inside Stud Holder (Jumper);34103 Plate Special 1 x 3 with 2 Studs with Groove and Inside Stud Holder (Jumper)
 18674 Plate Special Round 2 x 2 with Center Stud (Jumper Plate);87580 Plate Special 2 x 2 with Groove and Center Stud (Jumper);65509 Plate Special 2 x 4 with Groove and Two Center Studs (Jumper)
@@ -352,16 +352,16 @@ Fits with
 *92099/30042 Plate Special 4 x 6 with Trap Door Hinge
 
 Fits with
-*3044c/3044b Slope 45° 2 x 1 Double
-*3043 Slope 45° 2 x 2 Double
-*3041 Slope 45° 2 x 4 Double
-*80545 Slope 45° 2 x 4 x 1 1/3 Double
+*3044c/3044b Brick Sloped 45° 2 x 1 Double
+*3043 Brick Sloped 45° 2 x 2 Double
+*3041 Brick Sloped 45° 2 x 4 Double
+*80545 Brick Sloped 45° 2 x 4 x 1 1/3 Double
 
 Fits with
-*32802 Slope Inverted 45° 4 x 1 Double with 1 x 2 Recessed
-*52501 Slope Inverted 45° 6 x 1 Double with 1 x 4 Recessed
-*2310 Slope 45° 2 x 1 Inverted with 2/3 Cutout
-*3665 Slope Inverted 45° 2 x 1
+*32802 Brick Sloped Inverted 45° 4 x 1 Double with 1 x 2 Recessed
+*52501 Brick Sloped Inverted 45° 6 x 1 Double with 1 x 4 Recessed
+*2310 Brick Sloped 45° 2 x 1 Inverted with 2/3 Cutout
+*3665 Brick Sloped Inverted 45° 2 x 1
 
 Fits with
 *4216 Brick Special 1 x 2 with Groove
@@ -509,19 +509,19 @@ Fits with
 *3713 Technic Bush
 
 Inverted
-*4460b Slope 75° 2 x 1 x 3
-*2449 Slope Inverted 75° 2 x 1 x 3
+*4460b Brick Sloped 75° 2 x 1 x 3
+*2449 Brick Sloped Inverted 75° 2 x 1 x 3
 
 Fits with
-*4460b Slope 75° 2 x 1 x 3
-*98560 Slope 75° 2 x 2 x 3
-*3685 Slope 75° 2 x 2 x 3 Double Convex
+*4460b Brick Sloped 75° 2 x 1 x 3
+*98560 Brick Sloped 75° 2 x 2 x 3
+*3685 Brick Sloped 75° 2 x 2 x 3 Double Convex
 
 *6587 Technic Axle 3 with Stud
 *24316 Technic Axle 3 with Stop
 
-*28192 Slope 45° 2 x 1 with 2/3 Inverted Cutout and no stud
-*5540 Slope 45° 2 x 4 with 2/3 Inverted Cutout and no Studs
+*28192 Brick Sloped 45° 2 x 1 with 2/3 Inverted Cutout and no stud
+*5540 Brick Sloped 45° 2 x 4 with 2/3 Inverted Cutout and no Studs
 
 Fits with
 *30565 Plate Round Corner 4 x 4
@@ -544,8 +544,8 @@ Fits with
 *10314/6191 Brick Curved 1 x 4 x 1 1/3 No Studs
 
 Fits with
-*4515 Slope 10° 6 x 8
-*4569 Slope 10° 1 x 6 x 1 with 1 x 2 x 1/3 Cutout
+*4515 Brick Sloped 10° 6 x 8
+*4569 Brick Sloped 10° 1 x 6 x 1 with 1 x 2 x 1/3 Cutout
 
 Fits with
 *68297 Wedge Plate 4 x 8 Cut Corners
@@ -562,7 +562,7 @@ Fits with
 *27261 Plate Special 2 x 3 with Rocks
 
 *27261 Plate Special 2 x 3 with Rocks
-*7037 Brick Curved 2 x 2 with Curved Front, 2 Studs
+*7037 Brick Wedged, Rounded 2 x 2 with Curved Front, 2 Studs
 
 *6141 Plate Round 1 x 1 with Solid Stud
 *98138 Tile Round 1 x 1
@@ -606,15 +606,15 @@ Fits with
 *43713 Wedge Curved Inverted 6 x 4
 
 Fits with
-*60477 Slope 18° 4 x 1
-*30363 Slope 18° 4 x 2
+*60477 Brick Sloped 18° 4 x 1
+*30363 Brick Sloped 18° 4 x 2
 *43710 Wedge Sloped 4 x 2 Triple Left
 *43711 Wedge Sloped 4 x 2 Triple Right
 *43708 Wedge Sloped 18° 4 x 4 Corner
 
 Fits with
-*3040b Slope 45° 2 x 1
-*3039 Slope 45° 2 x 2
+*3040b Brick Sloped 45° 2 x 1
+*3039 Brick Sloped 45° 2 x 2
 *43710 Wedge Sloped 4 x 2 Triple Left
 *43711 Wedge Sloped 4 x 2 Triple Right
 *13548 Wedge Sloped 45° 2 x 2 Corner
@@ -637,10 +637,10 @@ Fits with
 *61485 Turntable 4 x 4 Square Base, Locking
 
 Fits with
-*15672 Slope 45° 2 x 1 with 2/3 Cutout
-*28192 Slope 45° 2 x 1 with 2/3 Inverted Cutout and no stud
-*3040b Slope 45° 2 x 1
-*3044c/3044b Slope 45° 2 x 1 Double
+*15672 Brick Sloped 45° 2 x 1 with 2/3 Cutout
+*28192 Brick Sloped 45° 2 x 1 with 2/3 Inverted Cutout and no stud
+*3040b Brick Sloped 45° 2 x 1
+*3044c/3044b Brick Sloped 45° 2 x 1 Double
 
 Fits with
 *11153/61678 Slope Curved 4 x 1 No Studs
@@ -680,15 +680,15 @@ Fits with
 *25269 Tile Round 1 x 1 Quarter
 *24246 Tile Round 1 x 1 Half Circle
 
-*5404 Slope 18° 2 x 1 x 2/3
-*61409 Slope 18° 2 x 1 x 2/3 with 4 Slots / Grate
+*5404 Brick Sloped 18° 2 x 1 x 2/3
+*61409 Brick Sloped 18° 2 x 1 x 2/3 with 4 Slots / Grate
 
 Fits with
-*3044c/3044b Slope 45° 2 x 1 Double
-*3043 Slope 45° 2 x 2 Double
-*3041 Slope 45° 2 x 4 Double
-*15571/3048c Slope 45° 2 x 1 Triple
-*3049d Slope 45° 2 x 1 Double / Inverted
+*3044c/3044b Brick Sloped 45° 2 x 1 Double
+*3043 Brick Sloped 45° 2 x 2 Double
+*3041 Brick Sloped 45° 2 x 4 Double
+*15571/3048c Brick Sloped 45° 2 x 1 Triple
+*3049d Brick Sloped 45° 2 x 1 Double / Inverted
 
 Fits with
 *5847 Slope Curved 1 x 2 Inverted with 1 x 1 Cutouts
@@ -765,20 +765,20 @@ Inverted
 *3700 Technic Brick 1 x 2 [1 Pin Hole]
 *44865/2458 Brick Special 1 x 2 with Pin
 
-*85984 Slope 30° 1 x 2 x 2/3
-*3300 Slope 33° 2 x 2 Double
+*85984 Brick Sloped 30° 1 x 2 x 2/3
+*3300 Brick Sloped 33° 2 x 2 Double
 
 Fits with
-*3044c/3044b Slope 45° 2 x 1 Double
-*3040b Slope 45° 2 x 1
+*3044c/3044b Brick Sloped 45° 2 x 1 Double
+*3040b Brick Sloped 45° 2 x 1
 
 Fits with
-*3043 Slope 45° 2 x 2 Double
-*3039 Slope 45° 2 x 2
+*3043 Brick Sloped 45° 2 x 2 Double
+*3039 Brick Sloped 45° 2 x 2
 
 Fits with
-*3041 Slope 45° 2 x 4 Double
-*3037 Slope 45° 2 x 4
+*3041 Brick Sloped 45° 2 x 4 Double
+*3037 Brick Sloped 45° 2 x 4
 
 *85861 Plate Round 1 x 1 with Open Stud
 *65578/25893 Bar, Angled with 1 x 1 Round Plate / Stud on End
@@ -1038,35 +1038,35 @@ Fits with
 *3709 Technic Plate 2 x 4 [3 Holes]
 *39789 Brick Special 2 x 4 with 3 Axle Holes
 
-*54200 Slope 30° 1 x 1 x 2/3
-*35464 Slope Double 45° 1 x 1
+*54200 Brick Sloped 30° 1 x 1 x 2/3
+*35464 Brick Sloped Double 45° 1 x 1
 
-*35464 Slope Double 45° 1 x 1
-*22388 Slope 45° 1 x 1 x 2/3 Quadruple Convex [Pyramid]
+*35464 Brick Sloped Double 45° 1 x 1
+*22388 Brick Sloped 45° 1 x 1 x 2/3 Quadruple Convex [Pyramid]
 
-*35464 Slope Double 45° 1 x 1
+*35464 Brick Sloped Double 45° 1 x 1
 *49307 Brick Curved 1 x 1 x 2/3 Double, No Studs
 
 Fits with
-*54200 Slope 30° 1 x 1 x 2/3
-*85984 Slope 30° 1 x 2 x 2/3
-*7825 Slope 30° 1 x 3 x 2/3
-*7835 Slope 30° 1 x 4 x 2/3
-*7827 Slope 30° 1 x 1 x 2/3 Double Concave
-*7826 Slope 30° 1 x 1 x 2/3 Double Corner
+*54200 Brick Sloped 30° 1 x 1 x 2/3
+*85984 Brick Sloped 30° 1 x 2 x 2/3
+*7825 Brick Sloped 30° 1 x 3 x 2/3
+*7835 Brick Sloped 30° 1 x 4 x 2/3
+*7827 Brick Sloped 30° 1 x 1 x 2/3 Double Concave
+*7826 Brick Sloped 30° 1 x 1 x 2/3 Double Corner
 
 Fits with
-*3040b Slope 45° 2 x 1
-*3039 Slope 45° 2 x 2
-*3045 Slope 45° 2 x 2 Double Convex
-*3046a Slope 45° 2 x 2 Double Concave
+*3040b Brick Sloped 45° 2 x 1
+*3039 Brick Sloped 45° 2 x 2
+*3045 Brick Sloped 45° 2 x 2 Double Convex
+*3046a Brick Sloped 45° 2 x 2 Double Concave
 
 Fits with
-*3040b Slope 45° 2 x 1
-*3039 Slope 45° 2 x 2
+*3040b Brick Sloped 45° 2 x 1
+*3039 Brick Sloped 45° 2 x 2
 *13548 Wedge Sloped 45° 2 x 2 Corner
 
-*3045 Slope 45° 2 x 2 Double Convex
+*3045 Brick Sloped 45° 2 x 2 Double Convex
 *13548 Wedge Sloped 45° 2 x 2 Corner
 
 Fits with
@@ -1078,27 +1078,27 @@ Fits with
 *78886 Wedge Sloped 65° 2 x 2 x 2 Corner
 
 Fits with
-*60481 Slope 65° 2 x 1 x 2
-*3678b Slope 65° 2 x 2 x 2
+*60481 Brick Sloped 65° 2 x 1 x 2
+*3678b Brick Sloped 65° 2 x 2 x 2
 *78886 Wedge Sloped 65° 2 x 2 x 2 Corner
 
 Fits with
-*3660/76959 Slope Inverted 45° 2 x 2
-*3665 Slope Inverted 45° 2 x 1
-*3676 Slope Inverted 45° 2 x 2 Double Convex
+*3660/76959 Brick Sloped Inverted 45° 2 x 2
+*3665 Brick Sloped Inverted 45° 2 x 1
+*3676 Brick Sloped Inverted 45° 2 x 2 Double Convex
 
 Fits with
-*3298 Slope 33° 3 x 2
-*4161 Slope 33° 3 x 3
-*3675 Slope 33° 3 x 3 Double Convex
-*99301 Slope 33° 3 x 3 Double Concave
+*3298 Brick Sloped 33° 3 x 2
+*4161 Brick Sloped 33° 3 x 3
+*3675 Brick Sloped 33° 3 x 3 Double Convex
+*99301 Brick Sloped 33° 3 x 3 Double Concave
 
 Fits with
-*3665 Slope Inverted 45° 2 x 1
-*18759 Slope Inverted 45° 3 x 1 Double
+*3665 Brick Sloped Inverted 45° 2 x 1
+*18759 Brick Sloped Inverted 45° 3 x 1 Double
 
 *95188 Brick Round Corner 6 x 6 with 33° Slope and Facet Cutout
-*58846 Brick Round Corner 10 x 10 with Slope 33° Edge, Axle Hole, Facet Cutout
+*58846 Brick Round Corner 10 x 10 with Brick Sloped 33° Edge, Axle Hole, Facet Cutout
 
 Fits with
 *11090 Bar Holder with Clip
@@ -1334,12 +1334,12 @@ Fits with
 
 Fits with
 *41749 Wedge Curved 8 x 3 x 2 Open Right
-*3298 Slope 33° 3 x 2
+*3298 Brick Sloped 33° 3 x 2
 *50955 Wedge Curved 10 x 3 Left
 
 Fits with
 *41750 Wedge Curved 8 x 3 x 2 Open Left
-*3298 Slope 33° 3 x 2
+*3298 Brick Sloped 33° 3 x 2
 *50956 Wedge Curved 10 x 3 Right
 
 Fits with
@@ -1503,12 +1503,12 @@ Fits with
 *44301b Hinge Plate 1 x 2 Locking with 1 Finger On End
 
 Fits with
-*4871 Slope Inverted 45° 4 x 2 Double with 2 x 2 Recessed
-*3660/76959 Slope Inverted 45° 2 x 2
+*4871 Brick Sloped Inverted 45° 4 x 2 Double with 2 x 2 Recessed
+*3660/76959 Brick Sloped Inverted 45° 2 x 2
 
 Fits with
-*22889 Slope Inverted 45° 6 x 2 Double with 2 x 4 Recessed
-*3660/76959 Slope Inverted 45° 2 x 2
+*22889 Brick Sloped Inverted 45° 6 x 2 Double with 2 x 4 Recessed
+*3660/76959 Brick Sloped Inverted 45° 2 x 2
 
 *3941 Brick Round 2 x 2 with Axle Hole
 *87081 Brick Round 4 x 4 Centre Hole
@@ -1544,9 +1544,9 @@ Fits with
 *24307 Wedge Plate 2 x 2 Right
 *26601 Wedge Plate 2 x 2 Cut Corner
 
-*54200 Slope 30° 1 x 1 x 2/3
-*5404 Slope 18° 2 x 1 x 2/3
-*85984 Slope 30° 1 x 2 x 2/3
+*54200 Brick Sloped 30° 1 x 1 x 2/3
+*5404 Brick Sloped 18° 2 x 1 x 2/3
+*85984 Brick Sloped 30° 1 x 2 x 2/3
 
 *64867 Wedge 4 x 4 Fractured Polygon Top
 *48933/6069 Wedge Sloped 4 x 4 Triple
