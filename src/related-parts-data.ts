@@ -395,14 +395,14 @@ Fits with
 *87620 Wedge 2 x 2 Facet
 *78594 Panel 2 x 2 x 5 Corner
 
-*13349/4855 Wedge Sloped Inverted 4 x 4 Triple
-*4856b/4856a Wedge Sloped Inverted 6 x 4 with 4 Stud Connections
+*13349/4855 Brick Wedged, Sloped Inverted 4 x 4 Triple
+*4856b/4856a Brick Wedged, Sloped Inverted 6 x 4 with 4 Stud Connections
 
-*4856b/4856a Wedge Sloped Inverted 6 x 4 with 4 Stud Connections
+*4856b/4856a Brick Wedged, Sloped Inverted 6 x 4 with 4 Stud Connections
 *43713 Wedge Curved Inverted 6 x 4
 
-*22391 Wedge Sloped 4 x 4 Pointed
-*22390 Wedge Sloped 45° 6 x 8 with Pointed Cutout
+*22391 Brick Wedged, Sloped 4 x 4 Pointed
+*22390 Brick Wedged, Sloped 45° 6 x 8 with Pointed Cutout
 
 Fits with
 *6565 Wedge 3 x 2 Left
@@ -411,20 +411,20 @@ Fits with
 Fits with
 *43723 Wedge Plate 3 x 2 Left
 *43722 Wedge Plate 3 x 2 Right
-*93348 Wedge Sloped 4 x 4 Taper
+*93348 Brick Wedged, Sloped 4 x 4 Taper
 
-*93348 Wedge Sloped 4 x 4 Taper
-*48933/6069 Wedge Sloped 4 x 4 Triple
-*6153b Wedge Sloped 6 x 4 Cutout
-
-Fits with
-*90194/48183/4859 Wedge Plate 3 x 4 with 1 x 2 Cutout
-*93348 Wedge Sloped 4 x 4 Taper
-*48933/6069 Wedge Sloped 4 x 4 Triple
+*93348 Brick Wedged, Sloped 4 x 4 Taper
+*48933/6069 Brick Wedged, Sloped 4 x 4 Triple
+*6153b Brick Wedged, Sloped 6 x 4 Cutout
 
 Fits with
 *90194/48183/4859 Wedge Plate 3 x 4 with 1 x 2 Cutout
-*6153b Wedge Sloped 6 x 4 Cutout
+*93348 Brick Wedged, Sloped 4 x 4 Taper
+*48933/6069 Brick Wedged, Sloped 4 x 4 Triple
+
+Fits with
+*90194/48183/4859 Wedge Plate 3 x 4 with 1 x 2 Cutout
+*6153b Brick Wedged, Sloped 6 x 4 Cutout
 
 Fits with
 *77180 Brick Round, Curved 10 x 2 x 2 with Rounded End Left
@@ -592,7 +592,7 @@ Fits with
 Fits with
 *41748/5830 Wedge Curved 6 x 2 Left
 *41747/5711 Wedge Curved 6 x 2 Right
-*13548 Wedge Sloped 45° 2 x 2 Corner
+*13548 Brick Wedged, Sloped 45° 2 x 2 Corner
 *43712 Wedge Curved 6 x 4 Triple
 
 Fits with
@@ -608,21 +608,21 @@ Fits with
 Fits with
 *60477 Brick Sloped 18° 4 x 1
 *30363 Brick Sloped 18° 4 x 2
-*43710 Wedge Sloped 4 x 2 Triple Left
-*43711 Wedge Sloped 4 x 2 Triple Right
-*43708 Wedge Sloped 18° 4 x 4 Corner
+*43710 Brick Wedged, Sloped 4 x 2 Triple Left
+*43711 Brick Wedged, Sloped 4 x 2 Triple Right
+*43708 Brick Wedged, Sloped 18° 4 x 4 Corner
 
 Fits with
 *3040b Brick Sloped 45° 2 x 1
 *3039 Brick Sloped 45° 2 x 2
-*43710 Wedge Sloped 4 x 2 Triple Left
-*43711 Wedge Sloped 4 x 2 Triple Right
-*13548 Wedge Sloped 45° 2 x 2 Corner
+*43710 Brick Wedged, Sloped 4 x 2 Triple Left
+*43711 Brick Wedged, Sloped 4 x 2 Triple Right
+*13548 Brick Wedged, Sloped 45° 2 x 2 Corner
 
 Fits with
-*43710 Wedge Sloped 4 x 2 Triple Left
-*43711 Wedge Sloped 4 x 2 Triple Right
-*48933/6069 Wedge Sloped 4 x 4 Triple
+*43710 Brick Wedged, Sloped 4 x 2 Triple Left
+*43711 Brick Wedged, Sloped 4 x 2 Triple Right
+*48933/6069 Brick Wedged, Sloped 4 x 4 Triple
 
 Fits with
 *41766 Brick Curved 8 x 2 x 2
@@ -1064,23 +1064,23 @@ Fits with
 Fits with
 *3040b Brick Sloped 45° 2 x 1
 *3039 Brick Sloped 45° 2 x 2
-*13548 Wedge Sloped 45° 2 x 2 Corner
+*13548 Brick Wedged, Sloped 45° 2 x 2 Corner
 
 *3045 Brick Sloped 45° 2 x 2 Double Convex
-*13548 Wedge Sloped 45° 2 x 2 Corner
+*13548 Brick Wedged, Sloped 45° 2 x 2 Corner
 
 Fits with
-*13548 Wedge Sloped 45° 2 x 2 Corner
-*47759 Wedge Sloped 45° 2 x 4 Triple
+*13548 Brick Wedged, Sloped 45° 2 x 2 Corner
+*47759 Brick Wedged, Sloped 45° 2 x 4 Triple
 *64225 Wedge Curved 4 x 3 No Studs [Plain]
 
-*13548 Wedge Sloped 45° 2 x 2 Corner
-*78886 Wedge Sloped 65° 2 x 2 x 2 Corner
+*13548 Brick Wedged, Sloped 45° 2 x 2 Corner
+*78886 Brick Wedged, Sloped 65° 2 x 2 x 2 Corner
 
 Fits with
 *60481 Brick Sloped 65° 2 x 1 x 2
 *3678b Brick Sloped 65° 2 x 2 x 2
-*78886 Wedge Sloped 65° 2 x 2 x 2 Corner
+*78886 Brick Wedged, Sloped 65° 2 x 2 x 2 Corner
 
 Fits with
 *3660/76959 Brick Sloped Inverted 45° 2 x 2
@@ -1549,7 +1549,7 @@ Fits with
 *85984 Brick Sloped 30° 1 x 2 x 2/3
 
 *64867 Wedge 4 x 4 Fractured Polygon Top
-*48933/6069 Wedge Sloped 4 x 4 Triple
+*48933/6069 Brick Wedged, Sloped 4 x 4 Triple
 
 6610 Technic Link 1 x 4;32005a/32005b Technic Link 1 x 6;5996 Technic Link 1 x 8;32293 Technic Link 1 x 9;2637 Technic Link 1 x 16
 30397 Technic Link 1 x 5;4514 Technic Link 1 x 6 Perpendicular;7684 Technic Link 1 x 6 x 2 Angled, Bent, Double;64451 Technic Link 1 x 9 Bent (6 - 4);6247 Technic Link 1 x 11
