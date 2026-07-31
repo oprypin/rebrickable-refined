@@ -53,11 +53,11 @@ async function getOrUpdateDataFile({maxAgeDays, filename}: {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === 'getPartColorsData') {
-        void getOrUpdateDataFile({
-            maxAgeDays: 1,
-            filename: 'parts-images-v2.json',
-        }).then(sendResponse);
+    if (message.action === 'getPartsImagesData2') {
+        void getOrUpdateDataFile({maxAgeDays: 3, filename: 'parts-images-v2.json'}).then(sendResponse);
+        return true;
+    } else if (message.action === 'getPartsImagesData') {
+        void getOrUpdateDataFile({maxAgeDays: 1, filename: 'parts-images.json'}).then(sendResponse);
         return true;
     }
     return undefined;

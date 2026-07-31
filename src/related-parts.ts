@@ -73,7 +73,10 @@ if (insertBefore) {
         const splitData = relatedPartsData.trim().split('\n\n');
         splitData.push(...extraSplitData);
 
-        const partsImages: Array<Record<string, string>> = await chrome.runtime.sendMessage({action: 'getPartColorsData'}) ?? [];
+        await settingsInitialized;
+        const action = 'getPartsImagesData' + (settings['consistent-part-images'] ? '2' : '');
+        const partsImages: Array<Record<string, string>> = await chrome.runtime.sendMessage({action}) ?? [];
+
         function getPartImage(partNum: string) {
             for (const record of partsImages) {
                 const url = record[partNum];
