@@ -30,7 +30,7 @@ const relatedPartsData = `
 
 3070b Tile 1 x 1;3069b Tile 1 x 2;63864 Tile 1 x 3;2431 Tile 1 x 4;6636 Tile 1 x 6;4162 Tile 1 x 8
 ;3068b Tile 2 x 2;26603 Tile 2 x 3;87079 Tile 2 x 4;69729 Tile 2 x 6
-;;;1751 Tile 4 x 4
+;;;1751 Tile 4 x 4;;8165 Tile 4 x 8
 ;;;;10202 Tile 6 x 6 with Bottom Tubes
 ;;;;;4974/90498 Tile 8 x 16
 
