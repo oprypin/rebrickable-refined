@@ -154,12 +154,26 @@ function populateSetDetails(root: HTMLDivElement) {
     details.classList.add('rbrefined-populated');
 }
 
-when('moc-sort-options', (activated) => {
-    for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds')) {
-        observeChanges(container, () => {
-            if (!container.querySelector('.set-tn')) {
-                return false;
-            }
+for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds')) {
+    observeChanges(container, () => {
+        if (!container.querySelector('.set-tn')) {
+            return false;
+        }
+        // Allow toggling MOC alt sections
+        for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
+            const toggler = createElement('span', {className: 'link pull-right'}, [
+                'Toggle ', createElement('i', {className: 'fa fa-chevron-down'}),
+            ]);
+            heading.prepend(toggler);
+            toggler.addEventListener('click', () => {
+                const parent = heading.parentElement!;
+                const isHidden = parent.style.height === '60px';
+                parent.style.cssText = 'overflow: hidden; interpolate-size: allow-keywords; transition: height 0.15s ease';
+                parent.style.height = (isHidden ? 'auto' : '60px');
+            });
+        }
+
+        when('moc-sort-options', (activated) => {
             const sortOptionElements: Array<HTMLLIElement> = [];
             for (const [sortByName, sortByKey, sortDefault] of [
                 ['Likes', 'likes', 'D'],
@@ -231,10 +245,10 @@ when('moc-sort-options', (activated) => {
             sortOptionElements[0].click();
 
             activated();
-            return true;
         });
-    }
-});
+        return true;
+    });
+}
 
 when('redesign-set-and-moc-tiles', (activated) => {
     for (const container of document.querySelectorAll<HTMLElement>('#set_list_sets, #tab_sets, #tab_alt_builds, #filtered_results, #designer_mocs, #related_mocs, #build_results')) {
