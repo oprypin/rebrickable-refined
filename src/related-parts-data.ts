@@ -888,6 +888,12 @@ Fits with
 *87552 Panel 1 x 2 x 2
 *87544 Panel 1 x 2 x 3
 
+*22886 Brick 1 x 2 x 3 with Bottom Stud Holder
+*87544 Panel 1 x 2 x 3 [Side Supports / Hollow Studs]
+
+*49311 Brick 1 x 4 x 3
+*60581 Panel 1 x 4 x 3 [Side Supports / Hollow Studs]
+
 *15207/43337 Panel 1 x 4 x 1
 *14718 Panel 1 x 4 x 2
 *60581 Panel 1 x 4 x 3
@@ -1405,6 +1411,25 @@ Fits with
 Fits with
 *5066 Plate Special 2 x 2 with Horizontal T-Bar Underneath
 *60470b/60470a Plate Special 1 x 2 with Clips Horizontal
+
+*98138pr9989 Tile Round 1 x 1 with Ladybug / Ladybird Print
+*98138pr0374 Tile Round 1 x 1 with Ladybug print
+
+*3005pr0003 Brick 1 x 1 with Simple Black Eye with White Pupil Print
+*3005pr9996 Brick 1 x 1 with Simple Eye Black and White Print
+
+*14769pr0037 Tile Round 2 x 2 with Red/Yellow Pizza print
+*25269pr0004 Tile Round 1 x 1 Quarter with Pizza Print
+
+*25269pr0004 Tile Round 1 x 1 Quarter with Pizza Print
+*25269pr0038 Tile Round 1 x 1 Quarter with Pizza print
+
+*14769pr0011/4150pr0015 Tile Round 2 x 2 with Pizza Print
+*14769pr0037 Tile Round 2 x 2 with Red/Yellow Pizza print
+*4150pr0049 Tile Round 2 x 2 with Pizza 12 Pepperoni Print
+
+*2431pr0156 Tile 1 x 4 with Wooden Board, Nails print
+*2431pr0081 Tile 1 x 4 with Wood Groove and Nails Print
 
 *14769pr1003 Tile Round 2 x 2 with Bottom Stud Holder with Offset Black Eye Print
 *14769pr1116 Tile Round 2 x 2 with Eye, Blue Iris, Black Pupil print
