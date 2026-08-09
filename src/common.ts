@@ -7,7 +7,13 @@ function createElement<K extends keyof HTMLElementTagNameMap>(
 ): HTMLElementTagNameMap[K] {
     const el = document.createElement(tagName);
     for (const key in options) {
-        el[key] = options[key]!;
+        if (key === 'dataset') {
+            for (const [k, v] of Object.entries(options[key] as Record<string, string>)) {
+                el.dataset[k] = v;
+            }
+        } else {
+            el[key] = options[key]!;
+        }
     }
     if (children) {
         el.append(...children);

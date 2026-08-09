@@ -1,7 +1,11 @@
 // Copyright (C) 2026 Oleh Prypin
 
+function getAuthorName(setEl: Element): string | null {
+    return setEl.querySelector<HTMLAnchorElement>('a[href^="/mocs/"]')?.href.match(/\/mocs\/MOC-[0-9]+\/([^/]+)/)?.[1] ?? null;
+}
+
 function populateSetDetails(root: HTMLDivElement) {
-    const details = root.querySelector('.set-tn-details>*');
+    const details = root.querySelector<HTMLElement>('.set-tn-details>*');
     if (details == null || details.classList.contains('rbrefined-populated') || details.closest('.set-tn-small')) {
         return;
     }
@@ -19,11 +23,11 @@ function populateSetDetails(root: HTMLDivElement) {
     }
     if (authorEl == null) {
         // Populate author in case it's missing, also adjust vertical spacing for build search page.
-        const match = details.querySelector<HTMLAnchorElement>('a[href^="/mocs/"]')?.href.match(/\/mocs\/MOC-[0-9]+\/([^/]+)/);
+        const authorName = getAuthorName(details);
         const authorEl = createElement('div', {className: 'clearfix trunc mb-6 size-12 rbrefined-set-author'}, ['\u00a0']);
-        if (match != null && !document.location.pathname.startsWith(`/users/${match[1]}/`)) {
-            const authorLink = createElement('a', {className: 'js-hover-card', href: `/users/${match[1]}/mocs/`}, [decodeURIComponent(match[1])]);
-            authorLink.dataset['hover'] = `/users/${match[1]}/card/`;
+        if (authorName != null && !document.location.pathname.startsWith(`/users/${authorName}/`)) {
+            const authorLink = createElement('a', {className: 'js-hover-card', href: `/users/${authorName}/mocs/`}, [decodeURIComponent(authorName)]);
+            authorLink.dataset['hover'] = `/users/${authorName}/card/`;
             authorEl.replaceChildren('By ', authorLink);
             result.push(authorEl);
         }
@@ -149,6 +153,88 @@ function populateSetDetails(root: HTMLDivElement) {
     details.replaceChildren(...result);
     details.classList.add('rbrefined-populated');
 }
+
+when('moc-sort-options', (activated) => {
+    for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds')) {
+        observeChanges(container, () => {
+            if (!container.querySelector('.set-tn')) {
+                return false;
+            }
+            const sortOptionElements: Array<HTMLLIElement> = [];
+            for (const [sortByName, sortByKey, sortDefault] of [
+                ['Likes', 'likes', 'D'],
+                ['Year', 'added', 'A'],
+                ['Num Parts', 'num_parts', 'D'],
+                ['Author', 'author', 'A'],
+            ]) {
+                const li = createElement('li', {dataset: {sortByKey, sortDefault}}, [ // 'sort1': 'color_name', 'sort2': 'part_name', 'sort_by': '0',
+                    createElement('a', {}, [
+                        createElement('i', {className: 'fa fa-fw'}),
+                        ' ', sortByName,
+                    ]),
+                ]);
+                sortOptionElements.push(li);
+            }
+
+            const sortSelector = createElement('div', {className: 'btn-group', title: 'Sort MOCs'}, [
+                createElement('button', {type: 'button', className: 'btn btn-default btn-sm dropdown-toggle', dataset: {'toggle': 'dropdown'}}, [
+                    createElement('span'),
+                    ' ', createElement('span', {className: 'caret'}),
+                ]),
+                createElement('ul', {className: 'dropdown-menu', role: 'menu'}, sortOptionElements),
+            ]);
+            container.prepend(sortSelector);
+
+            nestedEventListener(sortSelector, 'li', 'click', (e, target) => {
+                const {sortByKey, sortDefault} = target.dataset;
+                const thisI = target.querySelector('i')!;
+                const isDescending = !(
+                    sortDefault === 'D'
+                        ? thisI.classList.contains('fa-sort-amount-desc')
+                        : !thisI.classList.contains('fa-sort-amount-asc')
+                );
+                for (const otherI of sortSelector.querySelectorAll('i')) {
+                    otherI.classList.remove('fa-sort-amount-desc');
+                    otherI.classList.remove('fa-sort-amount-asc');
+                }
+                thisI.classList.add(isDescending ? 'fa-sort-amount-desc' : 'fa-sort-amount-asc');
+                sortSelector.querySelector('span')!.replaceChildren(...target.querySelector('a')!.cloneNode(true).childNodes);
+
+                for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
+                    heading.style.marginTop = '20px';
+                    heading.style.marginBottom = '20px';
+
+                    const elementsToSort: Array<Element> = [];
+                    let el: Element | null = heading;
+                    while ((el = el.nextElementSibling) && el.querySelector('div.heading-title') == null) {
+                        if (el.querySelector('div.js-sort-data')) {
+                            elementsToSort.push(el);
+                        }
+                    }
+                    if (elementsToSort.length <= 1) {
+                        continue;
+                    }
+                    sortBy(elementsToSort, (e) => {
+                        const data = e.querySelector<HTMLDivElement>('div.js-sort-data')!.dataset;
+                        return [
+                            sortByKey === 'author' ? getAuthorName(e)?.toLocaleLowerCase() : naturalSortKey(data[sortByKey!]),
+                            naturalSortKey(data['added']),
+                        ];
+                    });
+                    if (isDescending) {
+                        elementsToSort.reverse();
+                    }
+                    elementsToSort[0].before(...elementsToSort);
+                }
+            });
+
+            sortOptionElements[0].click();
+
+            activated();
+            return true;
+        });
+    }
+});
 
 when('redesign-set-and-moc-tiles', (activated) => {
     for (const container of document.querySelectorAll<HTMLElement>('#set_list_sets, #tab_sets, #tab_alt_builds, #filtered_results, #designer_mocs, #related_mocs, #build_results')) {

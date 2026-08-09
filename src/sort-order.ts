@@ -16,24 +16,6 @@ function getWindow() {
 
 /* eslint-disable camelcase */
 
-// Returns -1, 0 or 1 based on the comparison of the two values.
-// In the case of arrays, an item-by-item lexicographic comparison is implemented.
-function cmpRespectingArrays(a, b) {
-    if (Array.isArray(a) && Array.isArray(b)) {
-        for (let i = 0; i < Math.min(a.length, b.length); ++i) {
-            const result = cmpRespectingArrays(a[i], b[i]);
-            if (result !== 0) {
-                return result;
-            }
-        }
-        return a.length - b.length;
-    } else if (a === b) {
-        return 0;
-    } else {
-        return a > b ? 1 : -1;
-    }
-}
-
 function sortItems(containerJ, itemsJ, dataSelector: string, sort1: string, sort2: string, sortDir: 'A' | 'D') {
     const [container]: [HTMLElement] = $(containerJ);
     if (container == null) {
@@ -63,21 +45,16 @@ function sortItems(containerJ, itemsJ, dataSelector: string, sort1: string, sort
         if (sortType === 'color_hsv') {
             return [value, data('color_name').includes('Trans') ? 0 : 1];
         }
-        // Implement natural sort order.
-        const valueArr: Array<string | number> = value.split(/(0|[1-9][0-9]*)/);
-        for (let i = 1; i < valueArr.length; i += 2) {
-            valueArr[i] = +valueArr[i];
-        }
-        return valueArr;
+        return naturalSortKey(value);
     }
 
     items.sort((a: HTMLElement, b: HTMLElement) => {
         for (const [i, so] of sortOrder.entries()) {
-            let cmpResult = cmpRespectingArrays(getSortKey(a, so), getSortKey(b, so));
-            if (sortDir === 'D' && i === 0) {
-                cmpResult = -cmpResult;
-            }
+            const cmpResult = cmpRespectingArrays(getSortKey(a, so), getSortKey(b, so));
             if (cmpResult) {
+                if (sortDir === 'D' && i === 0) {
+                    return -cmpResult;
+                }
                 return cmpResult;
             }
         }

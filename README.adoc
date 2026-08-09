@@ -240,6 +240,15 @@ For sets:  Always show the set number, part count and release year.
 |image::docs/redesign-set-tiles.png[]
 |===
 
+[#moc-sort-options]
+=== Allow sorting MOCs in the Alt Builds tab
+
+In the Alt Builds tab of a set, add a sort options dropdown, which allows you to sort alternate builds by:
+
+* Likes (default)
+* Year (date that it was added on)
+* Num Parts
+* Author
 
 [#detailed-moc-sidebar]
 === Show more details on the sidebar of a MOC

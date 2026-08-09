@@ -18,6 +18,7 @@ const settings = {
     'part-dialog-always-sort-colors': true,
     'part-dialog-improved-keyboard-input': true,
     'redesign-set-and-moc-tiles': true,
+    'moc-sort-options': true,
     'detailed-moc-sidebar': true,
     'quick-download-csv-link': true,
     'increase-image-resolution': false,

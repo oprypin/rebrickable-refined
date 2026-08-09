@@ -42,6 +42,7 @@
                 "https://rebrickable.com/*"
             ],
             "js": [
+                "sort-utils.js",
                 "sort-order.js"
             ],
             "world": "MAIN",
@@ -52,6 +53,7 @@
                 "https://rebrickable.com/*"
             ],
             "js": [
+                "sort-utils.js",
                 "common.js",
                 "part-lists.js",
                 "search-addition.js",
