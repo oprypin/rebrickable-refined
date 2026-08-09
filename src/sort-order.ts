@@ -36,11 +36,14 @@ function sortItems(containerJ, itemsJ, dataSelector: string, sort1: string, sort
         }
     }
 
-    function getSortKey(item: HTMLElement, sortType: string) {
-        function data(key: string) {
-            return item.querySelector(dataSelector)!.getAttribute(`data-${key}`)!;
+    function getSortKey(item: HTMLElement, sortType: string): Array<string | number> {
+        function data(key: string): string {
+            return item.querySelector(dataSelector)?.getAttribute(`data-${key}`) ?? '';
         }
 
+        if (sortType === 'year' && data('added')) {
+            return [+data('year'), +data('added')];
+        }
         const value = data(sortType);
         if (sortType === 'color_hsv') {
             return [value, data('color_name').includes('Trans') ? 0 : 1];

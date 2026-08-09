@@ -64,6 +64,7 @@ Additional fixes:
 
 * When sorting by Hue, "Red" and "Trans-Red" will no longer be arbirarily mixed with each other just because they have the same hue.
 * When sorting by Category, the sort order used to be "by Category, then by Color" which is disorienting. Change it to "by Category, then by Part, then by Hue"
+* When sorting sets by Year, sort by their overall addition date, not only the year.
 
 // The sorting fixes can also apply in other areas of the website but there is no known effect of this.
 
