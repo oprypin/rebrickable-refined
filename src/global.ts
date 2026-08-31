@@ -14,13 +14,22 @@ function applyHighContrast() {
             .text-high-contrast .link.green {
                 color: var(--primary-high-contrast);
             }
-            .text-high-contrast .autosuggest {
+            .text-high-contrast {
                 --text-color: var(--text-color-high-contrast);
             }
             .autosuggest .tt-suggestion {
-                color: var(--text-color);
+                color: var(--text-color) !important;
             }
-        `.replaceAll(';', ' !important;');
+            a {
+                font-weight: normal;
+            }
+            .text-muted {
+                color: #666;
+            }
+            .dark-mode .text-muted {
+                color: #bbb;
+            }
+        `;
         document.head.appendChild(style);
         activated();
     });

@@ -290,7 +290,7 @@ image:docs/increase-image-resolution-after.jpg[]
 image::docs/checklist-range-selection.png[]
 
 [#enable-high-contrast-text]
-=== Enable the built-in "high contrast text" setting
+=== Enable high-contrast text
 
 The "High Contrast Text" setting of Rebrickable is very nice to enable, so I really hope to spread the word about it in this way. We forcibly enable it and also fix up a few further places where high contrast should have been applied.
 
