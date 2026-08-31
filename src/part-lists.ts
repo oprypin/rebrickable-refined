@@ -2,13 +2,27 @@
 
 const inventoryStyles = /* css */ `
 .inv_img,
-.inv_img.border-green {
+.inv_img.border-green,
+.inv_img.border-orange,
+.inv_img.border-red {
     border-width: 3px !important;
     border-radius: 0.25rem;
     margin: 2px;
     padding: 0;
     padding-bottom: 3px;
     line-height: 1.05;
+}
+.inv_img.border-green {
+    border-color: var(--primary);
+}
+.inv_img.border-orange {
+    border-color: var(--part-orange);
+}
+.inv_img.border-red {
+    border-color: var(--part-red);
+}
+.inv_img::after {
+    display: none;
 }
 .inv_img {
     border-color: #dddddd;
@@ -22,21 +36,19 @@ body.dark-mode .inv_img {
 body.dark-mode .inv_img:hover {
     border-color: #b4d1c7;
 }
-.inv_img img {
-    padding: 0;
-    margin-top: 3px;
-    margin-bottom: 1px;
+.inv_img .rb-card__image {
+    margin: 0;
+    padding: 3px;
+    padding-bottom: 1px;
 }
 .part-text {
     padding-top: 0;
-}
-.part-text {
     font-size: 105% !important;
 }
 .part-text small {
     font-size: 90%;
 }
-.part-overlay {
+.part-length-overlay {
     border: none;
     font-weight: initial;
     margin: 0;
@@ -54,9 +66,9 @@ body.dark-mode .inv_img:hover {
 .js-part>div {
     background-color: white;
 }
-.js-part a {
+.js-part a, .js-part .part-text {
     text-decoration: none;
-    color: #395405;
+    color: var(--primary-high-contrast) !important;
 }
 .js-part b {
     font-size: 115%;
@@ -104,7 +116,7 @@ body.dark-mode .inv_img:hover {
     background: repeating-linear-gradient(45deg, var(--corner_col), var(--corner_col) 3px, #888 3px, #888 4px);
 }
 
-.js-part-data.rbrefined-corner img.overlay.img-responsive {
+.js-part-data.rbrefined-corner img.part-overlay.img-responsive {
     top: 8px;
 }
 

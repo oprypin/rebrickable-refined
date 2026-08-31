@@ -343,7 +343,7 @@ if (insertBefore) {
             addStyle(/* css */`
                 #rbrefined-related-parts .inv_img {
                     border: 2px solid var(--border-part);
-                    background-color: var(--bg-parts);
+                    background-color: var(--bg-form-input);
                     padding: 2px;
                     margin: 0;
                     min-width: 95px;
