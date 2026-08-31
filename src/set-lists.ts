@@ -159,21 +159,22 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
         if (!container.querySelector('.set-tn')) {
             return false;
         }
-        // Allow toggling MOC alt sections
-        for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
-            const toggler = createElement('span', {className: 'link pull-right'}, [
-                'Toggle ', createElement('i', {className: 'fa fa-chevron-down'}),
-            ]);
-            heading.prepend(toggler);
-            toggler.addEventListener('click', () => {
-                const parent = heading.parentElement!;
-                const isHidden = parent.style.height === '60px';
-                parent.style.cssText = 'overflow: hidden; interpolate-size: allow-keywords; transition: height 0.15s ease';
-                parent.style.height = (isHidden ? 'auto' : '60px');
-            });
-        }
 
         when('moc-sort-options', (activated) => {
+            // Allow toggling MOC alt sections
+            for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
+                const toggler = createElement('span', {className: 'link pull-right'}, [
+                    'Toggle ', createElement('i', {className: 'fa fa-chevron-down'}),
+                ]);
+                heading.prepend(toggler);
+                toggler.addEventListener('click', () => {
+                    const parent = heading.parentElement!;
+                    const isHidden = parent.style.height === '60px';
+                    parent.style.cssText = 'overflow: hidden; interpolate-size: allow-keywords; transition: height 0.15s ease';
+                    parent.style.height = (isHidden ? 'auto' : '60px');
+                });
+            }
+
             const sortOptionElements: Array<HTMLLIElement> = [];
             for (const [sortByName, sortByKey, sortDefault] of [
                 ['Likes', 'likes', 'D'],

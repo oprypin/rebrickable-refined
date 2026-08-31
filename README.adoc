@@ -251,6 +251,8 @@ In the Alt Builds tab of a set, add a sort options dropdown, which allows you to
 * Num Parts
 * Author
 
+Additionally, this allows you to collapse each section by clicking "Toggle" on the right.
+
 [#detailed-moc-sidebar]
 === Show more details on the sidebar of a MOC
 
