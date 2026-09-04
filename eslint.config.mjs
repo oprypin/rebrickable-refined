@@ -1,6 +1,7 @@
 import {defineConfig, globalIgnores} from 'eslint/config';
 import eslint from '@eslint/js';
 import globals from 'globals';
+import perfectionist from 'eslint-plugin-perfectionist';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
 
@@ -29,6 +30,9 @@ export default defineConfig([
                 ],
             },
         },
+    }},
+    {plugins: {
+        perfectionist,
     }},
     {rules: {
         '@stylistic/array-bracket-spacing': 'error',
@@ -65,7 +69,7 @@ export default defineConfig([
         '@stylistic/quote-props': 'off',
         '@stylistic/quotes': ['error', 'single'],
         '@stylistic/rest-spread-spacing': 'error',
-        '@stylistic/semi': 'error',
+        '@stylistic/semi': ['error', 'always', {omitLastInOneLineBlock: false}],
         '@stylistic/semi-spacing': 'error',
         '@stylistic/semi-style': 'error',
         '@stylistic/space-before-function-paren': ['error', {anonymous: 'always', named: 'never', asyncArrow: 'always'}],
@@ -89,6 +93,7 @@ export default defineConfig([
         '@typescript-eslint/no-unused-vars': ['error', {caughtErrors: 'none'}],
         '@typescript-eslint/require-await': 'off',
         '@typescript-eslint/triple-slash-reference': 'off',
+        'perfectionist/sort-sets': ['error', {type: 'natural', order: 'asc'}],
         'arrow-body-style': ['error', 'as-needed'],
         'block-scoped-var': 'error',
         'camelcase': 'error',
