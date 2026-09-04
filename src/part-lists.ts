@@ -41,8 +41,6 @@ body.dark-mode .inv_img:hover {
 }
 .inv_img .rb-card__image {
     margin: 0;
-    padding: 3px;
-    padding-bottom: 1px;
 }
 .part-length-overlay {
     border: none;
@@ -68,7 +66,7 @@ body.dark-mode .inv_img:hover {
 .js-part .part-text {
     color: #3e5b08;
     font-weight: 500;
-    padding-top: 0;
+    padding-top: 2px;
     font-size: 105%;
 }
 .js-part .part-text__qty {
@@ -87,6 +85,8 @@ body.text-high-contrast .rbrefined-part-list .js-part .js-part-price {
 }
 .rb-part__meta {
     padding: 1px;
+    padding-top: 0;
+    margin-top: -1px;
 }
 
 .js-part-data {
@@ -140,6 +140,13 @@ body.text-high-contrast .rbrefined-part-list .js-part .js-part-price {
 }
 `.replace(/^\.\b/gm, 'body .rbrefined-part-list .');
 
+const inventoryStylesForConsistentPartImages = /* css */ `
+.inv_img .rb-card__image {
+    padding: 3px;
+    background-color: white;
+}
+`.replace(/^\.\b/gm, 'body .');
+
 function processCheckboxList(container: HTMLElement) {
     let lastClickedItem: HTMLElement | null = null;
     const checkboxSelector = 'input[type=checkbox]' as const;
@@ -192,6 +199,10 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
     when('rework-inventory-styles', (activated) => {
         addStyle(inventoryStyles);
         inventoryContainer.classList.add('rbrefined-part-list');
+        void activated;
+    });
+    when('consistent-part-images', (activated) => {
+        addStyle(inventoryStylesForConsistentPartImages);
         void activated;
     });
 
