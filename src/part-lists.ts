@@ -1,13 +1,19 @@
 // Copyright (C) 2026 Oleh Prypin
 
 const inventoryStyles = /* css */ `
+.rb-parts-grid {
+    justify-content: center;
+    row-gap: 4px !important;
+    column-gap: 4px !important;
+}
 .inv_img,
 .inv_img.border-green,
 .inv_img.border-orange,
 .inv_img.border-red {
+    border: 3px solid #dddddd;
     border-width: 3px !important;
     border-radius: 0.25rem;
-    margin: 2px;
+    margin: 0;
     padding: 0;
     padding-bottom: 3px;
     line-height: 1.05;
@@ -24,9 +30,6 @@ const inventoryStyles = /* css */ `
 .inv_img::after {
     display: none;
 }
-.inv_img {
-    border-color: #dddddd;
-}
 .inv_img:hover {
     border-color: #999999;
 }
@@ -40,13 +43,6 @@ body.dark-mode .inv_img:hover {
     margin: 0;
     padding: 3px;
     padding-bottom: 1px;
-}
-.part-text {
-    padding-top: 0;
-    font-size: 105% !important;
-}
-.part-text small {
-    font-size: 90%;
 }
 .part-length-overlay {
     border: none;
@@ -66,13 +62,31 @@ body.dark-mode .inv_img:hover {
 .js-part>div {
     background-color: white;
 }
-.js-part a, .js-part .part-text {
+.js-part * {
     text-decoration: none;
-    color: var(--primary-high-contrast) !important;
 }
-.js-part b {
+.js-part .part-text {
+    color: #3e5b08;
+    font-weight: 500;
+    padding-top: 0;
+    font-size: 105%;
+}
+.js-part .part-text__qty {
+    color: #444;
     font-size: 115%;
+    font-weight: 600;
+}
+body.text-high-contrast .rbrefined-part-list .js-part .part-text__qty {
     color: #000;
+}
+.js-part .js-part-price {
+    color: #666;
+}
+body.text-high-contrast .rbrefined-part-list .js-part .js-part-price {
+    color: #444;
+}
+.rb-part__meta {
+    padding: 1px;
 }
 
 .js-part-data {
@@ -192,7 +206,7 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
                 activated();
             });
 
-            const countText = part.querySelector('.part-text b');
+            const countText = part.querySelector('.part-text .part-text__qty');
             if (countText == null) {
                 continue;  // Not `return` - for the case where only 1 item in the inventory gets dynamically refreshed.
             }
@@ -200,7 +214,7 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
             when('rework-inventory-styles', (activated) => {
                 // Move the part quantity out of the first line.
                 countText.textContent = countText.textContent.replace(' x', '');
-                part.querySelector('.part-text')?.after(countText);
+                part.querySelector('.part-text')?.before(countText);
 
                 const img = part.querySelector('.inv_img');
                 if (img != null && !img.classList.contains('inv_img_small')) {

@@ -21,7 +21,7 @@ function applyHighContrast() {
                 color: var(--text-color) !important;
             }
             a {
-                font-weight: normal;
+                font-weight: normal !important;
             }
             .text-muted {
                 color: #666;
