@@ -15,7 +15,6 @@ const inventoryStyles = /* css */ `
     border-radius: 0.25rem;
     margin: 0;
     padding: 0;
-    padding-bottom: 3px;
     line-height: 1.05;
 }
 .inv_img.border-green {
@@ -41,6 +40,9 @@ body.dark-mode .inv_img:hover {
 }
 .inv_img .rb-card__image {
     margin: 0;
+}
+.html-tooltip {
+    margin: -2px;
 }
 .part-length-overlay {
     border: none;
@@ -86,13 +88,16 @@ body.text-high-contrast .rbrefined-part-list .js-part .js-part-price {
 .rb-part__meta {
     padding: 1px;
     padding-top: 0;
+    padding-bottom: 4px;
     margin-top: -1px;
 }
 
 .js-part-data {
     position: relative;
-    overflow: hidden;
     background-color: white;
+}
+.js-part-data.rbrefined-corner {
+    overflow: hidden;
 }
 .js-part-data.rbrefined-corner::before {
     content: "";
