@@ -91,12 +91,16 @@ See previous screenshot -- these corners can be disabled if desired.
 [#remove-x-from-part-counts]
 === Remove the "x" symbol from part counts
 
-TODO
+(This feature is disabled by default; enable it in settings)
+
+Part counts are displayed as "9 x" in part lists. Because the "x" is obvious from the context, you have the option of dropping this suffix to get nicely centered text.
+
+image::docs/remove-x-from-part-counts.png[]
 
 [#consistent-part-images]
-=== Make part images consistent, fix brightness of black parts
+=== Use the old style of part images, fix brightness of black parts
 
-The images of parts on Rebrickable can have varying styles and varying levels of brightness for the same color. This brings them back to a consistent look.
+The images of parts on Rebrickable have been gradually updated to a new shiny "photoreal" style. This consistently brings the images back to the original style.
 
 Here's a live comparison of how the images look with and without this change:
 
