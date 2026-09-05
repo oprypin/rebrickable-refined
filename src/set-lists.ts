@@ -154,6 +154,17 @@ function populateSetDetails(root: HTMLDivElement) {
     details.classList.add('rbrefined-populated');
 }
 
+function findSetsUnderHeading(heading: HTMLElement): Array<Element> {
+    const elements: Array<Element> = [];
+    let el: Element | null = heading;
+    while ((el = el.nextElementSibling) && el.querySelector('div.heading-title') == null) {
+        if (el.querySelector('div.js-sort-data')) {
+            elements.push(el);
+        }
+    }
+    return elements;
+}
+
 for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds')) {
     observeChanges(container, () => {
         if (!container.querySelector('.set-tn')) {
@@ -161,7 +172,7 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
         }
 
         when('moc-sort-options', (activated) => {
-            // Allow toggling MOC alt sections
+            // Allow toggling MOC alt sections and add totals
             for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
                 const toggler = createElement('span', {className: 'link pull-right'}, [
                     'Toggle ', createElement('i', {className: 'fa fa-chevron-down'}),
@@ -173,6 +184,34 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                     parent.style.cssText = 'overflow: hidden; interpolate-size: allow-keywords; transition: height 0.15s ease';
                     parent.style.height = (isHidden ? 'auto' : '60px');
                 });
+
+                heading.style.marginTop = '20px';
+                heading.style.marginBottom = '20px';
+
+                try {
+                    let freeCount = 0;
+                    let premiumCount = 0;
+                    for (const set of findSetsUnderHeading(heading)) {
+                        if (set.querySelector('.fa-bolt')) {
+                            premiumCount += 1;
+                        } else {
+                            freeCount += 1;
+                        }
+                    }
+                    const textParts: Array<string> = [];
+                    if (freeCount) {
+                        textParts.push(`${freeCount} free`);
+                    }
+                    if (premiumCount) {
+                        textParts.push(`${premiumCount} premium`);
+                    }
+                    if (textParts) {
+                        textParts[textParts.length - 1] += textParts[textParts.length - 1].match(/^1\b/) ? ' MOC' : ' MOCs';
+                    }
+                    heading.querySelector('h4')?.append(
+                        createElement('small', {className: 'ml-30'}, [textParts.join(', ')]),
+                    );
+                } catch (e) {}
             }
 
             const sortOptionElements: Array<HTMLLIElement> = [];
@@ -216,16 +255,7 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                 sortSelector.querySelector('span')!.replaceChildren(...target.querySelector('a')!.cloneNode(true).childNodes);
 
                 for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
-                    heading.style.marginTop = '20px';
-                    heading.style.marginBottom = '20px';
-
-                    const elementsToSort: Array<Element> = [];
-                    let el: Element | null = heading;
-                    while ((el = el.nextElementSibling) && el.querySelector('div.heading-title') == null) {
-                        if (el.querySelector('div.js-sort-data')) {
-                            elementsToSort.push(el);
-                        }
-                    }
+                    const elementsToSort = findSetsUnderHeading(heading);
                     if (elementsToSort.length <= 1) {
                         continue;
                     }

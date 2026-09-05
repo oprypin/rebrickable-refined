@@ -11,7 +11,7 @@ function applyHighContrast() {
         // Fix a bug on the website - links should also be high-contrast when that's activated.
         const style = document.createElement('style');
         style.textContent = `
-            .text-high-contrast .link.green {
+            .link.green {
                 color: var(--primary-high-contrast);
             }
             .text-high-contrast {
@@ -28,6 +28,12 @@ function applyHighContrast() {
             }
             .dark-mode .text-muted {
                 color: #bbb;
+            }
+            h1 .small, h2 small, h3 small, h4 small, h5 small {
+                color: #555;
+            }
+            .dark-mode h1 .small, .dark-mode h2 small, .dark-mode h3 small, .dark-mode h4 small, .dark-mode h5 small {
+                color: #999;
             }
         `;
         document.head.appendChild(style);
