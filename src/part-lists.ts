@@ -138,7 +138,22 @@ body.text-high-contrast .rbrefined-part-list .js-part .js-part-price {
 .js-part .control-label.checkbox:has(input:active) {
     outline: 1px dashed gray;
 }
-`.replace(/^\.\b/gm, 'body .rbrefined-part-list .');
+`.replace(/^\.\b/gm, 'body .rbrefined-part-list .') + /* css */ `
+.js-part .part-text__qty {
+    color: #444;
+    font-size: 115%;
+    font-weight: 600;
+    margin-left: 0.2ex;
+}
+.js-part .part-text__qty::after {
+    content: "×";
+    font-size: 90%;
+    margin-left: 0.1ex;
+}
+.js-part .rbrefined-kerning-one::after {
+    margin-left: -0.05ex;
+}
+`.replace(/^\.\b/gm, 'body .rbrefined-part-list:not(.rbrefined-skip-x) .');
 
 const inventoryStylesForConsistentPartImages = /* css */ `
 .inv_img .rb-card__image {
@@ -201,6 +216,10 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
         inventoryContainer.classList.add('rbrefined-part-list');
         void activated;
     });
+    when('remove-x-from-part-counts', (activated) => {
+        inventoryContainer.classList.add('rbrefined-skip-x');
+        void activated;
+    });
     when('consistent-part-images', (activated) => {
         addStyle(inventoryStylesForConsistentPartImages);
         void activated;
@@ -222,10 +241,19 @@ function processPartsInventory(inventoryContainer: HTMLElement) {
                 continue;  // Not `return` - for the case where only 1 item in the inventory gets dynamically refreshed.
             }
 
+            when('remove-x-from-part-counts', (activated) => {
+                // Move the part quantity out of the first line.
+                countText.textContent = countText.textContent.replace(/ *\bx\b */, '');
+                activated();
+            });
+
             when('rework-inventory-styles', (activated) => {
                 // Move the part quantity out of the first line.
-                countText.textContent = countText.textContent.replace(' x', '');
+                countText.textContent = countText.textContent.replace(/ *\bx\b */, '');
                 part.querySelector('.part-text')?.before(countText);
+                if (countText.textContent.endsWith('1')) {
+                    countText.classList.add('rbrefined-kerning-one');
+                }
 
                 const img = part.querySelector('.inv_img');
                 if (img != null && !img.classList.contains('inv_img_small')) {

@@ -4,6 +4,7 @@ const settings = {
     'fix-parts-sort-order': true,
     'rework-inventory-styles': true,
     'decorate-part-colors': true,
+    'remove-x-from-part-counts': false,
     'consistent-part-images': true,
     'always-export-parts': true,
     'display-related-parts': true,

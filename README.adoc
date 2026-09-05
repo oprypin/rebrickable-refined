@@ -88,6 +88,11 @@ image:docs/part-lists-after.png[]
 When sorting by Hue or Color, the first piece in each color gets a colored corner swatch in the top-left. +
 See previous screenshot -- these corners can be disabled if desired.
 
+[#remove-x-from-part-counts]
+=== Remove the "x" symbol from part counts
+
+TODO
+
 [#consistent-part-images]
 === Make part images consistent, fix brightness of black parts
 

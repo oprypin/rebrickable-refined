@@ -7,7 +7,7 @@ function isSortOrderEnabled() {
 }
 
 function sortOrderActivated() {
-    document.body.setAttribute('data-rbrefined-activated-fix-parts-sort-order', 'true');
+    document.documentElement.setAttribute('data-rbrefined-activated-fix-parts-sort-order', 'true');
 }
 
 function getWindow() {
