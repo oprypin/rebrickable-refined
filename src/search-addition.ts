@@ -44,9 +44,20 @@ when('part-dialog-replace-search', (activated) => {
     void activated;
 });
 
+function selectOption(option: HTMLOptionElement) {
+    if (option.selected) {
+        return;
+    }
+    option.selected = true;
+    option.closest('select')?.dispatchEvent(
+        new Event('change', {bubbles: true, cancelable: true}),
+    );
+}
+
 for (const searchField of document.querySelectorAll<HTMLElement>('.autosuggest')) {
     void populateSearchField(searchField);
 }
+
 async function populateSearchField(searchField: HTMLElement) {
     const originalQueryUrl = searchField.getAttribute('data-queryurl')!;
     if (!originalQueryUrl) {
@@ -78,7 +89,7 @@ async function populateSearchField(searchField: HTMLElement) {
 
         when('focus-main-parts-search', (activated) => {
             if (window.location.pathname.startsWith('/parts/')) {
-                newOption.selected = true;
+                selectOption(newOption);
                 shouldRememberSearchOption = false;
                 activated();
             }
@@ -104,10 +115,7 @@ async function populateSearchField(searchField: HTMLElement) {
             if (savedSelection && savedSelection.match(/^\w+$/)) {
                 const selector = (savedSelection === searchValue ? `option[${searchAttr}="${savedSelection}"]` : `option[value="${savedSelection}"]`);
                 for (const option of sel.querySelectorAll<HTMLOptionElement>(selector)) {
-                    if (!option.selected) {
-                        option.selected = true;
-                        sel.dispatchEvent(new Event('change', {bubbles: true, cancelable: true}));
-                    }
+                    selectOption(option);
                     break;
                 }
             }
