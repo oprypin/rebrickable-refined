@@ -9,8 +9,6 @@ async function sendMessage(tabId: number, args: Record<string, unknown>) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await settingsInitialized;
-
     let activatedSettings: Set<SettingsKey> = new Set();
     let onSettingChanged = () => {};
     try {
@@ -37,10 +35,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             void maybeRemoveWarnings();
         }
         if (input.type === 'checkbox') {
-            input.checked = settings[key];
+            input.checked = await getSetting(key);
             input.addEventListener('change', () => {
                 set(input.checked);
-                if (specialSettings.includes(key)) {
+                const keyAny = key as any;
+                if (specialSettings.includes(keyAny)) {
                     localStorage.setItem(`rbrefined-${key}`, input.checked ? 'true' : 'false');
                 }
 

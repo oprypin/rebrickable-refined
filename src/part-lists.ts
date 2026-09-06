@@ -210,29 +210,25 @@ function processCheckboxList(container: HTMLElement) {
     });
 }
 
-function processPartsInventory(inventoryContainer: HTMLElement) {
+async function processPartsInventory(inventoryContainer: HTMLElement) {
     if (inventoryContainer.closest('#filtered_results')) {
         return;
     }
 
-    when('rework-inventory-styles', (activated) => {
+    if (await getSetting('rework-inventory-styles')) {
         addStyle(inventoryStyles);
         inventoryContainer.classList.add('rbrefined-part-list');
-        void activated;
-    });
-    when('remove-x-from-part-counts', (activated) => {
+    }
+    if (await getSetting('remove-x-from-part-counts')) {
         inventoryContainer.classList.add('rbrefined-skip-x');
-        void activated;
-    });
-    when('consistent-part-images', (activated) => {
+    }
+    if (await getSetting('consistent-part-images')) {
         addStyle(inventoryStylesForConsistentPartImages);
-        void activated;
-    });
+    }
 
-    when('checklist-range-selection', (activated) => {
+    if (await getSetting('checklist-range-selection')) {
         processCheckboxList(inventoryContainer);
-        void activated;
-    });
+    }
 
     observeChanges(inventoryContainer, () => {
         for (const part of inventoryContainer.querySelectorAll<HTMLElement>('.js-part')) {
@@ -465,11 +461,11 @@ function fixImg(container: HTMLElement, alsoNonLazy = false) {
 
 const inventoryContainer = document.querySelector<HTMLElement>('#inventory, #part_list_parts, #tab_parts, .container:has(#common_parts)');
 if (inventoryContainer != null) {
-    processPartsInventory(inventoryContainer);
+    void processPartsInventory(inventoryContainer);
 }
 
 for (const placeholderContainer of document.querySelectorAll<HTMLElement>('#part_stores_list')) {
-    processPartsInventory(placeholderContainer);
+    void processPartsInventory(placeholderContainer);
 }
 
 when('checklist-range-selection', (activated) => {

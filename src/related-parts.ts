@@ -73,8 +73,7 @@ if (insertBefore) {
         const splitData = relatedPartsData.trim().split('\n\n');
         splitData.push(...extraSplitData);
 
-        await settingsInitialized;
-        const action = 'getPartsImagesData' + (settings['consistent-part-images'] ? '2' : '');
+        const action = 'getPartsImagesData' + (await getSetting('consistent-part-images') ? '2' : '');
         const partsImages: Array<Record<string, string>> = await chrome.runtime.sendMessage({action}) ?? [];
 
         function getPartImage(partNum: string) {

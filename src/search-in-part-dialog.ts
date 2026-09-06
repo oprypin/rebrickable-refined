@@ -10,7 +10,7 @@ function updatePartDialogSearchField(searchField: HTMLElement) {
         return;
     }
 
-    const filterExistingColors = localStorage.getItem('rbrefined-part-dialog-filter-existing-colors') === 'true';
+    const filterExistingColors = getSettingFast('part-dialog-filter-existing-colors');
 
     searchField.dataset['queryurl'] = (filterExistingColors
         ? 'https://setmaster.pryp.in/api/search_parts_rebrickable/?format=part_num_color_v1&q='
@@ -59,7 +59,7 @@ function updatePartDialogSearchField(searchField: HTMLElement) {
         }
     });
     if (filterExistingColors) {
-        document.body.setAttribute('data-rbrefined-activated-part-dialog-filter-existing-colors', 'true');
+        settingActivated('part-dialog-filter-existing-colors');
     }
 
     partInput.addEventListener('change', () => {
@@ -74,17 +74,19 @@ function updatePartDialogSearchField(searchField: HTMLElement) {
             currentlyDisplayedPart = null;
         }
     });
-    document.documentElement.setAttribute('data-rbrefined-activated-part-dialog-replace-search', 'true');
+    settingActivated('part-dialog-replace-search');
 }
 
 for (const modalBody of document.querySelectorAll('#page_modal_body, #part_popup_modal')) {
     const observer = new MutationObserver(() => {
         for (const searchField of modalBody.querySelectorAll<HTMLElement>('.autosuggest')) {
-            if (localStorage.getItem('rbrefined-part-dialog-replace-search') !== 'true') {
+            const setting = getSettingFast('part-dialog-replace-search');
+            if (setting !== undefined) {
                 observer.disconnect();
-                return;
+                if (setting) {
+                    updatePartDialogSearchField(searchField);
+                }
             }
-            updatePartDialogSearchField(searchField);
         }
     });
     observer.observe(modalBody, {

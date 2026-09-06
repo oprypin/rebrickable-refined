@@ -33,6 +33,7 @@
             ],
             "js": [
                 "settings.js",
+                "settings-ext.js",
                 "global.js"
             ],
             "run_at": "document_start"
@@ -42,6 +43,7 @@
                 "https://rebrickable.com/*"
             ],
             "js": [
+                "settings.js",
                 "sort-utils.js",
                 "sort-order.js"
             ],

@@ -1,6 +1,7 @@
 // Copyright (C) 2026 Oleh Prypin
 
-const settings = {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const localSettings = {
     'fix-parts-sort-order': true,
     'rework-inventory-styles': true,
     'decorate-part-colors': true,
@@ -26,91 +27,26 @@ const settings = {
     'checklist-range-selection': true,
     'enable-high-contrast-text': true,
 };
-
-type SettingsKey = keyof typeof settings;
-
-let settingsInitialized: Promise<void> | true = new Promise<void>((resolve) => {
-    void (async function () {
-        for (const key in settings) {
-            if (typeof chrome !== 'undefined') {
-                const storageKey = `setting-${key}`;
-                const result = (await chrome.storage.local.get([storageKey]))[storageKey];
-                if (result != null) {
-                    settings[key] = result;
-                }
-            } else {
-                settings[key] = true;
-            }
-        }
-        settingsInitialized = true;
-        resolve();
-    })();
-});
-
-if (typeof chrome !== 'undefined') {
-    let anySettingsChanged = false;
-    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-        if (request.action === 'getActivatedSettings') {
-            const activatedSettings: Array<string> = [];
-            for (const key in settings) {
-                if (document.documentElement.getAttribute(`data-rbrefined-activated-${key}`)) {
-                    activatedSettings.push(key);
-                }
-            }
-            sendResponse(activatedSettings);
-        } else if (request.action === 'settingChanged') {
-            anySettingsChanged = true;
-        }
-    });
-    chrome.runtime.onConnect.addListener((port) => {
-        if (port.name === 'popupToContent') {
-            port.onDisconnect.addListener(() => {
-                if (anySettingsChanged) {
-                    window.location.reload();
-                }
-            });
-        }
-    });
-}
-
-const alreadyActivatedSettings: Set<SettingsKey> = new Set();
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function when(key: SettingsKey, callback: (activated: () => void) => void) {
-    if (callback?.length !== 1) {
-        throw new Error('Callback must be accepted as a parameter');
-    }
-    if (settingsInitialized !== true) {
-        void settingsInitialized.then(() => when(key, callback));
-        return;
-    }
-    if (settings[key]) {
-        try {
-            callback(() => {
-                if (alreadyActivatedSettings.has(key)) {
-                    return;
-                }
-                alreadyActivatedSettings.add(key);
-                document.documentElement.setAttribute(`data-rbrefined-activated-${key}`, 'true');
-            });
-        } catch (e) {
-            console.error(e);
-        }
-    }
-}
+type SettingsKey = keyof typeof localSettings;
 
 const specialSettings = [
     'fix-parts-sort-order',
     'part-dialog-replace-search',
     'part-dialog-filter-existing-colors',
     'enable-high-contrast-text',
-] as Array<SettingsKey>;
+] as const;
 
-// Special settings that need to load very early - they get activated early or through world: MAIN.
-void (async function () {
-    await settingsInitialized;
-    for (const key of specialSettings) {
-        localStorage.setItem(`rbrefined-${key}`, settings[key] ? 'true' : 'false');
-    }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function settingActivated(key: SettingsKey): void {
+    document.documentElement.setAttribute(`data-rbrefined-activated-${key}`, 'true');
 }
-)();
+
+type SpecialSettingsKey = (typeof specialSettings)[number];
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function getSettingFast(key: SpecialSettingsKey): boolean | undefined {
+    if (!specialSettings.includes(key)) {
+        throw new Error(`Settings setup failure for key ${key}`);
+    }
+    return {'true': true, 'false': false}[localStorage.getItem(`rbrefined-${key}`) ?? ''];
+}

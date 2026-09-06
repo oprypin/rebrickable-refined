@@ -2,14 +2,6 @@
 
 declare const $, unsafeWindow;
 
-function isSortOrderEnabled() {
-    return localStorage.getItem('rbrefined-fix-parts-sort-order') === 'true';
-}
-
-function sortOrderActivated() {
-    document.documentElement.setAttribute('data-rbrefined-activated-fix-parts-sort-order', 'true');
-}
-
 function getWindow() {
     return (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window);
 }
@@ -65,7 +57,7 @@ function sortItems(containerJ, itemsJ, dataSelector: string, sort1: string, sort
     });
     container.append(...items);
 
-    sortOrderActivated();
+    settingActivated('fix-parts-sort-order');
     if (sort1 === 'color_name' || sort1 === 'color_hsv') {
         container.classList.add('rbrefined-corner-enabled');
     } else {
@@ -106,7 +98,7 @@ function reSort() {
             rbSortItems = v;
         },
         get sort_items() {
-            return (isSortOrderEnabled() ? sortItems : rbSortItems);
+            return (getSettingFast('fix-parts-sort-order') ? sortItems : rbSortItems);
         },
 
         set setPartPricesView(v) {
@@ -115,7 +107,7 @@ function reSort() {
         get setPartPricesView() {
             return (...args) => {
                 rbSetPartPricesView!(...args);
-                if (isSortOrderEnabled()) {
+                if (getSettingFast('fix-parts-sort-order')) {
                     reSort();
                 }
             };

@@ -90,3 +90,10 @@ function initiateDownload(
     a.click();
     window.URL.revokeObjectURL(url);
 }
+
+// Miscellaneous: fix an offset pixel.
+addStyle(/* css */`
+    #header .header-logo {
+        line-height: initial;
+    }
+`);

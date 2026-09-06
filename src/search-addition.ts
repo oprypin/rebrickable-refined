@@ -45,26 +45,25 @@ when('part-dialog-replace-search', (activated) => {
 });
 
 for (const searchField of document.querySelectorAll<HTMLElement>('.autosuggest')) {
+    void populateSearchField(searchField);
+}
+async function populateSearchField(searchField: HTMLElement) {
     const originalQueryUrl = searchField.getAttribute('data-queryurl')!;
     if (!originalQueryUrl) {
-        continue;
+        return;
     }
     if (searchField.getAttribute(searchUpdatedAttr)) {
-        continue;
+        return;
     }
     searchField.setAttribute(searchUpdatedAttr, 'true');
 
     const partsOption = searchField.parentElement?.querySelector<HTMLOptionElement>('select option[value="parts"]');
     if (partsOption == null) {
-        continue;
+        return;
     }
     const sel = partsOption.closest('select')!;
 
-    let shouldRememberSearchOption = false;
-    when('remember-selected-search-option', (activated) => {
-        shouldRememberSearchOption = true;
-        void activated;
-    });
+    let shouldRememberSearchOption = await getSetting('remember-selected-search-option');
 
     const searchAttr = 'data-rbrefined-search';
     const searchValue = 'rbrefined_parts';
@@ -182,7 +181,6 @@ for (const modalBody of document.querySelectorAll('#page_modal_body, #part_popup
                 }
             });
 
-            document.documentElement.setAttribute('data-rbrefined-activated-part-dialog-improved-keyboard-input', 'true');
             activated();
         });
 
@@ -207,10 +205,3 @@ for (const modalBody of document.querySelectorAll('#page_modal_body, #part_popup
         subtree: true,
     });
 }
-
-// Miscellaneous: fix an offset pixel.
-addStyle(/* css */`
-    #header .header-logo {
-        line-height: initial;
-    }
-`);
