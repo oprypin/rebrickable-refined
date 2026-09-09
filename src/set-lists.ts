@@ -146,6 +146,7 @@ function populateSetDetails(root: HTMLDivElement) {
         if (authorEl != null) {
             for (const button of buttons.querySelectorAll('button')) {
                 authorEl.prepend(button);
+                button.style.float = 'right';
             }
         }
     }
