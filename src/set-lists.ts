@@ -68,7 +68,7 @@ function populateSetDetails(root: HTMLDivElement) {
         }
     }
 
-    for (const el of details.querySelectorAll<HTMLElement>('.label')) {
+    for (const el of details.querySelectorAll<HTMLElement>('.rb-chip')) {
         if (el.querySelector('.fa-trophy')) {
             el.remove();
             continue;
