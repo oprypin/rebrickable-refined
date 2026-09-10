@@ -219,9 +219,9 @@ const relatedPartsData = `
 61332/2780 Technic Pin with Friction Ridges;42924/6558 Technic Pin Long with Friction Ridges;89678 Technic Pin 1/2 with Friction;43093 Technic Axle Pin with Friction Ridges;18651 Technic Axle Pin 3L with Friction Ridges and 2L Axle;11214 Technic Axle Pin 3L with Friction Ridges and 1L Axle;65304/32054 Technic Pin Long with Friction Ridges and Stop Bush;66906/6628 Technic Pin with Friction Ridges and Towball;80477 Technic Pin with Friction, Bar 2L and Towball
 3673 Technic Pin without Friction Ridges;39888/32556/32556a Technic Pin Long without Friction Ridges;4274 Technic Pin 1/2;3749 Technic Axle Pin without Friction Ridges;65249 Technic Axle Pin 3L without Friction Ridges and 2L Axle;77765 Technic Pin Long 3l, No Friction Ridges, with Stop and Hole;61184 Technic Pin 1/2 with 2L Bar Extension;32002 Technic Pin 3/4;65826 Technic Pin 1/2 with Anti-Stud
 
-14704 Plate Special 1 x 2 5.9mm Centre Side Towball Socket;14418 Plate Special 1 x 2 5.9mm Towball Socket;;63082 Plate Special 2 x 2 with Towball Socket, Short, Flattened with Holes and Axle Hole in Center
-14417 Plate Special 1 x 2 with 5.9mm Centre Side Towball;22890 Plate Special 1 x 2 with End Towball;14419 Plate Special 1 x 2 with 5.9mm Towball Socket and Towball;15456 Plate Special 2 x 2 with Towball and Hole;3184 Plate Special 1 x 4 with Towball
-22484 Bar 2L with Towball;2736 Technic Axle Towball;66906/6628 Technic Pin with Friction Ridges and Towball;5995 Technic Beam 1 x 2 with Towball Straight
+14704 Plate Special 1 x 2 5.9mm Centre Side Towball Socket;14418 Plate Special 1 x 2 5.9mm Towball Socket;14419 Plate Special 1 x 2 with 5.9mm Towball Socket and Towball;;63082 Plate Special 2 x 2 with Towball Socket, Short, Flattened with Holes and Axle Hole in Center
+14417 Plate Special 1 x 2 with 5.9mm Centre Side Towball;22890 Plate Special 1 x 2 with End Towball;3170 Plate Special 1 x 2 with 2 End Towballs;;15456/3729 Plate Special 2 x 2 with Towball;3184 Plate Special 1 x 4 with Towball
+22484 Bar 2L with Towball;2736 Technic Axle Towball;66906/6628 Technic Pin with Friction Ridges and Towball;;5995 Technic Beam 1 x 2 with Towball Straight
 
 87087 Brick Special 1 x 1 with Stud on 1 Side;47905 Brick Special 1 x 1 with Studs on 2 Sides;26604 Brick Special 1 x 1 with Studs on 2 Adjacent Sides;4733 Brick Special 1 x 1 Studs on 4 Sides
 
