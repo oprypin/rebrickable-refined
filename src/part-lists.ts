@@ -328,7 +328,7 @@ async function processPartsInventory(inventoryContainer: HTMLElement) {
             if (inventory.querySelector('.js-export-parts-list, .rbrefined-export-parts-list')) {
                 continue;
             }
-            const exportButton = createElement('button', {className: 'btn btn-default rbrefined-export-parts-list'}, [
+            const exportButton = createElement('button', {className: 'rb-btn rb-btn--default rbrefined-export-parts-list'}, [
                 createElement('i', {className: 'fa fa-save'}), ' ',
                 createElement('span', {className: 'hidden-xs'}, ['Export Parts']), ' ',
                 createElement('span', {className: 'hidden-xs'}, ['(CSV)']),

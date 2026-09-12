@@ -232,7 +232,7 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
             }
 
             const sortSelector = createElement('div', {className: 'btn-group', title: 'Sort MOCs'}, [
-                createElement('button', {type: 'button', className: 'btn btn-default btn-sm dropdown-toggle', dataset: {'toggle': 'dropdown'}}, [
+                createElement('button', {type: 'button', className: 'rb-btn rb-btn--default btn-sm dropdown-toggle', dataset: {'toggle': 'dropdown'}}, [
                     createElement('span'),
                     ' ', createElement('span', {className: 'caret'}),
                 ]),
