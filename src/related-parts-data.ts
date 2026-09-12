@@ -38,7 +38,7 @@ const relatedPartsData = `
 6541 Technic Brick 1 x 1 with Pin Hole;32000 Technic Brick 1 x 2 [2 Pin Holes];5565 Technic Brick 1 x 3 [3 Pin Holes]
 73230 Technic Brick 1 x 1 with Axle Hole;32064a Technic Brick 1 x 2 with Axle Hole
 
-3665 Brick Sloped Inverted 45° 2 x 1;3660/76959 Brick Sloped Inverted 45° 2 x 2
+3665 Brick Sloped Inverted 45° 2 x 1;3660/76959/7261 Brick Sloped Inverted 45° 2 x 2
 4287c Brick Sloped Inverted 33° 3 x 1;2752/3747b Brick Sloped Inverted 33° 3 x 2
 
 87620 Wedge 2 x 2 Facet;2462 Wedge 3 x 3 Facet;14413 Wedge 4 x 4 Facet;6107 Wedge 5 x 5 Facet
@@ -138,10 +138,10 @@ const relatedPartsData = `
 32952 Brick Special 1 x 1 x 1 2/3 with Studs on 1 Side;22885 Brick Special 1 x 2 x 1 2/3 with 4 Studs on 1 Side
 7729 Brick Special 1 x 1 x 1 2/3 with 6 Studs on 3 Sides;67329 Brick Special 1 x 2 x 1 2/3 with 8 Studs on 3 Sides
 
-49307 Brick Curved 1 x 1 x 2/3 Double, No Studs;3563 Brick Curved 1 x 2 x 2/3 Double, No Studs;79756 Brick Curved 1 x 4 x 2/3 Double, No Studs;79757 Brick Curved 2 x 2 x 2/3 Double, Corner, No Studs
+49307 Brick Curved 1 x 1 x 2/3 Double, No Studs;3563 Brick Curved 1 x 2 x 2/3 Double, No Studs;79756 Brick Curved 1 x 4 x 2/3 Double, No Studs
 
 36840 Bracket 1 x 1 - 1 x 1 Inverted;99780 Bracket 1 x 2 - 1 x 2 Inverted
-73825 Bracket 1 x 1 - 1 x 2 Inverted;99207 Bracket 1 x 2 - 2 x 2 Inverted;7452 Bracket 1 x 2 - 2 x 4 Inverted
+73825 Bracket 1 x 1 - 1 x 2 Inverted;99207 Bracket 1 x 2 - 2 x 2 Inverted;7452 Bracket 1 x 2 - 2 x 4 Inverted;5090 Bracket 1 x 6 - 2 x 6 Inverted
 
 36841 Bracket 1 x 1 - 1 x 1;99781 Bracket 1 x 2 - 1 x 2;28802 Bracket 1 x 2 - 1 x 4;;5175 Bracket 2 x 4 - 1 x 4
 79389 Bracket 1 x 1 - 1 x 2;44728 Bracket 1 x 2 - 2 x 2;93274 Bracket 1 x 2 - 2 x 4;6970 Bracket 1 x 2 - 2 x 6
@@ -159,7 +159,7 @@ const relatedPartsData = `
 85861 Plate Round 1 x 1 with Open Stud;35480 Plate Special 1 x 2 Rounded with 2 Open Studs;77850 Plate Special 1 x 3 Rounded with 3 Open Studs;77845 Plate Special 1 x 4 Rounded with 2 Open Studs;32124 Technic Plate 1 x 5 with Smooth Ends, 4 Studs and Centre Axle Hole
 +3024 Plate 1 x 1;+3023 Plate 1 x 2;+3623 Plate 1 x 3;+3710 Plate 1 x 4;+78329 Plate 1 x 5
 
-+6141 Plate Round 1 x 1 with Solid Stud;4032a/4032b Plate Round 2 x 2 with Axle Hole;60474 Plate Round 4 x 4;11213 Plate Round 6 x 6;74611 Plate Round 8 x 8
++6141 Plate Round 1 x 1 with Solid Stud;4032a/4032b Plate Round 2 x 2 with Axle Hole;60474 Plate Round 4 x 4;11213 Plate Round 6 x 6;74611 Plate Round 8 x 8;89523 Plate Special 10 x 10 Octagonal
 
 7904 Plate Round Corner 2 x 2;30357 Plate Round Corner 3 x 3;30565 Plate Round Corner 4 x 4;6003 Plate Round Corner 6 x 6
 
@@ -205,9 +205,19 @@ const relatedPartsData = `
 ;;57895 Glass for Window 1 x 4 x 6;42509 Glass for Frame 1 x 6 x 6
 
 4865b/4865a Panel 1 x 2 x 1;23950 Panel 1 x 3 x 1;15207/43337 Panel 1 x 4 x 1
+;;8012 Panel 1 x 4 x 2, No Studs
 
 87552 Panel 1 x 2 x 2;14718 Panel 1 x 4 x 2
 87544 Panel 1 x 2 x 3;60581 Panel 1 x 4 x 3
+
+*14718 Panel 1 x 4 x 2
+*8012 Panel 1 x 4 x 2, No Studs
+
+Fits with
+*3535 Panel 3 x 3 x 2 Quarter Round
+*8012 Panel 1 x 4 x 2, No Studs
+
+40379 Animal Body Part / Plant, Tail / Claw / Horn / Branch / Tentacle, End Section;8254 Animal Body Part / Plant, Tail / Claw / Horn / Branch / Tentacle, End Section Long
 
 35442 Plate Special 2 x 2 Splat Gear with 6 Teeth;35443 Plate Special 4 x 4 Splat Gear with 10 Teeth;35446 Plate Special 6 x 6 Splat Gear with 14 Teeth
 
@@ -454,10 +464,13 @@ Fits with
 *5841 Brick Curved 1 x 2 x 1 with Curved Top
 *5843 Brick Arch 1 x 3 x 1 2/3 Curved Top
 
+7126 Brick Curved 1 x 1;37352/7134 Brick Curved 1 x 2 x 1 No Studs
+
 Fits with
 *5848 Brick Round Curved 1 x 1 x 1 Quarter Dome
 *5841 Brick Curved 1 x 2 x 1 with Curved Top
 *6215 Brick Curved 2 x 3
+*7126 Brick Curved 1 x 1
 *37352/7134 Brick Curved 1 x 2 x 1 No Studs
 *4045 Brick Curved 1 x 4 x 1 Rounded Ends
 
@@ -465,6 +478,7 @@ Fits with
 *5848 Brick Round Curved 1 x 1 x 1 Quarter Dome
 *5841 Brick Curved 1 x 2 x 1 with Curved Top
 *6215 Brick Curved 2 x 3
+*7126 Brick Curved 1 x 1
 *37352/7134 Brick Curved 1 x 2 x 1 No Studs
 *6192b Brick Curved 2 x 4 Double, No Studs, with Groove
 
@@ -675,6 +689,14 @@ Fits with
 
 *6091 Brick Curved 1 x 2 x 1 1/3 with Curved Top
 *5841 Brick Curved 1 x 2 x 1 with Curved Top
+
+Fits with
+*6091 Brick Curved 1 x 2 x 1 1/3 with Curved Top
+*8103 Brick Round, Curved Triple 2 x 4 x 1 with 1 x 2 Recessed Center
+
+Fits with
+*7532 Brick Round, Quarter 1 x 1
+*3005 Brick 1 x 1
 
 Fits with
 *5849 Brick Curved 1 x 4 x 1
@@ -969,6 +991,9 @@ Fits with
 *2420 Plate 2 x 2 Corner
 *79491 Plate Round Corner 2 x 2 with 1 x 1 Cutout
 
+*79491 Plate Round Corner 2 x 2 with 1 x 1 Cutout
+*7531 Plate Round Half 2 x 4 with 1 x 2 Cutout
+
 *2420 Plate 2 x 2 Corner
 *14719 Tile 2 x 2 Corner
 
@@ -982,6 +1007,7 @@ Fits with
 *3396 Tile Special 2 x 2 with 2 Quarter Round Cutouts
 *25269 Tile Round 1 x 1 Quarter
 
+Fits with
 *7828 Wedge Tile 2 x 2 Left
 *7829 Wedge Tile 2 x 2 Right
 *3068b Tile 2 x 2
@@ -1019,6 +1045,9 @@ Fits with
 *29120 Brick Wedged, Curved 2 x 1 with Stud Notch Left
 *66956 Brick Wedged, Curved 2 x 2 with Stud Notches
 *29119 Brick Wedged, Curved 2 x 1 with Stud Notch Right
+
+*66956 Brick Wedged, Curved 2 x 2 with Stud Notches
+*7821 Brick Wedged, Curved 2 x 2 x 2/3 with Notches 27°
 
 Fits with
 *15068 Brick Curved 2 x 2 x 2/3
@@ -1108,9 +1137,12 @@ Fits with
 *78886 Brick Wedged, Sloped 65° 2 x 2 x 2 Corner
 
 Fits with
-*3660/76959 Brick Sloped Inverted 45° 2 x 2
+*3660/76959/7261 Brick Sloped Inverted 45° 2 x 2
 *3665 Brick Sloped Inverted 45° 2 x 1
 *3676 Brick Sloped Inverted 45° 2 x 2 Double Convex
+
+Fits with
+*8103 Brick Round, Curved Triple 2 x 4 x 1 with 1 x 2 Recessed Center
 
 Fits with
 *3298 Brick Sloped 33° 3 x 2
@@ -1548,11 +1580,11 @@ Fits with
 
 Fits with
 *4871 Brick Sloped Inverted 45° 4 x 2 Double with 2 x 2 Recessed
-*3660/76959 Brick Sloped Inverted 45° 2 x 2
+*3660/76959/7261 Brick Sloped Inverted 45° 2 x 2
 
 Fits with
 *22889 Brick Sloped Inverted 45° 6 x 2 Double with 2 x 4 Recessed
-*3660/76959 Brick Sloped Inverted 45° 2 x 2
+*3660/76959/7261 Brick Sloped Inverted 45° 2 x 2
 
 *3941 Brick Round 2 x 2 with Axle Hole
 *87081 Brick Round 4 x 4 Centre Hole
@@ -1613,8 +1645,34 @@ Fits with
 2926 Plate Special 1 x 4 with Wheels Holder;39767/6157 Plate Special 2 x 2 with Wheels Holder Wide;42947/18892 Brick Special 2 x 4 with Wheels Holder with 2 x 2 Recessed and Hole
 
 Fits with
-*49307 Brick Curved 1 x 1 x 2/3 Double Curved Top, No Studs
 *7818 Brick Curved 1 x 1 x 2/3 Curved Top, Corner
+*49307 Brick Curved 1 x 1 x 2/3 Double, No Studs
+*3563 Brick Curved 1 x 2 x 2/3 Double, No Studs
+*79756 Brick Curved 1 x 4 x 2/3 Double, No Studs
+*79757 Brick Curved 2 x 2 x 2/3 Double, Corner, No Studs
+*8411 Brick Round Corner 2 x 2 x 2/3 No Studs
+
+*4595 Brick Special 1 x 2 x 2/3 with Studs on Sides
+*15071 Weapon Gun / Blaster 1 x 2 x 2/3 with Studs on Sides and Handle
+
+Fits with
+*60474 Plate Round 4 x 4 with Pin Hole
+*7904 Plate Round Corner 2 x 2
+
+Fits with
+*65617 Brick Round Corner 3 x 3 x 1 No Studs
+*5152 Brick Round Corner 3 x 3 Macaroni with 2 Studs
+
+*11609 Tile, Star with Stud Holder, Pin Hole
+*8295 Plate Special 5-Point Star 2 x 2 with One Stud
+
+Fits with
+*5520 Tile Round 2 x 2 Half Circle
+*3068b Tile 2 x 2 with Groove
+
+Fits with
+*86500 Dome Hemisphere 4 x 4
+*60474 Plate Round 4 x 4 with Pin Hole
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
