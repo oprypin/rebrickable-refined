@@ -258,6 +258,7 @@ async function processPartsInventory(inventoryContainer: HTMLElement) {
                 const img = part.querySelector('.inv_img');
                 if (img != null && !img.classList.contains('inv_img_small')) {
                     img.classList.add('inv_img_med');
+                    img.closest('.rb-parts-grid')?.classList.add('rb-parts-grid--med');
                 }
 
                 activated();
@@ -336,7 +337,7 @@ async function processPartsInventory(inventoryContainer: HTMLElement) {
             exportButton.addEventListener('click', () => {
                 exportInventoryCsv(inventory);
             });
-            inventory.prepend(exportButton);
+            inventory.before(exportButton);
             activated();
         }
     });
