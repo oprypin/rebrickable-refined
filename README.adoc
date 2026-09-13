@@ -296,6 +296,8 @@ image:docs/increase-image-resolution-after.jpg[]
 
 * For lists of filters, you can similarly select or deselect a range of checkboxes by clicking the first checkbox and Shift+clicking the last checkbox you want to change.
 
+* The exact same works for the list of messages in your Inbox.
+
 image::docs/checklist-range-selection.png[]
 
 [#enable-high-contrast-text]

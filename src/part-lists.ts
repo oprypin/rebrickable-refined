@@ -166,50 +166,6 @@ const inventoryStylesForConsistentPartImages = /* css */ `
 }
 `.replace(/^\.\b/gm, 'body .');
 
-function processCheckboxList(container: HTMLElement) {
-    let lastClickedItem: HTMLElement | null = null;
-    const checkboxSelector = 'input[type=checkbox]' as const;
-
-    nestedEventListener(container, `.control-label.checkbox, ${checkboxSelector}`, 'mousedown', () => {
-        window.getSelection()?.removeAllRanges();
-    });
-
-    let processing = false;
-    nestedEventListener(container, `.control-label.checkbox, ${checkboxSelector}`, 'click', (e, target) => {
-        if (processing) {
-            return;
-        }
-        const itemSelector = '.js-part, li.clearfix';
-        const clickedItem = target.closest<HTMLElement>(itemSelector);
-        if (!e.shiftKey) {
-            lastClickedItem = clickedItem;
-        } else {
-            window.getSelection()?.removeAllRanges();
-            if (clickedItem == null || lastClickedItem == null) {
-                return;
-            }
-            const lastClickedChecked = lastClickedItem.querySelector<HTMLInputElement>(checkboxSelector)!.checked;
-            // Go over all parts and, within the range, make all checkboxes match the last clicked one's state.
-            processing = true;
-            let isWithinSelection = false;
-            for (const el of clickedItem.parentElement?.querySelectorAll<HTMLElement>(itemSelector) ?? []) {
-                const wasWithinSelection = isWithinSelection;
-                if ((el === lastClickedItem) !== (el === clickedItem)) {
-                    isWithinSelection = !isWithinSelection;
-                }
-                if (isWithinSelection || wasWithinSelection) {
-                    const elCheckbox = el.querySelector<HTMLInputElement>(checkboxSelector)!;
-                    if (elCheckbox.checked !== lastClickedChecked) {
-                        elCheckbox.click();
-                    }
-                }
-            }
-            processing = false;
-            e.preventDefault();
-        }
-    });
-}
-
 async function processPartsInventory(inventoryContainer: HTMLElement) {
     if (inventoryContainer.closest('#filtered_results')) {
         return;
@@ -227,7 +183,7 @@ async function processPartsInventory(inventoryContainer: HTMLElement) {
     }
 
     if (await getSetting('checklist-range-selection')) {
-        processCheckboxList(inventoryContainer);
+        processCheckboxListForRangeSelection(inventoryContainer);
     }
 
     observeChanges(inventoryContainer, () => {
@@ -468,22 +424,6 @@ if (inventoryContainer != null) {
 for (const placeholderContainer of document.querySelectorAll<HTMLElement>('#part_stores_list')) {
     void processPartsInventory(placeholderContainer);
 }
-
-when('checklist-range-selection', (activated) => {
-    for (const checkboxContainer of document.querySelectorAll<HTMLElement>('#part_list_filters, #set_list_filters, #lost_parts_sidebar, #drill_down_filters')) {
-        observeChanges(checkboxContainer, () => {
-            const checkboxLists = checkboxContainer.querySelectorAll<HTMLUListElement>('ul:has(input.js-drill-down-filter[type=checkbox])');
-            for (const checkboxList of checkboxLists) {
-                processCheckboxList(checkboxList);
-            }
-            if (checkboxLists.length > 0) {
-                activated();
-                return true;
-            }
-            return false;
-        });
-    }
-});
 
 for (const img of document.querySelectorAll<HTMLElement>('img.img-responsive[data-src]')) {
     fixImg(img);

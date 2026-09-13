@@ -57,6 +57,7 @@
             "js": [
                 "sort-utils.js",
                 "common.js",
+                "range-selection.js",
                 "part-lists.js",
                 "search-addition.js",
                 "set-lists.js",
