@@ -193,7 +193,7 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                     let freeCount = 0;
                     let premiumCount = 0;
                     for (const set of findSetsUnderHeading(heading)) {
-                        if (set.querySelector('.fa-bolt')) {
+                        if (set.querySelector('.rb-chip--premium, .fa-diamond')) {
                             premiumCount += 1;
                         } else {
                             freeCount += 1;
