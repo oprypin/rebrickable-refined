@@ -173,6 +173,8 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
         }
 
         when('moc-sort-options', (activated) => {
+            const premiumSelector = '.rb-chip--premium, .fa-diamond';
+
             // Allow toggling MOC alt sections and add totals
             for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
                 const toggler = createElement('span', {className: 'link pull-right'}, [
@@ -193,7 +195,7 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                     let freeCount = 0;
                     let premiumCount = 0;
                     for (const set of findSetsUnderHeading(heading)) {
-                        if (set.querySelector('.rb-chip--premium, .fa-diamond')) {
+                        if (set.querySelector(premiumSelector)) {
                             premiumCount += 1;
                         } else {
                             freeCount += 1;
@@ -215,6 +217,7 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                 } catch (e) {}
             }
 
+            // Add sort dropdown
             const sortOptionElements: Array<HTMLLIElement> = [];
             for (const [sortByName, sortByKey, sortDefault] of [
                 ['Likes', 'likes', 'D'],
@@ -222,7 +225,7 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                 ['Num Parts', 'num_parts', 'D'],
                 ['Author', 'author', 'A'],
             ]) {
-                const li = createElement('li', {dataset: {sortByKey, sortDefault}}, [ // 'sort1': 'color_name', 'sort2': 'part_name', 'sort_by': '0',
+                const li = createElement('li', {dataset: {sortByKey, sortDefault}}, [
                     createElement('a', {}, [
                         createElement('i', {className: 'fa fa-fw'}),
                         ' ', sortByName,
@@ -231,30 +234,63 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                 sortOptionElements.push(li);
             }
 
-            const sortSelector = createElement('div', {className: 'btn-group', title: 'Sort MOCs'}, [
-                createElement('button', {type: 'button', className: 'rb-btn rb-btn--default btn-sm dropdown-toggle', dataset: {'toggle': 'dropdown'}}, [
+            const sortSelectorBtn = createElement('div', {className: 'btn-group', title: 'Sort MOCs'}, [
+                createElement('button', {type: 'button', className: 'rb-btn rb-btn--default rb-btn--sm dropdown-toggle', dataset: {'toggle': 'dropdown'}}, [
                     createElement('span'),
                     ' ', createElement('span', {className: 'caret'}),
                 ]),
                 createElement('ul', {className: 'dropdown-menu', role: 'menu'}, sortOptionElements),
             ]);
-            container.prepend(sortSelector);
 
-            nestedEventListener(sortSelector, 'li', 'click', (e, target) => {
-                const {sortByKey, sortDefault} = target.dataset;
+            // Add grouping button
+            const groupPremiumBtn = createElement('button',
+                {
+                    className: 'rb-btn rb-btn--sm rb-btn--default rb-btn--toggle',
+                    title: 'Group free MOCs and show them before premium MOCs',
+                }, [
+                    createElement('i', {className: 'fa fa-square-o'}), ' Free MOCs first',
+                ],
+            );
+
+            container.prepend(
+                createElement('div', {className: 'rb-toolbar__cluster'}, [
+                    'Sort by:', sortSelectorBtn, groupPremiumBtn,
+                ]),
+            );
+
+            let sortByKey = '';
+            let sortDefault = '';
+            let sortFreeFirst = false;
+            let isDescending = false;
+
+            nestedEventListener(sortSelectorBtn, 'li', 'click', (e, target) => {
+                sortByKey = target.dataset.sortByKey!;
+                sortDefault = target.dataset.sortDefault!;
                 const thisI = target.querySelector('i')!;
-                const isDescending = !(
+                isDescending = !(
                     sortDefault === 'D'
                         ? thisI.classList.contains('fa-sort-amount-desc')
                         : !thisI.classList.contains('fa-sort-amount-asc')
                 );
-                for (const otherI of sortSelector.querySelectorAll('i')) {
+                for (const otherI of sortSelectorBtn.querySelectorAll('i')) {
                     otherI.classList.remove('fa-sort-amount-desc');
                     otherI.classList.remove('fa-sort-amount-asc');
                 }
                 thisI.classList.add(isDescending ? 'fa-sort-amount-desc' : 'fa-sort-amount-asc');
-                sortSelector.querySelector('span')!.replaceChildren(...target.querySelector('a')!.cloneNode(true).childNodes);
+                sortSelectorBtn.querySelector('span')!.replaceChildren(...target.querySelector('a')!.cloneNode(true).childNodes);
+                reSort();
+            });
 
+            groupPremiumBtn.addEventListener('click', () => {
+                setTimeout(() => {
+                    sortFreeFirst = groupPremiumBtn.classList.contains('active');
+                    groupPremiumBtn.querySelector('i')?.classList.toggle('fa-square-o', !sortFreeFirst);
+                    groupPremiumBtn.querySelector('i')?.classList.toggle('fa-check-square-o', sortFreeFirst);
+                    reSort();
+                }, 1);
+            });
+
+            function reSort() {
                 for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
                     const elementsToSort = findSetsUnderHeading(heading);
                     if (elementsToSort.length <= 1) {
@@ -263,16 +299,19 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                     sortBy(elementsToSort, (e) => {
                         const data = e.querySelector<HTMLDivElement>('div.js-sort-data')!.dataset;
                         return [
-                            sortByKey === 'author' ? getAuthorName(e)?.toLocaleLowerCase() : naturalSortKey(data[sortByKey!]),
+                            sortByKey === 'author' ? getAuthorName(e)?.toLocaleLowerCase() : naturalSortKey(data[sortByKey]),
                             naturalSortKey(data['added']),
                         ];
                     });
                     if (isDescending) {
                         elementsToSort.reverse();
                     }
+                    if (sortFreeFirst) {
+                        sortBy(elementsToSort, (e) => (e.querySelector(premiumSelector) ? 1 : 0));
+                    }
                     elementsToSort[0].before(...elementsToSort);
                 }
-            });
+            }
 
             sortOptionElements[0].click();
 
