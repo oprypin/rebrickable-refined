@@ -145,8 +145,6 @@ body.text-high-contrast .rbrefined-part-list .js-part .js-part-price {
 }
 `.replace(/^\.\b/gm, 'body .rbrefined-part-list .') + /* css */ `
 .js-part .part-text__qty {
-    font-size: 115%;
-    font-weight: 600;
     margin-left: 0.2ex;
 }
 .js-part .part-text__qty::after {
