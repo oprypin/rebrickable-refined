@@ -105,7 +105,7 @@ const relatedPartsData = `
 3161 Rock Panel 2 x 4 x 4;47847 Rock Panel 2 x 4 x 6;6082 Rock Panel Rectangular 4 x 10 x 6 (aka BURP);6083 Rock Panel Triangular 3 x 8 x 7 (aka LURP);23996 Rock Brick 8 x 8 x 6
 
 44301b Hinge Plate 1 x 2 Locking with 1 Finger On End;44567b Hinge Plate 1 x 2 Locking with 1 Finger on Side;44568 Hinge Plate 1 x 4 Locking Dual 1 Finger;30383 Hinge Plate 1 x 2 Locking with 1 Finger On Top;92582 Hinge Plate 2 x 2 Locking with 1 Finger on Top
-54657 Hinge Plate 1 x 2 Locking with 2 Fingers On End;50340 Hinge Plate 1 x 2 Locking with 2 Fingers on Side;50337/44570 Hinge Plate 3 x 4 Locking Dual 2 Finger;53941/44300 Hinge Tile 1 x 3 Locking with 1 Finger on Top
+54657/44302a Hinge Plate 1 x 2 Locking with 2 Fingers On End;50340/60471 Hinge Plate 1 x 2 Locking with 2 Fingers on Side;50337/44570 Hinge Plate 3 x 4 Locking Dual 2 Finger;53941/44300 Hinge Tile 1 x 3 Locking with 1 Finger on Top
 
 3024 Plate 1 x 1;3023 Plate 1 x 2;3623 Plate 1 x 3;3710 Plate 1 x 4;3666 Plate 1 x 6;3460 Plate 1 x 8;4477 Plate 1 x 10;60479 Plate 1 x 12
 ;3022 Plate 2 x 2;3021 Plate 2 x 3;3020 Plate 2 x 4;3795 Plate 2 x 6;3034 Plate 2 x 8;3832 Plate 2 x 10;2445 Plate 2 x 12;91988 Plate 2 x 14;4282 Plate 2 x 16
@@ -136,18 +136,14 @@ const relatedPartsData = `
 
 87087 Brick Special 1 x 1 with Stud on 1 Side;11211 Brick Special 1 x 2 with 2 Studs on 1 Side;30414 Brick Special 1 x 4 with 4 Studs on One Side
 32952 Brick Special 1 x 1 x 1 2/3 with Studs on 1 Side;22885 Brick Special 1 x 2 x 1 2/3 with 4 Studs on 1 Side
-7729 Brick Special 1 x 1 x 1 2/3 with 6 Studs on 3 Sides;67329 Brick Special 1 x 2 x 1 2/3 with 8 Studs on 3 Sides
+7729 Brick Special 1 x 1 x 1 2/3 with 6 Studs on 3 Sides;67329 Brick Special 1 x 2 x 1 2/3 with 8 Studs on 3 Sides;80796 Brick Special 1 x 2 x 1 2/3 with 8 Studs on 2 Sides
 
 49307 Brick Curved 1 x 1 x 2/3 Double, No Studs;3563 Brick Curved 1 x 2 x 2/3 Double, No Studs;79756 Brick Curved 1 x 4 x 2/3 Double, No Studs
 
-36840 Bracket 1 x 1 - 1 x 1 Inverted;99780 Bracket 1 x 2 - 1 x 2 Inverted
-73825 Bracket 1 x 1 - 1 x 2 Inverted;99207 Bracket 1 x 2 - 2 x 2 Inverted;7452 Bracket 1 x 2 - 2 x 4 Inverted;5090 Bracket 1 x 6 - 2 x 6 Inverted
-
-36841 Bracket 1 x 1 - 1 x 1;99781 Bracket 1 x 2 - 1 x 2;28802 Bracket 1 x 2 - 1 x 4;;5175 Bracket 2 x 4 - 1 x 4
+36840 Bracket 1 x 1 - 1 x 1 Inverted;99780 Bracket 1 x 2 - 1 x 2 Inverted;;;4585 Bracket 1 x 2 with 1 x 2 Vertical Studs;41682 Bracket 2 x 2 with 1 x 2 Vertical Studs
+73825 Bracket 1 x 1 - 1 x 2 Inverted;99207 Bracket 1 x 2 - 2 x 2 Inverted;7452 Bracket 1 x 2 - 2 x 4 Inverted;5090 Bracket 1 x 6 - 2 x 6 Inverted;;7674 Bracket 1 x 2 - 2 x 2 Centered
 79389 Bracket 1 x 1 - 1 x 2;44728 Bracket 1 x 2 - 2 x 2;93274 Bracket 1 x 2 - 2 x 4;6970 Bracket 1 x 2 - 2 x 6
-
-4585 Bracket 1 x 2 with 1 x 2 Vertical Studs;41682 Bracket 2 x 2 with 1 x 2 Vertical Studs
-;7674 Bracket 1 x 2 - 2 x 2 Centered
+36841 Bracket 1 x 1 - 1 x 1;99781 Bracket 1 x 2 - 1 x 2;28802 Bracket 1 x 2 - 1 x 4;;5175 Bracket 2 x 4 - 1 x 4
 
 73562 Bracket 3 x 2 x 1 1/3;11215/79180 Bracket 5 x 2 x 1 1/3;76766 Bracket 5 x 2 x 2 1/3
 ;5712 Bracket 5 x 1 x 1 1/3
@@ -173,7 +169,7 @@ const relatedPartsData = `
 4490 Brick Arch 1 x 3;3659 Brick Arch 1 x 4;92950 Brick Arch 1 x 6
 ;6182 Brick Arch 1 x 4 x 2;15254/12939/3307 Brick Arch 1 x 6 x 2;5850/88292 (half of 1 x 6 x 2)  Brick Arch 1 x 3 x 2;16577 Brick Arch 1 x 8 x 2;3572 (half of 1 x 10 x 2)  Brick Arch 1 x 5 x 2
 ;;;13965 (half of 1 x 6 x 3)  Brick Arch 1 x 3 x 3;80543 (half of 1 x 8 x 3)  Brick Arch 1 x 4 x 3;18838 Brick Arch 1 x 12 x 3 Raised Arch
-;;;;;14395 (half of 1 x 10 x 4)  Brick Arch 1 x 5 x 4
+;;;;;14395/2339 (half of 1 x 10 x 4)  Brick Arch 1 x 5 x 4
 
 3709 Technic Plate 2 x 4 [3 Holes];32001 Technic Plate 2 x 6 [5 Holes];3738 Technic Plate 2 x 8 [7 Holes]
 
@@ -235,6 +231,9 @@ Fits with
 
 87087 Brick Special 1 x 1 with Stud on 1 Side;47905 Brick Special 1 x 1 with Studs on 2 Sides;26604 Brick Special 1 x 1 with Studs on 2 Adjacent Sides;4733 Brick Special 1 x 1 Studs on 4 Sides
 
+*4733 Brick Special 1 x 1 Studs on 4 Sides
+*7729 Brick Special 1 x 1 x 1 2/3 with 6 Studs on 3 Sides
+
 3386 Plate 1 x 1 x 2/3 Half Round with Side Stud;4304/99206 Plate Special 2 x 2 x 2/3 with Two Studs On Side and Two Raised;72132/87609 Plate Special 2 x 6 x 2/3 with 4 Studs on Side
 
 5847 Brick Curved Inverted 1 x 2 with 1 x 1 Cutouts;1750 Brick Curved Inverted 2 x 2 with 1 x 2 Cutouts;5853 Brick Curved Inverted 2 x 4 with 1 x 4 Cutouts
@@ -246,7 +245,7 @@ Fits with
 54671/30365 Hinge Brick 1 x 2 Locking with 2 Fingers Vertical End;30364 Hinge Brick 1 x 2 Locking with 1 Finger Vertical End;39893/30386 Hinge Brick 1 x 2 Locking with 1 Finger Vertical End and 2 Fingers Vertical End;54661/30387 Hinge Brick 1 x 4 Locking with 1 Finger Vertical End and 2 Fingers Vertical End;53914/30388 Hinge Brick 1 x 6 Locking with 1 Finger Vertical End and 2 Fingers Vertical End
 54672/30540 Hinge Brick 1 x 2 Locking with 2 Fingers Horizontal End, 9 Teeth;30541 Hinge Brick 1 x 2 Locking with 1 Finger Horizontal End;;;76385 Hinge Brick 1 x 2 Locking with Single Finger On Top
 
-47905 Brick Special 1 x 1 with Studs on 2 Sides;52107 Brick Special 1 x 2 with Studs on 2 Sides
+47905 Brick Special 1 x 1 with Studs on 2 Sides;52107 Brick Special 1 x 2 with Studs on 2 Sides;+80796 Brick Special 1 x 2 x 1 2/3 with 8 Studs on 2 Sides
 
 5843 Brick Arch 1 x 3 x 1 2/3 Curved Top;6005 Brick Arch 1 x 3 x 2 Curved Top;5845 Brick Arch 1 x 5 x 3 1/3 Curved Top;6060 Brick Arch 1 x 6 x 3 1/3 Curved Top
 
@@ -398,10 +397,6 @@ Fits with
 
 *4216 Brick Special 1 x 2 with Groove
 *90258 Brick Special 2 x 2 with Grooves and Axle Hole
-
-Fits with
-*22885 Brick Special 1 x 2 x 1 2/3 with 4 Studs on 1 Side
-*67329 Brick Special 1 x 2 x 1 2/3 with 8 Studs on 3 Sides
 
 Fits with
 *68568 Plate Round Corner 3 x 3 with 2 x 2 Round Cutout
@@ -1567,13 +1562,13 @@ Fits with
 *3937 Hinge Brick 1 x 2 Base
 
 *53029/40902 Hinge Brick 2 x 2 Locking with 2 Fingers Vertical and Axle Hole
-*50340 Hinge Plate 1 x 2 Locking with 2 Fingers on Side
+*50340/60471 Hinge Plate 1 x 2 Locking with 2 Fingers on Side
 
 *30389b/30389c Hinge Brick 2 x 2 Locking with 1 Finger Vertical and Axle Hole
 *44567b Hinge Plate 1 x 2 Locking with 1 Finger on Side
 
 *54671/30365 Hinge Brick 1 x 2 Locking with 2 Fingers Vertical End
-*54657 Hinge Plate 1 x 2 Locking with 2 Fingers On End
+*54657/44302a Hinge Plate 1 x 2 Locking with 2 Fingers On End
 
 *30364 Hinge Brick 1 x 2 Locking with 1 Finger Vertical End
 *44301b Hinge Plate 1 x 2 Locking with 1 Finger On End
