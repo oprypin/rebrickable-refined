@@ -323,17 +323,6 @@ when('redesign-set-and-moc-tiles', (activated) => {
         .rbrefined-set-stats button {
             display: flex;
         }
-        .rbrefined-set-stats .label {
-            display: inline-block;
-            padding: 3.5px;
-            font-size: 12px;
-        }
-        .rbrefined-set-stats .label.fa-retweet {
-            filter: opacity(0.85);
-        }
-        .rbrefined-set-stats .action-buttons {
-            min-height: 23px;
-        }
         .rbrefined-set-stats .fa-puzzle-piece {
             margin-right: -1.5px;
         }
@@ -341,6 +330,12 @@ when('redesign-set-and-moc-tiles', (activated) => {
             margin-bottom: 0;
             padding-bottom: 1px;
             font-size: 12.5px;
+        }
+        .rbrefined-populated .rb-chip+.rb-chip {
+            margin-inline-start: 3px;
+        }
+        .rbrefined-populated .rb-chip--label {
+            margin-right: 1.5px;
         }
         .text-right:has(.pagination-btns) {
             clear: both;
