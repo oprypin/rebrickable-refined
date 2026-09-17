@@ -7,6 +7,7 @@ import io
 import json
 import os
 import pathlib
+import random
 import re
 import sys
 import time
@@ -36,7 +37,7 @@ with open('src/related-parts-data.ts', encoding='utf-8') as f:
 
 
 def ensure_download(name: str) -> pathlib.Path:
-    tmp_path = pathlib.Path(f'.{name}.csv.gz.part')
+    tmp_path = pathlib.Path(f'.{name}.csv.gz.{random.randrange(100000)}.part')
     dest_path = pathlib.Path(f'.{name}.csv.gz')
 
     if dest_path.is_file():
