@@ -19,7 +19,7 @@ function sortBy<T>(arr: Array<T>, key: (arg: T) => any): Array<T> {
 
 // Returns -1, 0 or 1 based on the comparison of the two values.
 // In the case of arrays, an item-by-item lexicographic comparison is implemented.
-function cmpRespectingArrays(a, b): -1 | 0 | 1 {
+function cmpRespectingArrays(a, b): number {
     if (Array.isArray(a) && Array.isArray(b)) {
         for (let i = 0; i < Math.min(a.length, b.length); ++i) {
             const result = cmpRespectingArrays(a[i], b[i]);
@@ -27,7 +27,7 @@ function cmpRespectingArrays(a, b): -1 | 0 | 1 {
                 return result;
             }
         }
-        return a.length > b.length ? 1 : -1;
+        return a.length - b.length;
     } else if (a === b) {
         return 0;
     } else {
