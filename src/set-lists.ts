@@ -175,7 +175,7 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
         when('moc-sort-options', (activated) => {
             const premiumSelector = '.rb-chip--premium, .fa-diamond';
 
-            // Allow toggling MOC alt sections and add totals
+            // Allow toggling MOC alt sections, add totals, count free vs premium.
             for (const heading of container.querySelectorAll<HTMLDivElement>('div.heading-title')) {
                 const toggler = createElement('span', {className: 'link pull-right'}, [
                     'Toggle ', createElement('i', {className: 'fa fa-chevron-down'}),
@@ -194,7 +194,12 @@ for (const container of document.querySelectorAll<HTMLElement>('#tab_alt_builds'
                 try {
                     let freeCount = 0;
                     let premiumCount = 0;
-                    for (const set of findSetsUnderHeading(heading)) {
+                    const setsUnderHeading = findSetsUnderHeading(heading);
+                    if (!setsUnderHeading || !getAuthorName(setsUnderHeading[0])) {
+                        // These are not MOCs but rather B-models.
+                        continue;
+                    }
+                    for (const set of setsUnderHeading) {
                         if (set.querySelector(premiumSelector)) {
                             premiumCount += 1;
                         } else {
