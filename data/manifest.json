@@ -43,8 +43,8 @@
                 "https://rebrickable.com/*"
             ],
             "js": [
-                "settings.js",
-                "sort-utils.js",
+                "settings-main.js",
+                "sort-utils-main.js",
                 "sort-order.js"
             ],
             "world": "MAIN",

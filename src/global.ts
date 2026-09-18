@@ -2,7 +2,7 @@
 
 function applyHighContrast() {
     // Special early activation
-    if (getSettingFast('enable-high-contrast-text')) {
+    if (rbrefinedGetSetting('enable-high-contrast-text')) {
         document.body.classList.add('text-high-contrast');
     }
 

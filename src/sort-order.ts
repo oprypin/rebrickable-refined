@@ -57,7 +57,7 @@ function sortItems(containerJ, itemsJ, dataSelector: string, sort1: string, sort
     });
     container.append(...items);
 
-    settingActivated('fix-parts-sort-order');
+    rbrefinedSettingActivated('fix-parts-sort-order');
     if (sort1 === 'color_name' || sort1 === 'color_hsv') {
         container.classList.add('rbrefined-corner-enabled');
     } else {
@@ -98,7 +98,7 @@ function reSort() {
             rbSortItems = v;
         },
         get sort_items() {
-            return (getSettingFast('fix-parts-sort-order') ? sortItems : rbSortItems);
+            return (rbrefinedGetSetting('fix-parts-sort-order') ? sortItems : rbSortItems);
         },
 
         set setPartPricesView(v) {
@@ -107,7 +107,7 @@ function reSort() {
         get setPartPricesView() {
             return (...args) => {
                 rbSetPartPricesView!(...args);
-                if (getSettingFast('fix-parts-sort-order')) {
+                if (rbrefinedGetSetting('fix-parts-sort-order')) {
                     reSort();
                 }
             };

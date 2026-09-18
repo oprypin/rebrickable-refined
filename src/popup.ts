@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             input.addEventListener('change', () => {
                 set(input.checked);
                 const keyAny = key as any;
-                if (specialSettings.includes(keyAny)) {
+                if (rbrefinedSpecialSettings.includes(keyAny)) {
                     localStorage.setItem(`rbrefined-${key}`, input.checked ? 'true' : 'false');
                 }
 

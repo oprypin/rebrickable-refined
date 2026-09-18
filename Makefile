@@ -9,10 +9,13 @@ copied_dist := $(copied_dist:data/%=dist/%)
 icons_dist = dist/icon16.png dist/icon32.png dist/icon48.png dist/icon128.png
 
 .PHONY: all
-all: $(ts_dist) $(icons_dist) dist/parts-images-v2.json dist/parts-images.json $(copied_dist)
+all: $(ts_dist) $(icons_dist) dist/settings-main.js dist/sort-utils-main.js dist/parts-images-v2.json dist/parts-images.json $(copied_dist)
 
 $(ts_dist) &: $(ts_files) tsconfig.json node_modules/.bin/tsc
 	node_modules/.bin/tsc
+
+dist/%-main.js: dist/%.js
+	cp $< $@
 
 dist/%.html: src/%.html
 	cp $< $@
